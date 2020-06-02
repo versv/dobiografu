@@ -1,0 +1,111 @@
+/* #012f45 modrá, 
+#e09e03 žlutá
+#d1c5bc - šedá
+#ffbd8a - merunka 
+
+Font: font-family: 'Quicksand', sans-serif;*/
+
+:after,
+:before {
+  box-sizing: border-box;
+}
+/*obecné*/
+
+body {
+  font-family: "Quicksand", sans-serif;
+  background-color: #e0d9d3;
+  text-align: center;
+}
+header {
+  color: white;
+  background-color: #012f45;
+  height: 300px;
+  box-shadow: 4px 4px 8px 0px rgba(50, 50, 50, 0.27);
+}
+
+footer {
+  font-size: 12px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.title {
+  padding: 15px;
+}
+
+h1 {
+  font-family: "Kalam", cursive;
+  font-size: 50px;
+}
+
+/*boxíky*/
+
+.boxy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -70px;
+}
+
+.box {
+  background-color: #e09e03;
+  margin: 20px;
+  width: 200px;
+  height: 150px;
+  box-shadow: 4px 4px 8px 0px rgba(50, 50, 50, 0.27);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+img {
+  max-width: 100%;
+}
+
+/*tlačítka*/
+
+.button a {
+  text-decoration: none;
+  color: black;
+  border-radius: 5px;
+
+  background-color: #ffbd8a;
+  box-shadow: 4px 4px 8px 0px rgba(50, 50, 50, 0.27);
+  font-family: "Kalam", cursive;
+  text-transform: uppercase;
+
+  padding: 5px 20px;
+  width: 120px;
+}
+
+.button a:hover {
+  background-color: #012f45;
+  color: #ffbd8a;
+  font-family: "Kalam", cursive;
+}
+
+/*mobil*/
+
+/*tablet*/
+@media screen and (min-width: 541px) and (max-width: 960px) {
+  .boxy {
+  }
+}
+
+/*desktop*/
+@media screen and (min-width: 961px) {
+  .boxy {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .box {
+    text-align: center;
+    height: 300px;
+    width: 33%;
+    flex-grow: 1 1;
+  }
+}
