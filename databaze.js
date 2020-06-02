@@ -57,4 +57,57 @@ const cinemaList = [
     bar: true,
     transport: "tramvaj. zastávka: Husinecká - linka: 5, 9, 15, 26"
   },
+  {
+    name: "Kino Mat",
+    address: "Karlovo náměstí 19, Praha 2",
+    specialProgramme: true,
+    barrierFree: false,
+    bar: true,
+    transport: "metro: Karlovo náměstí, linka B, tramvaj. zastávka: Karlovo náměstí - linka: 2, 3, 6, 14, 18, 22"
+  },
+
+  {
+    name: "Edison Filmhub",
+    address: "Jeruzalémská 2, Praha 1",
+    specialProgramme: true,
+    barrierFree: false, 
+    bar: true,
+    transport: "tramvaj. zastávka: Jindřišská - linka: 3, 6, 9, 14, 24"
+  },
+
+  {
+    name: "Kino Atlas",
+    address: "Sokolovská 1, Praha 8",
+    specialProgramme: true,
+    barrierFree: false,
+    bar: true,
+    transport: "metro: Florenc, linka B/C, tramvaj. zastávka Florenc - linka: 3, 8, 24, Těšnov - linka: 14 "
+  },
+
+  {
+    name: "Komorní kino Evald",
+    address: "Národní 28, Praha 1",
+    specialProgramme: true,
+    barrierFree: false,
+    bar: true,
+    transport: "metro: Národní - linka B, Můstek - linka: A/B, tramvaj. zastávka Národní třída - linka: 1, 2, 9, 18, 22"
+  }, 
+
+  {
+    name: "Kino Ponrepo",
+    address: "Bartolomějská 11, Praha 1",
+    specialProgramme: true,
+    barrierFree: true, //částečně
+    bar: true,
+    transport: "metro: Národní, linka: B, tramvaj. zastávka: Národní třída - linka: 1, 2, 9, 18, 22"
+  }, 
+
+  {
+    name: "Kino Dlabačov",
+    address: "Bělohorská 24, Praha 6",
+    specialProgramme: true,
+    barrierFree: true, //nemůžu to najít, ale myslím si, že je
+    bar: true,
+    transport: "tramvaj. zastávka: Malovanka - linka: 22, 23, 35, bus: Malovanka - linka: 143, 149 "
+  }
 ]

@@ -19,6 +19,7 @@ body {
 header {
   color: white;
   background-color: #012f45;
+  background-size: 300px;
   height: 300px;
   box-shadow: 4px 4px 8px 0px rgba(50, 50, 50, 0.27);
 }
@@ -29,6 +30,7 @@ footer {
   left: 0;
   bottom: 0;
   width: 100%;
+  background-color:  #e0d9d3;
 }
 
 .title {
@@ -47,6 +49,7 @@ h1 {
   flex-direction: column;
   align-items: center;
   margin-top: -70px;
+  margin-bottom: 40px;
 }
 
 .box {
@@ -66,13 +69,13 @@ img {
 }
 
 /*tlačítka*/
-
+ 
 .button a {
   text-decoration: none;
   color: black;
   border-radius: 5px;
 
-  background-color: #ffbd8a;
+  background-color: #e0d9d3;
   box-shadow: 4px 4px 8px 0px rgba(50, 50, 50, 0.27);
   font-family: "Kalam", cursive;
   text-transform: uppercase;
@@ -108,4 +111,7 @@ img {
     width: 33%;
     flex-grow: 1 1;
   }
+  
+  
+  
 }
