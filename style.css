@@ -30,7 +30,7 @@ footer {
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color:  #e0d9d3;
+  background-color: #e0d9d3;
 }
 
 .title {
@@ -64,24 +64,29 @@ h1 {
   align-items: center;
 }
 
-img {
-  max-width: 100%;
+.box img {
+  max-width: 50%;
 }
 
 /*tlačítka*/
- 
+
+.button {
+  background-color: #e0d9d3;
+  font-family: "Kalam", cursive;
+  text-transform: uppercase;
+  border-radius: 5px;
+  width: 120px;
+  height: 35px;
+  padding: 0;
+  box-shadow: 4px 4px 8px 0px rgba(50, 50, 50, 0.27);
+}
+
 .button a {
   text-decoration: none;
   color: black;
+  display: block;
   border-radius: 5px;
-
-  background-color: #e0d9d3;
-  box-shadow: 4px 4px 8px 0px rgba(50, 50, 50, 0.27);
-  font-family: "Kalam", cursive;
-  text-transform: uppercase;
-
-  padding: 5px 20px;
-  width: 120px;
+  padding: 5px;
 }
 
 .button a:hover {
@@ -94,7 +99,19 @@ img {
 
 /*tablet*/
 @media screen and (min-width: 541px) and (max-width: 960px) {
-  .boxy {
+  .box {
+    width: 400px;
+    height: 300px;
+  }
+
+  .button {
+    width: 240px;
+    height: 50px;
+  }
+
+  .button a {
+    padding: 10px;
+    font-size: 20px;
   }
 }
 
@@ -111,7 +128,18 @@ img {
     width: 33%;
     flex-grow: 1 1;
   }
-  
-  
-  
+
+  .box img {
+    max-width: 60%;
+  }
+
+  .button {
+    min-width: 220px;
+    max-width: 280px;
+    height: 50px;
+  }
+  .button a {
+    padding: 7px;
+    font-size: 24px;
+  }
 }
