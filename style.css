@@ -19,6 +19,7 @@ body {
 header {
   color: white;
   background-color: #012f45;
+  background-size: 300px;
   height: 300px;
   box-shadow: 4px 4px 8px 0px rgba(50, 50, 50, 0.27);
 }
@@ -29,6 +30,7 @@ footer {
   left: 0;
   bottom: 0;
   width: 100%;
+  background-color: #e0d9d3;
 }
 
 .title {
@@ -47,6 +49,7 @@ h1 {
   flex-direction: column;
   align-items: center;
   margin-top: -70px;
+  margin-bottom: 40px;
 }
 
 .box {
@@ -61,24 +64,29 @@ h1 {
   align-items: center;
 }
 
-img {
-  max-width: 100%;
+.box img {
+  max-width: 50%;
 }
 
 /*tlačítka*/
 
+.button {
+  background-color: #e0d9d3;
+  font-family: "Kalam", cursive;
+  text-transform: uppercase;
+  border-radius: 5px;
+  width: 120px;
+  height: 35px;
+  padding: 0;
+  box-shadow: 4px 4px 8px 0px rgba(50, 50, 50, 0.27);
+}
+
 .button a {
   text-decoration: none;
   color: black;
+  display: block;
   border-radius: 5px;
-
-  background-color: #ffbd8a;
-  box-shadow: 4px 4px 8px 0px rgba(50, 50, 50, 0.27);
-  font-family: "Kalam", cursive;
-  text-transform: uppercase;
-
-  padding: 5px 20px;
-  width: 120px;
+  padding: 5px;
 }
 
 .button a:hover {
@@ -91,7 +99,19 @@ img {
 
 /*tablet*/
 @media screen and (min-width: 541px) and (max-width: 960px) {
-  .boxy {
+  .box {
+    width: 400px;
+    height: 300px;
+  }
+
+  .button {
+    width: 240px;
+    height: 50px;
+  }
+
+  .button a {
+    padding: 10px;
+    font-size: 20px;
   }
 }
 
@@ -108,4 +128,239 @@ img {
     width: 33%;
     flex-grow: 1 1;
   }
+
+  .box img {
+    max-width: 60%;
+  }
+
+  .button {
+    min-width: 220px;
+    max-width: 280px;
+    height: 50px;
+  }
+  .button a {
+    padding: 7px;
+    font-size: 24px;
+  }
+}
+
+/* Filtr kin */
+
+/*mobil*/
+
+.instructions {
+  display: none;
+}
+
+.cinemaSelect .cameraImg img {
+  width: 100px;
+  margin-left: 10px;
+}
+
+.cinemaSelect {
+  display: flex;
+  justify-content: space-between;
+  background-color:#e09e03;
+  border-radius: 5px;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: -60px;
+  height: 100px;
+  padding: 10px;
+  width: 80%;
+  box-shadow: 4px 4px 8px 0px rgba(50, 50, 50, 0.27);
+}
+
+#cinemaMenu {
+  width: 120px;
+  height: 30px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-family: Quicksand;
+  font-size: 16px;
+  margin-right: 20px;
+  
+}
+
+.cinemaList {
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 60px;
+  padding: 10px;
+  background-color: #b0adbe;
+  box-shadow: 4px 4px 8px 0px rgba(50, 50, 50, 0.27);
+}
+
+.cinemaItem {
+  display: flex;
+  color: white;
+  height: 130px;
+  align-items: flex-start;
+  justify-content: space-between;
+  border-bottom: 2px solid #e0d9d3;
+  padding-bottom: 10px;
+  clear: right;
+}
+
+.cinemaName {
+  width: 50%;
+  text-align: left;
+  padding-left: 20px;
+}
+
+.cinemaItem p {
+  font-style: italic;
+}
+
+.cinemaButton {
+  width: 120px;
+  height: 35px;
+  border-radius: 5px ;
+  background-color: #e09e03;
+  padding: 0;
+  margin-bottom: 10px;
+  margin-right: 20px;
+  position: relative;
+  bottom: -80px;
+}
+
+.cinemaButton a {
+  text-decoration: none;
+  color: black;
+  padding: 5px;
+  border-radius: 5px;
+  display: block;
+ 
+}
+
+.cinemaButton a:hover {
+  background-color: #012f45;
+  color: #ffbd8a;
+  font-family: "Kalam", cursive;
+}
+
+  /*Detail kina */
+
+.cinemaDetail {
+  margin-top: 10px;
+  background-color: #e0d9d3;
+  border-radius: 5px;
+  padding: 15px;
+}
+
+.cinemaDetail img {
+  width: 200px;
+  height: auto;
+  border-radius: 5px;
+}
+
+.cinemaPhoto {
+  float: left;
+}
+
+.copyright {
+  font-size: 8px;
+  font-style: italic;
+}
+  
+
+.cinemaInfo {
+  clear: left;
+  text-align: left;
+  font-size: 12px;
+  padding-top: 1px;
+}
+
+.programButton {
+  width: 120px;
+  height: 35px;
+  border-radius: 5px ;
+  background-color:#012f45;
+  padding: 0;
+  float: right;
+  position: relative;
+  top: -35px;
+  right: 5px;
+}
+
+.programButton a {
+    text-decoration: none;
+    color:white;
+    padding: 5px;
+    border-radius: 5px;
+    display: block;
+}
+
+.programButton a:hover {
+  background-color: #012f45;
+  font-weight: bold;
+}
+
+
+/*tablet*/
+/*tablet*/
+@media screen and (min-width: 541px)  {
+  .instructions {
+    display: unset;
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  .cinemaDetail img {
+    width: 300px;
+    height: auto;
+  }
+
+  .cinemaInfo {
+    font-size: 16px;
+  }
+
+  .addressDetails {
+    font-size: 20px;
+  }
+
+  .programButton {
+    width: 180px;
+    height: 50px;
+    top: -50px;
+  }
+
+  .programButton a {
+    padding: 12px;
+  }
+
+  .copyright {
+    font-size: 10px;
+  }
+}
+
+/*desktop*/
+@media screen and (min-width: 961px) {
+  .cinemaDetail img {
+    width: 400px;
+    height: auto;
+  }
+
+  .cinemaInfo {
+    font-size: 20x;
+  }
+
+  .addressDetails {
+    font-size: 24px;
+  }
+
+  .programButton {
+    width: 240px;
+    height: 70px;
+    top: -70px;
+    font-size: 20px;
+  }
+
+  .programButton a {
+    padding: 20px;
+  }
+
+  .copyright {
+    font-size: 12px;
+    }
 }
