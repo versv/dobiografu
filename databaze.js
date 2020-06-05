@@ -10,7 +10,11 @@ const cinemaList = [
     specialProgramme: true,
     barrierFree: false,
     bar: true,
-    transport: "metro: Můstek - linka A/B, tramvaj. zastávka: Vodičkova - linka: 3, 5, 6, 9, 14, 24"
+    transport: "metro: Můstek - linka A/B, tramvaj. zastávka: Vodičkova - linka: 3, 5, 6, 9, 14, 24",
+    movies: [
+      ["6.6.2020", "Karkulka", "15:00"],
+      ["7.6.2020", "Králíček Jojo", "18:30"]
+    ]
   },
 
   {
@@ -70,7 +74,7 @@ const cinemaList = [
     name: "Edison Filmhub",
     address: "Jeruzalémská 2, Praha 1",
     specialProgramme: true,
-    barrierFree: false, 
+    barrierFree: false,
     bar: true,
     transport: "tramvaj. zastávka: Jindřišská - linka: 3, 6, 9, 14, 24"
   },
@@ -91,7 +95,7 @@ const cinemaList = [
     barrierFree: false,
     bar: true,
     transport: "metro: Národní - linka B, Můstek - linka: A/B, tramvaj. zastávka Národní třída - linka: 1, 2, 9, 18, 22"
-  }, 
+  },
 
   {
     name: "Kino Ponrepo",
@@ -100,7 +104,7 @@ const cinemaList = [
     barrierFree: true, //částečně
     bar: true,
     transport: "metro: Národní, linka: B, tramvaj. zastávka: Národní třída - linka: 1, 2, 9, 18, 22"
-  }, 
+  },
 
   {
     name: "Kino Dlabačov",
