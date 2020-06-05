@@ -23,7 +23,10 @@ const cinemaList = [
     specialProgramme: true,
     barrierFree: false,
     bar: true,
-    transport: "metro: Můstek - linka A/B, tramvaj.zastávka: Vodičkova - linka: 3, 5, 6, 9, 14, 24"
+    transport: "metro: Můstek - linka A/B, tramvaj.zastávka: Vodičkova - linka: 3, 5, 6, 9, 14, 24",
+    movies: [
+      ["5.6.2020", "Jeníček a Mařenka", "13:00"],
+    ]
   },
 
   {
