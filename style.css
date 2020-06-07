@@ -1,10 +1,6 @@
-/* #012f45 modrá, 
-#e09e03 žlutá
-#d1c5bc - šedá
-#ffbd8a - merunka 
-
-Font: font-family: 'Quicksand', sans-serif;*/
-
+/*font-family: 'Montserrat', sans-serif;
+font-family: 'Zilla Slab', serif;
+*/
 :after,
 :before {
   box-sizing: border-box;
@@ -12,34 +8,37 @@ Font: font-family: 'Quicksand', sans-serif;*/
 /*obecné*/
 
 body {
-  font-family: "Quicksand", sans-serif;
-  background-color: #e0d9d3;
+  font-family: "Montserrat", sans-serif;
+  background-color: #30363d;
   text-align: center;
 }
 header {
-  color: white;
-  background-color: #012f45;
+  color: #ffffff;
+
   background-size: 300px;
   height: 300px;
   box-shadow: 4px 4px 8px 0px rgba(50, 50, 50, 0.27);
 }
 
-footer {
+/*footer {
   font-size: 12px;
   position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color: #e0d9d3;
-}
+}*/
 
 .title {
   padding: 15px;
 }
 
 h1 {
-  font-family: "Kalam", cursive;
-  font-size: 50px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  background: linear-gradient(to right, #f27a54 45%, #a154f2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 64px;
 }
 
 /*boxíky*/
@@ -53,12 +52,12 @@ h1 {
 }
 
 .box {
-  background-color: #e09e03;
+  background-color: #3c444c;
   margin: 20px;
   width: 200px;
   height: 150px;
-  box-shadow: 4px 4px 8px 0px rgba(50, 50, 50, 0.27);
-  border-radius: 10px;
+  box-shadow: 4px 4px 8px 0px rgba(12, 12, 12, 0.523);
+  border-radius: 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -72,27 +71,19 @@ h1 {
 
 .button {
   background-color: #e0d9d3;
-  font-family: "Kalam", cursive;
-  text-transform: uppercase;
-  border-radius: 5px;
+  font-family: "Zilla Slab", serif;
+  border-radius: 25px;
   width: 120px;
   height: 35px;
   padding: 0;
-  box-shadow: 4px 4px 8px 0px rgba(50, 50, 50, 0.27);
 }
 
 .button a {
   text-decoration: none;
+
   color: black;
   display: block;
-  border-radius: 5px;
-  padding: 5px;
-}
-
-.button a:hover {
-  background-color: #012f45;
-  color: #ffbd8a;
-  font-family: "Kalam", cursive;
+  border-radius: 25px;
 }
 
 /*mobil*/
@@ -160,7 +151,7 @@ h1 {
 .cinemaSelect {
   display: flex;
   justify-content: space-between;
-  background-color:#e09e03;
+  background-color: #3c444c;
   border-radius: 5px;
   align-items: center;
   margin: 0 auto;
@@ -176,10 +167,9 @@ h1 {
   height: 30px;
   border-radius: 5px;
   font-weight: bold;
-  font-family: Quicksand;
+  font-family: "Montserrat", sans-serif;
   font-size: 16px;
   margin-right: 20px;
-  
 }
 
 .cinemaList {
@@ -215,8 +205,8 @@ h1 {
 .cinemaButton {
   width: 120px;
   height: 35px;
-  border-radius: 5px ;
-  background-color: #e09e03;
+  border-radius: 5px;
+  background-color: #e0d9d3;
   padding: 0;
   margin-bottom: 10px;
   margin-right: 20px;
@@ -230,16 +220,15 @@ h1 {
   padding: 5px;
   border-radius: 5px;
   display: block;
- 
 }
 
 .cinemaButton a:hover {
-  background-color: #012f45;
-  color: #ffbd8a;
-  font-family: "Kalam", cursive;
+  background-color: #e0d9d3;
+
+  font-family: "Zilla Slab", serif;
 }
 
-  /*Detail kina */
+/*Detail kina */
 
 .cinemaDetail {
   margin-top: 10px;
@@ -262,7 +251,6 @@ h1 {
   font-size: 8px;
   font-style: italic;
 }
-  
 
 .cinemaInfo {
   clear: left;
@@ -274,8 +262,8 @@ h1 {
 .programButton {
   width: 120px;
   height: 35px;
-  border-radius: 5px ;
-  background-color:#012f45;
+  border-radius: 5px;
+  background-color: #3c444c;
   padding: 0;
   float: right;
   position: relative;
@@ -284,22 +272,21 @@ h1 {
 }
 
 .programButton a {
-    text-decoration: none;
-    color:white;
-    padding: 5px;
-    border-radius: 5px;
-    display: block;
+  text-decoration: none;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  display: block;
 }
 
 .programButton a:hover {
-  background-color: #012f45;
+  background-color: #3c444c;
   font-weight: bold;
 }
 
-
 /*tablet*/
 /*tablet*/
-@media screen and (min-width: 541px)  {
+@media screen and (min-width: 541px) {
   .instructions {
     display: unset;
     font-weight: bold;
@@ -362,5 +349,5 @@ h1 {
 
   .copyright {
     font-size: 12px;
-    }
+  }
 }
