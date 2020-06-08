@@ -134,7 +134,12 @@ const cinemaList = [
     specialProgramme: true,
     barrierFree: false,
     bar: true,
-    transport: "metro: Karlovo náměstí, linka B, tramvaj. zastávka: Karlovo náměstí - linka: 2, 3, 6, 14, 18, 22"
+    transport: "metro: Karlovo náměstí, linka B, tramvaj. zastávka: Karlovo náměstí - linka: 2, 3, 6, 14, 18, 22",
+    movies: [
+      ["Pá", "26.6.2020", "Vinnetou - Poslední výstřel", "18:30"],
+      ["So", "30.6.2020", "Poklad na stříbrném jezeře", "18:30"],
+
+    ]
   },
 
   {
@@ -143,7 +148,13 @@ const cinemaList = [
     specialProgramme: true,
     barrierFree: false,
     bar: true,
-    transport: "tramvaj. zastávka: Jindřišská - linka: 3, 6, 9, 14, 24"
+    transport: "tramvaj. zastávka: Jindřišská - linka: 3, 6, 9, 14, 24",
+    movies: [
+      ["Čt", "18.6.2020", "Gauguin z Národní galerie v Londýně", "19:00"],
+      ["Čt", "18.6.2020", "Gauguin", "21:00"],
+      ["Út", "30.6.2020", "Postřižiny", "19:00"],
+
+    ]
   },
 
   {
@@ -152,7 +163,10 @@ const cinemaList = [
     specialProgramme: true,
     barrierFree: false,
     bar: true,
-    transport: "metro: Florenc, linka B/C, tramvaj. zastávka Florenc - linka: 3, 8, 24, Těšnov - linka: 14 "
+    transport: "metro: Florenc, linka B/C, tramvaj. zastávka Florenc - linka: 3, 8, 24, Těšnov - linka: 14 ",
+    movies: [
+
+    ]
   },
 
   {
@@ -161,7 +175,10 @@ const cinemaList = [
     specialProgramme: true,
     barrierFree: false,
     bar: true,
-    transport: "metro: Národní - linka B, Můstek - linka: A/B, tramvaj. zastávka Národní třída - linka: 1, 2, 9, 18, 22"
+    transport: "metro: Národní - linka B, Můstek - linka: A/B, tramvaj. zastávka Národní třída - linka: 1, 2, 9, 18, 22",
+    movies: [
+
+    ]
   },
 
   {
@@ -170,7 +187,17 @@ const cinemaList = [
     specialProgramme: true,
     barrierFree: true, //částečně
     bar: true,
-    transport: "metro: Národní, linka: B, tramvaj. zastávka: Národní třída - linka: 1, 2, 9, 18, 22"
+    transport: "metro: Národní, linka: B, tramvaj. zastávka: Národní třída - linka: 1, 2, 9, 18, 22",
+    movies: [
+      ["Po", "22.6.2020", "Jiří Menzel – Nicollò Machiavelli / Mandragora", "18:00"],
+      ["Út", "23.6.2020", "Červená řeka", "20:30"],
+      ["St", "24.6.2020", "Kdyby všichni chlapi světa", "18:00"],
+      ["Čt", "25.6.2020", "Bez lásky", "18:00"],
+      ["Pá", "26.6.2020", "Svatba jako řemen", "18:00"],
+      ["So", "27.6.2020", "Strašidelné léto", "20:30"],
+      ["Ne", "28.6.2020", "Tranzit", "20:30"],
+
+    ]
   },
 
   {
@@ -179,6 +206,21 @@ const cinemaList = [
     specialProgramme: true,
     barrierFree: true, //nemůžu to najít, ale myslím si, že je
     bar: true,
-    transport: "tramvaj. zastávka: Malovanka - linka: 22, 23, 35, bus: Malovanka - linka: 143, 149 "
+    transport: "tramvaj. zastávka: Malovanka - linka: 22, 23, 35, bus: Malovanka - linka: 143, 149 ",
+    movies: [
+      ["Po", "22.6.2020", "Vlastníci", "18:00"],
+      ["Po", "22.6.2020", "V síti", "20:00"],
+      ["Út", "23.6.2020", "Emma.", "18:00"],
+      ["Út", "23.6.2020", "Maják", "20:00"],
+      ["St", "24.6.2020", "Daleko od Reykjavíku", "18:00"],
+      ["St", "24.6.2020", "Afrikou na pionýru", "20:00"],
+      ["Čt", "25.6.2020", "Afrikou na pionýru", "18:00"],
+      ["Čt", "25.6.2020", "Vysoká dívka", "20:00"],
+      ["Pá", "26.6.2020", "Příliš osobní známost", "18:00"],
+      ["Pá", "26.6.2020", "Hanební pancharti", "20:00"],
+      ["So", "27.6.2020", "Lassie se vrací", "16:00"],
+      ["So", "27.6.2020", "Osm hrozných", "20:00"],
+    ]
+
   }
 ]
