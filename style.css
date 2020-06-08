@@ -19,13 +19,10 @@ header {
   box-shadow: 4px 4px 8px 0px rgba(50, 50, 50, 0.27);
 }
 
-/*footer {
+footer {
   font-size: 12px;
-  position: fixed;
-  left: 0;
-  bottom: 0;
   width: 100%;
-}*/
+}
 
 .title {
   padding: 15px;
@@ -154,18 +151,23 @@ h1 {
   margin-left: 10px;
 }
 
+.cinema-filter {
+  margin: 0 auto;
+  margin-top: -60px;
+  margin-bottom: 60px;
+  padding: 0px;
+  width: 80%;
+  box-shadow: 4px 4px 8px 0px rgba(50, 50, 50, 0.27);
+}
+
 .cinema-select {
   display: flex;
   justify-content: space-between;
   background-color: #3c444c;
-  border-radius: 5px;
   align-items: center;
-  margin: 0 auto;
-  margin-top: -60px;
-  height: 100px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
   padding: 10px;
-  width: 80%;
-  box-shadow: 4px 4px 8px 0px rgba(50, 50, 50, 0.27);
 }
 
 #cinema-menu {
@@ -179,12 +181,11 @@ h1 {
 }
 
 .cinema-list {
-  width: 85%;
-  margin: 0 auto;
-  margin-bottom: 60px;
-  padding: 0px;
   background-color: #b0adbe;
   box-shadow: 4px 4px 8px 0px rgba(50, 50, 50, 0.27);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding-bottom: 1px;
 }
 
 .cinema-name h2, .cinema-name p {
@@ -199,6 +200,7 @@ h1 {
   justify-content: space-between;
   border-top: 1px solid #3c444c;
   clear: right;
+  margin-bottom: 10px;
 }
 
 .cinema-name {
@@ -225,15 +227,12 @@ h1 {
 
 /*Detail kina */
 
-/* je potřeba opravit ten poměr filtru a kin, aby to mělo stejnou šířku */
+/* proč je ta mezera mezi detailem a dalším kinem? */
 
 .cinema-detail {
-  margin-top: 10px;
   background-color:#3c444c;
-  margin: 0;
-  margin-top: 20px;
+  margin: 0px;
   padding: 15px;
-  padding-bottom: 25px;
   box-shadow: 4px 4px 8px 0px rgba(50, 50, 50, 0.27);
   color: white;
 }
@@ -331,8 +330,7 @@ h1 {
   h2 {
     font-size: 32px;
   }
-  .cinema-delect, 
-  .cinema-list {
+  .cinema-filter {
     width: 70%;
   }
 
