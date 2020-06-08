@@ -14,7 +14,6 @@ body {
 }
 header {
   color: #ffffff;
-
   background-size: 300px;
   height: 300px;
   box-shadow: 4px 4px 8px 0px rgba(50, 50, 50, 0.27);
@@ -38,7 +37,7 @@ h1 {
   background: linear-gradient(to right, #f27a54 45%, #a154f2 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: 64px;
+  font-size: 36px;
 }
 
 /*boxíky*/
@@ -74,13 +73,12 @@ h1 {
   font-family: "Zilla Slab", serif;
   border-radius: 25px;
   width: 120px;
-  height: 35px;
-  padding: 0;
+  height: 30px;
+  padding-top: 5px;;
 }
 
 .button a {
   text-decoration: none;
-
   color: black;
   display: block;
   border-radius: 25px;
@@ -103,6 +101,10 @@ h1 {
   .button a {
     padding: 10px;
     font-size: 20px;
+  }
+
+  h1 {
+    font-size: 48px;
   }
 }
 
@@ -133,6 +135,10 @@ h1 {
     padding: 7px;
     font-size: 24px;
   }
+
+  h1 {
+    font-size: 64px;
+  }
 }
 
 /* Filtr kin */
@@ -143,12 +149,12 @@ h1 {
   display: none;
 }
 
-.cinemaSelect .cameraImg img {
+.cinema-select .camera-img img {
   width: 100px;
   margin-left: 10px;
 }
 
-.cinemaSelect {
+.cinema-select {
   display: flex;
   justify-content: space-between;
   background-color: #3c444c;
@@ -162,7 +168,7 @@ h1 {
   box-shadow: 4px 4px 8px 0px rgba(50, 50, 50, 0.27);
 }
 
-#cinemaMenu {
+#cinema-menu {
   width: 120px;
   height: 30px;
   border-radius: 5px;
@@ -172,78 +178,73 @@ h1 {
   margin-right: 20px;
 }
 
-.cinemaList {
-  width: 80%;
+.cinema-list {
+  width: 85%;
   margin: 0 auto;
   margin-bottom: 60px;
-  padding: 10px;
+  padding: 0px;
   background-color: #b0adbe;
   box-shadow: 4px 4px 8px 0px rgba(50, 50, 50, 0.27);
 }
 
-.cinemaItem {
+.cinema-name h2, .cinema-name p {
+  color: #30363d;
+}
+
+.cinema-item {
   display: flex;
   color: white;
   height: 130px;
   align-items: flex-start;
   justify-content: space-between;
-  border-bottom: 2px solid #e0d9d3;
-  padding-bottom: 10px;
+  border-top: 1px solid #3c444c;
   clear: right;
 }
 
-.cinemaName {
+.cinema-name {
   width: 50%;
   text-align: left;
   padding-left: 20px;
 }
 
-.cinemaItem p {
+.cinema-item p {
   font-style: italic;
+  font-size: 12px;
 }
 
-.cinemaButton {
-  width: 120px;
-  height: 35px;
-  border-radius: 5px;
-  background-color: #e0d9d3;
-  padding: 0;
-  margin-bottom: 10px;
-  margin-right: 20px;
+.cinema-button {
   position: relative;
   bottom: -80px;
+  right: 10px;
+  background-color: #3c444c;
 }
 
-.cinemaButton a {
-  text-decoration: none;
-  color: black;
-  padding: 5px;
-  border-radius: 5px;
-  display: block;
-}
-
-.cinemaButton a:hover {
-  background-color: #e0d9d3;
-
-  font-family: "Zilla Slab", serif;
+.cinema-button a {
+  color: white;
 }
 
 /*Detail kina */
 
-.cinemaDetail {
+/* je potřeba opravit ten poměr filtru a kin, aby to mělo stejnou šířku */
+
+.cinema-detail {
   margin-top: 10px;
-  background-color: #e0d9d3;
-  border-radius: 5px;
+  background-color:#3c444c;
+  margin: 0;
+  margin-top: 20px;
   padding: 15px;
+  padding-bottom: 25px;
+  box-shadow: 4px 4px 8px 0px rgba(50, 50, 50, 0.27);
+  color: white;
 }
 
-.cinemaDetail img {
+.cinema-detail img {
   width: 200px;
   height: auto;
   border-radius: 5px;
 }
 
-.cinemaPhoto {
+.cinema-photo {
   float: left;
 }
 
@@ -252,67 +253,71 @@ h1 {
   font-style: italic;
 }
 
-.cinemaInfo {
+.cinema-info {
   clear: left;
   text-align: left;
   font-size: 12px;
   padding-top: 1px;
 }
 
-.programButton {
-  width: 120px;
-  height: 35px;
-  border-radius: 5px;
-  background-color: #3c444c;
-  padding: 0;
+.program-button {
   float: right;
   position: relative;
   top: -35px;
-  right: 5px;
+  right: 0px;
 }
 
-.programButton a {
-  text-decoration: none;
-  color: white;
-  padding: 5px;
-  border-radius: 5px;
-  display: block;
+.program-button a {
+  color: black;
 }
 
-.programButton a:hover {
-  background-color: #3c444c;
-  font-weight: bold;
-}
 
-/*tablet*/
 /*tablet*/
 @media screen and (min-width: 541px) {
+  h2 {
+    font-size: 28px;
+  }
+
+  .cinema-name p {
+    font-size: 14px;
+  }
   .instructions {
     display: unset;
-    font-weight: bold;
-    font-size: 20px;
+    font-size: 16px;
+    color: white;
   }
 
-  .cinemaDetail img {
+  .cinema-item {
+    padding: 20px;
+  }
+
+  .cinema-detail img {
     width: 300px;
     height: auto;
+    padding: 10px;
   }
 
-  .cinemaInfo {
+  .cinema-info {
     font-size: 16px;
+    padding: 10px;
   }
 
-  .addressDetails {
+  .address-details {
     font-size: 20px;
+    padding: 10px;
   }
 
-  .programButton {
+  .cinema-button {
     width: 180px;
-    height: 50px;
-    top: -50px;
   }
 
-  .programButton a {
+  .program-button {
+    width: 180px;
+    top: -50px;
+    right: 15px;
+  }
+
+  .program-button a {
     padding: 12px;
   }
 
@@ -323,28 +328,42 @@ h1 {
 
 /*desktop*/
 @media screen and (min-width: 961px) {
-  .cinemaDetail img {
+  h2 {
+    font-size: 32px;
+  }
+  .cinema-delect, 
+  .cinema-list {
+    width: 70%;
+  }
+
+  .cinema-name p {
+    font-size: 16px;
+  }
+  .cinema-detail img {
     width: 400px;
     height: auto;
   }
 
-  .cinemaInfo {
+  .cinema-info {
     font-size: 20x;
   }
 
-  .addressDetails {
+  .address-details {
     font-size: 24px;
   }
 
-  .programButton {
+  .cinema-button {
     width: 240px;
-    height: 70px;
+  }
+
+  .program-button {
+    width: 240px;
     top: -70px;
     font-size: 20px;
   }
 
-  .programButton a {
-    padding: 20px;
+  .program-button a {
+    padding: 5px;
   }
 
   .copyright {
