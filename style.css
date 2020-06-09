@@ -157,7 +157,9 @@ h1 {
   margin-bottom: 60px;
   padding: 0px;
   width: 80%;
+  border-radius: 10px;
   box-shadow: 4px 4px 8px 0px rgba(50, 50, 50, 0.27);
+  background-color: #b0adbe;
 }
 
 .cinema-select {
@@ -165,9 +167,9 @@ h1 {
   justify-content: space-between;
   background-color: #3c444c;
   align-items: center;
+  padding: 10px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  padding: 10px;
 }
 
 #cinema-menu {
@@ -181,10 +183,8 @@ h1 {
 }
 
 .cinema-list {
-  background-color: #b0adbe;
+  
   box-shadow: 4px 4px 8px 0px rgba(50, 50, 50, 0.27);
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
   padding-bottom: 1px;
 }
 
@@ -195,7 +195,7 @@ h1 {
 .cinema-item {
   display: flex;
   color: white;
-  height: 130px;
+  height: 150px;
   align-items: flex-start;
   justify-content: space-between;
   border-top: 1px solid #3c444c;
@@ -216,7 +216,7 @@ h1 {
 
 .cinema-button {
   position: relative;
-  bottom: -80px;
+  bottom: -100px;
   right: 10px;
   background-color: #3c444c;
 }
@@ -282,7 +282,7 @@ h1 {
   }
   .instructions {
     display: unset;
-    font-size: 16px;
+    font-size: 14px;
     color: white;
   }
 
@@ -306,7 +306,8 @@ h1 {
     padding: 10px;
   }
 
-  .cinema-button {
+  .cinema-button,
+  #cinema-menu {
     width: 180px;
   }
 
@@ -334,7 +335,8 @@ h1 {
     width: 70%;
   }
 
-  .cinema-name p {
+  .cinema-name p, 
+  .instructions {
     font-size: 16px;
   }
   .cinema-detail img {
@@ -350,7 +352,8 @@ h1 {
     font-size: 24px;
   }
 
-  .cinema-button {
+  .cinema-button,
+  #cinema-menu {
     width: 240px;
   }
 
