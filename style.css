@@ -15,7 +15,7 @@ body {
 header {
   color: #ffffff;
   background-size: 300px;
-  height: 300px;
+  height: 180px;
   box-shadow: 4px 4px 8px 0px rgba(50, 50, 50, 0.27);
 }
 
@@ -85,6 +85,10 @@ h1 {
 
 /*tablet*/
 @media screen and (min-width: 541px) and (max-width: 960px) {
+  header {
+    height: 200px;
+  }
+
   .box {
     width: 400px;
     height: 300px;
@@ -107,6 +111,9 @@ h1 {
 
 /*desktop*/
 @media screen and (min-width: 961px) {
+  header {
+    height: 240px;
+  }
   .boxy {
     flex-direction: row;
     align-items: flex-start;
@@ -138,23 +145,23 @@ h1 {
   }
 }
 
-/* Filtr kin */
+/* Přehled kin */
 
 /*mobil*/
 
-.instructions {
-  display: none;
-}
-
-.cinema-select .camera-img img {
-  width: 100px;
+.camera-img img {
+  width: 50px;
   margin-left: 10px;
 }
 
-.cinema-filter {
+.camera-img-flipped img {
+  width: 50px;
+  margin-right: 10px;
+  transform: rotateY(180deg);
+}
+
+.cinema-overview {
   margin: 0 auto;
-  margin-top: -60px;
-  margin-bottom: 60px;
   padding: 0px;
   width: 80%;
   border-radius: 10px;
@@ -162,7 +169,7 @@ h1 {
   background-color: #b0adbe;
 }
 
-.cinema-select {
+.cinema-overview-header {
   display: flex;
   justify-content: space-between;
   background-color: #3c444c;
@@ -183,7 +190,6 @@ h1 {
 }
 
 .cinema-list {
-  
   box-shadow: 4px 4px 8px 0px rgba(50, 50, 50, 0.27);
   padding-bottom: 1px;
 }
@@ -196,29 +202,28 @@ h1 {
   display: flex;
   color: white;
   height: 150px;
-  align-items: flex-start;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
   border-top: 1px solid #3c444c;
-  clear: right;
   margin-bottom: 10px;
+  padding: 0 20px 20px 20px;
 }
 
 .cinema-name {
-  width: 50%;
-  text-align: left;
-  padding-left: 20px;
+  width: 100%;
 }
 
 .cinema-item p {
   font-style: italic;
   font-size: 12px;
+  width: 100%;
 }
 
 .cinema-button {
-  position: relative;
-  bottom: -100px;
-  right: 10px;
+  width: 60%;
   background-color: #3c444c;
+  
 }
 
 .cinema-button a {
@@ -227,24 +232,21 @@ h1 {
 
 /*Detail kina */
 
-/* proč je ta mezera mezi detailem a dalším kinem? */
-
 .cinema-detail {
   background-color:#3c444c;
   margin: 0px;
-  padding: 15px;
+  padding: 20px;
   box-shadow: 4px 4px 8px 0px rgba(50, 50, 50, 0.27);
   color: white;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .cinema-detail img {
-  width: 200px;
+  width: 100%;
   height: auto;
   border-radius: 5px;
-}
-
-.cinema-photo {
-  float: left;
 }
 
 .copyright {
@@ -253,17 +255,19 @@ h1 {
 }
 
 .cinema-info {
-  clear: left;
   text-align: left;
   font-size: 12px;
-  padding-top: 1px;
+  width: 100%;
+}
+
+.address-details {
+ text-align: center;
+ width: 100%;
+ font-size: 14px;
 }
 
 .program-button {
-  float: right;
-  position: relative;
-  top: -35px;
-  right: 0px;
+  width: 60%;
 }
 
 .program-button a {
@@ -280,45 +284,36 @@ h1 {
   .cinema-name p {
     font-size: 14px;
   }
-  .instructions {
-    display: unset;
-    font-size: 14px;
-    color: white;
+
+  .camera-img img, 
+  .camera-img-flipped img {
+    width: 70px;
   }
 
   .cinema-item {
-    padding: 20px;
+    padding-bottom: 50px;
   }
 
   .cinema-detail img {
-    width: 300px;
+    width: 100%;
     height: auto;
-    padding: 10px;
+  }
+
+  .cinema-button,
+  .program-button {
+    width: 50%;
   }
 
   .cinema-info {
     font-size: 16px;
-    padding: 10px;
   }
 
   .address-details {
-    font-size: 20px;
-    padding: 10px;
-  }
-
-  .cinema-button,
-  #cinema-menu {
-    width: 180px;
-  }
-
-  .program-button {
-    width: 180px;
-    top: -50px;
-    right: 15px;
+    font-size: 18px;
   }
 
   .program-button a {
-    padding: 12px;
+    padding: 10px;
   }
 
   .copyright {
@@ -331,36 +326,33 @@ h1 {
   h2 {
     font-size: 32px;
   }
-  .cinema-filter {
-    width: 70%;
-  }
-
-  .cinema-name p, 
-  .instructions {
+  
+  .cinema-name p {
     font-size: 16px;
   }
-  .cinema-detail img {
-    width: 400px;
+  .cinema-photo {
+    width: 50%;
     height: auto;
   }
 
   .cinema-info {
     font-size: 20x;
+    width: 50%;
+    align-content: left;
   }
 
   .address-details {
-    font-size: 24px;
+    font-size: 20px;
+    width: 50%;
   }
 
-  .cinema-button,
-  #cinema-menu {
-    width: 240px;
+  .cinema-button {
+    width: 50%;
   }
 
   .program-button {
-    width: 240px;
-    top: -70px;
-    font-size: 20px;
+    width: 50%;
+    margin-right: 30px;
   }
 
   .program-button a {
@@ -369,5 +361,10 @@ h1 {
 
   .copyright {
     font-size: 12px;
+  }
+
+  .cinema-detail {
+    justify-content: space-between;
+    align-items: center;
   }
 }
