@@ -199,7 +199,8 @@ h1 {
   background-color: #b0adbe;
 }
 
-.cinema-overview-header {
+.cinema-overview-header,
+.programme-header {
   display: flex;
   justify-content: space-between;
   background-color: #3c444c;
@@ -402,3 +403,51 @@ h1 {
     align-items: center;
   }
 }
+
+/* Program kina */
+
+/* mobil */
+.cinema-programme {
+  padding: 10px;
+}
+
+.programme-header {
+  color: white;
+  padding: 10px 30px ;
+}
+
+.programme-header p {
+  font-style: italic;
+  font-size: 16px;
+}
+
+.programme-day {
+  text-align: left;
+}
+
+.programme-day-date {
+  font-weight: bold;
+}
+
+.programme-day-date:after {
+  content: "";
+  background: linear-gradient(to right, #f27a54 25%, #a154f2 100%);
+  display: block;
+  height: 1.5px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.movie {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tickets-button {
+  max-width: 140px;
+  margin: 0 auto;
+  padding-top: 10px;
+  background: linear-gradient(to right, #f27a54 25%, #a154f2 100%);
+  color: white;
+}
+
