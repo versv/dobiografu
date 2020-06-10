@@ -47,19 +47,21 @@ h1 {
   background-color: #3c444c;
   box-shadow: 4px 4px 8px 0px rgba(12, 12, 12, 0.523);
   border-radius: 5px;
-
   margin: 10px 50px;
   padding: 5px;
-
   flex: 1 1;
-
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+.cameraImg, .ticketImg, .calendarImg {
+  height: 60%;
+  margin: 0 30px;
+}
+
 .box img {
-  max-width: 50%;
+  max-width: 120px;
 }
 
 /*tlačítka*/
@@ -68,9 +70,8 @@ h1 {
   background-color: #e0d9d3;
   font-family: "Zilla Slab", serif;
   border-radius: 15px;
-  width: 120px;
+  min-width: 120px;
   height: 30px;
-
   margin-bottom: 15px;
 }
 
@@ -80,6 +81,7 @@ h1 {
   display: block;
   text-align: center;
   font-size: 14px;
+  padding: 5px;
 }
 
 /*mobil*/
@@ -95,6 +97,10 @@ h1 {
     height: 300px;
     margin: 15px;
     padding: 5px;
+  }
+
+  .box img {
+    max-width: 160px;
   }
 
   .button {
@@ -149,6 +155,10 @@ h1 {
     flex-grow: 1 1;
   }
 
+  .box img {
+    max-width: 200px;
+  }
+
   .button {
     min-width: 220px;
     max-width: 280px;
@@ -156,7 +166,7 @@ h1 {
   }
 
   .button a {
-    padding: 7px;
+    padding: 10px;
     font-size: 20px;
   }
 
@@ -189,7 +199,8 @@ h1 {
   background-color: #b0adbe;
 }
 
-.cinema-overview-header {
+.cinema-overview-header,
+.programme-header {
   display: flex;
   justify-content: space-between;
   background-color: #3c444c;
@@ -392,3 +403,51 @@ h1 {
     align-items: center;
   }
 }
+
+/* Program kina */
+
+/* mobil */
+.cinema-programme {
+  padding: 10px;
+}
+
+.programme-header {
+  color: white;
+  padding: 10px 30px ;
+}
+
+.programme-header p {
+  font-style: italic;
+  font-size: 16px;
+}
+
+.programme-day {
+  text-align: left;
+}
+
+.programme-day-date {
+  font-weight: bold;
+}
+
+.programme-day-date:after {
+  content: "";
+  background: linear-gradient(to right, #f27a54 25%, #a154f2 100%);
+  display: block;
+  height: 1.5px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.movie {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tickets-button {
+  max-width: 140px;
+  margin: 0 auto;
+  padding-top: 10px;
+  background: linear-gradient(to right, #f27a54 25%, #a154f2 100%);
+  color: white;
+}
+
