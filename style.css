@@ -11,21 +11,18 @@ body {
   font-family: "Montserrat", sans-serif;
   background-color: #30363d;
   text-align: center;
-}
-header {
-  color: #ffffff;
-  background-size: 300px;
-  height: 180px;
-  box-shadow: 4px 4px 8px 0px rgba(50, 50, 50, 0.27);
+  font-size: 14px;
 }
 
 footer {
+  display: none;
   font-size: 12px;
   width: 100%;
 }
 
 .title {
-  padding: 15px;
+  padding: 10px 40px 10px 40px;
+  color: #ffffff;
 }
 
 h1 {
@@ -34,7 +31,7 @@ h1 {
   background: linear-gradient(to right, #f27a54 45%, #a154f2 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: 36px;
+  font-size: 48px;
 }
 
 /*boxíky*/
@@ -43,17 +40,19 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: -70px;
   margin-bottom: 40px;
 }
 
 .box {
   background-color: #3c444c;
-  margin: 20px;
-  width: 200px;
-  height: 150px;
   box-shadow: 4px 4px 8px 0px rgba(12, 12, 12, 0.523);
   border-radius: 5px;
+
+  margin: 10px 50px;
+  padding: 5px;
+
+  flex: 1 1;
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -68,17 +67,19 @@ h1 {
 .button {
   background-color: #e0d9d3;
   font-family: "Zilla Slab", serif;
-  border-radius: 25px;
+  border-radius: 15px;
   width: 120px;
   height: 30px;
-  padding-top: 5px;;
+
+  margin-bottom: 15px;
 }
 
 .button a {
   text-decoration: none;
   color: black;
   display: block;
-  border-radius: 25px;
+  text-align: center;
+  font-size: 14px;
 }
 
 /*mobil*/
@@ -92,6 +93,8 @@ h1 {
   .box {
     width: 400px;
     height: 300px;
+    margin: 15px;
+    padding: 5px;
   }
 
   .button {
@@ -105,39 +108,56 @@ h1 {
   }
 
   h1 {
-    font-size: 48px;
+    font-size: 58px;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+
+  .button a {
+    padding: 7px;
+    font-size: 25px;
   }
 }
 
 /*desktop*/
 @media screen and (min-width: 961px) {
-  header {
-    height: 240px;
-  }
-  .boxy {
-    flex-direction: row;
-    align-items: flex-start;
+  body {
+    font-size: 16px;
   }
 
-  .box {
-    text-align: center;
-    height: 300px;
-    width: 33%;
-    flex-grow: 1 1;
+  h1 {
+    font-size: 58px;
+    margin-bottom: 10px;
+  }
+
+  .boxy {
+    flex-direction: row;
+    margin: 0px 30px;
   }
 
   .box img {
-    max-width: 60%;
+    max-width: 50%;
+  }
+
+  .box {
+    margin: 15px;
+    width: 33%;
+    flex-grow: 1 1;
   }
 
   .button {
     min-width: 220px;
     max-width: 280px;
-    height: 50px;
+    height: 45px;
   }
+
   .button a {
     padding: 7px;
-    font-size: 24px;
+    font-size: 20px;
   }
 
   h1 {
@@ -194,7 +214,8 @@ h1 {
   padding-bottom: 1px;
 }
 
-.cinema-name h2, .cinema-name p {
+.cinema-name h2,
+.cinema-name p {
   color: #30363d;
 }
 
@@ -233,7 +254,7 @@ h1 {
 /*Detail kina */
 
 .cinema-detail {
-  background-color:#3c444c;
+  background-color: #3c444c;
   margin: 0px;
   padding: 20px;
   box-shadow: 4px 4px 8px 0px rgba(50, 50, 50, 0.27);
@@ -273,7 +294,6 @@ h1 {
 .program-button a {
   color: black;
 }
-
 
 /*tablet*/
 @media screen and (min-width: 541px) {
@@ -326,8 +346,12 @@ h1 {
   h2 {
     font-size: 32px;
   }
-  
-  .cinema-name p {
+  .cinema-filter {
+    width: 70%;
+  }
+
+  .cinema-name p,
+  .instructions {
     font-size: 16px;
   }
   .cinema-photo {

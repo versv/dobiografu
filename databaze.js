@@ -1,6 +1,3 @@
-spev
-
-
 
 const cinemaList = [
 
@@ -119,7 +116,7 @@ const cinemaList = [
   {
     name: "Kino Pilotů",
     address: "Donská 108, Praha 10",
-    tagline: "I Vršovice už mají své artové kino. S vytříbenou dramaturgií a pohodlím multiplexu.", 
+    tagline: "I Vršovice už mají své artové kino. S vytříbenou dramaturgií a pohodlím multiplexu.",
     specialProgramme: true,
     specialProgrammeTypes: [
       "English friendly", "Cyklus Citrus", "Řada různých festivalů",
@@ -153,7 +150,7 @@ const cinemaList = [
   {
     name: "Kino Mat",
     address: "Karlovo náměstí 19, Praha 2",
-    tagline: "Opravdu komorní záležitost o 46 sedadlech. Takže lístky radši koupit dopředu.", 
+    tagline: "Opravdu komorní záležitost o 46 sedadlech. Takže lístky radši koupit dopředu.",
     specialProgramme: true,
     specialProgrammeTypes: ["Kino za babku", "MET Opera", "Mat hit", "Umění v kině", "Opera v kině - The Met: Live in HD", "Pro děti", "English friendly"],
     barrierFree: false,
@@ -171,7 +168,7 @@ const cinemaList = [
     address: "Jeruzalémská 2, Praha 1",
     tagline: "Tento relativně nedávný přírůstek k artovým kinum v centru sídlí v budově Edisonovy transformační stanice a jde ruku v ruce se stylovou kavárnou.",
     specialProgramme: true,
-    specialProgrammeTypes: [ "Matinee", "Český výběr", "Mentální hygiena", "Movie barf Monday (English friendly)", "Weird Europe", "Řada různých festivalů"
+    specialProgrammeTypes: ["Matinee", "Český výběr", "Mentální hygiena", "Movie barf Monday (English friendly)", "Weird Europe", "Řada různých festivalů"
     ],
     barrierFree: false,
     bar: true,
@@ -203,7 +200,7 @@ const cinemaList = [
       ["Út", "23.6.2020", "Bourák", "20:00"],
       ["St", "24.6.2020", "Ženská na vrcholu", "14:30"],
       ["St", "24.6.2020", "V síti: Za školou", "15:30"],
-      ["St", "24.6.2020", "Kalifornský sen", "17:30"],      
+      ["St", "24.6.2020", "Kalifornský sen", "17:30"],
       ["St", "24.6.2020", "Problémissky", "20:00"],
     ]
   },
