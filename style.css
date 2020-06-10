@@ -199,8 +199,7 @@ h1 {
   background-color: #b0adbe;
 }
 
-.cinema-overview-header,
-.programme-header {
+.cinema-overview-header {
   display: flex;
   justify-content: space-between;
   background-color: #3c444c;
@@ -408,16 +407,20 @@ h1 {
 
 /* mobil */
 .cinema-programme {
-  padding: 10px;
+  padding: 20px;
 }
 
 .programme-header {
   color: white;
-  padding: 10px 30px ;
+  padding: 5px;
+  background-color: #3c444c; 
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
-.programme-header p {
+h3 {
   font-style: italic;
+  font-weight: 400;
   font-size: 16px;
 }
 
@@ -443,11 +446,51 @@ h1 {
   justify-content: space-between;
 }
 
+.movies-list {
+  margin-bottom: 15px;
+}
+
 .tickets-button {
   max-width: 140px;
   margin: 0 auto;
-  padding-top: 10px;
-  background: linear-gradient(to right, #f27a54 25%, #a154f2 100%);
+  padding: 5px;
+  background: #3c444c;
   color: white;
 }
 
+.tickets-button:hover {
+  background: linear-gradient(to right, #f27a54 25%, #a154f2 100%);
+}
+
+/* tablet */
+
+@media screen and (min-width: 541px) {
+h3 {
+  font-size: 18px;
+}
+
+.programme-day {
+  font-size: 16px;
+}
+
+.programme-day-date:after {
+  margin-top: 15px;
+}
+
+}
+
+/* desktop */
+
+@media screen and (min-width: 961px) {
+h3 {
+  font-size: 20px;
+}
+
+.programme-day {
+  font-size: 18px;
+}
+
+.cinema-programme {
+  padding: 40px;
+}
+}
