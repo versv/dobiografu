@@ -12,6 +12,7 @@ const cinemaList = [
     barrierFree: false,
     bar: true,
     transport: "metro: Můstek - linka A/B, tramvaj. zastávka: Vodičkova - linka: 3, 5, 6, 9, 14, 24",
+    link: "https://www.kinosvetozor.cz/",
     movies: [
       ["Po", "22.6.2020", "Emma.", "15:00"],
       ["Út", "23.6.2020", "Cyrano z Bergeracu (NT Live)", "20:00"],
@@ -40,6 +41,7 @@ const cinemaList = [
     barrierFree: false,
     bar: true,
     transport: "metro: Můstek - linka A/B, tramvaj.zastávka: Vodičkova - linka: 3, 5, 6, 9, 14, 24",
+    link: "http://www.kinolucerna.cz/klient-263/kino-68/stranka-3705",
     movies: [
       ["Po", "22.6.2020", "V síti (+15)", "13:30"],
       ["Po", "22.6.2020", "Raoul Taburin", "15:30"],
@@ -72,6 +74,7 @@ const cinemaList = [
     barrierFree: true,
     bar: true,
     transport: "tramvaj. zastávka: Kamenická - linka: 1, 8, 12, 25, 26",
+    link: "https://www.biooko.net/",
     movies: [
       ["Po", "22.6.2020", "Potvora (NT Live)", "21:00"],
       ["Po", "29.6.2020", "Hamlet (NT Live)", "19:00"],
@@ -95,6 +98,7 @@ const cinemaList = [
     barrierFree: true,
     bar: true,
     transport: "tramvaj. zastávky: Biskupcova - linka: 9, 10, 11, 16; Ohrada - linka: 1, 9, 11, autobus č. 133, 136 207",
+    link: "https://www.kinoaero.cz/",
     movies: [
       ["Po", "22.6.2020", "Barbarella", "20:30"],
       ["Út", "23.6.2020", "1917", "10:00"],
@@ -124,6 +128,7 @@ const cinemaList = [
     barrierFree: false,
     bar: false,
     transport: "tramvaj. zastávka: Krymská - linka: 4, 22, autobus č. 135",
+    link: "http://www.kinopilotu.cz/",
     movies: [
       ["Čt", "25.6.2020", "Pocta klasikám road movie - blok krátkáých filmů", "17:30"],
       ["Čt", "25.6.2020", "Na vrchol Velkošvédska", "18:00"],
@@ -142,6 +147,7 @@ const cinemaList = [
     barrierFree: false,
     bar: true,
     transport: "tramvaj. zastávka: Husinecká - linka: 5, 9, 15, 26",
+    link: "https://goout.net/cs/kina/pritomnost-boutique-cinema/stud/", /*nebo stránky kina?*/
     movies: [
       ["St", "24.6.2020", "Půlnoční projekce: Čarodějnice", "23:59"],
       ["Ne", "28.6.2020", "Film & Breakfast: Prázdniny v Římě", "11:00"],
@@ -156,6 +162,7 @@ const cinemaList = [
     barrierFree: false,
     bar: true,
     transport: "metro: Karlovo náměstí, linka B, tramvaj. zastávka: Karlovo náměstí - linka: 2, 3, 6, 14, 18, 22",
+    link: "http://www.mat.cz/kino/",
     movies: [
       ["Pá", "26.6.2020", "Vinnetou - Poslední výstřel", "18:30"],
       ["So", "30.6.2020", "Poklad na stříbrném jezeře", "18:30"],
@@ -173,6 +180,7 @@ const cinemaList = [
     barrierFree: false,
     bar: true,
     transport: "tramvaj. zastávka: Jindřišská - linka: 3, 6, 9, 14, 24",
+    link: "https://goout.net/cs/kina/edison-filmhub/tekd/",
     movies: [
       ["Čt", "18.6.2020", "Gauguin z Národní galerie v Londýně", "19:00"],
       ["Čt", "18.6.2020", "Gauguin", "21:00"],
@@ -192,6 +200,7 @@ const cinemaList = [
     barrierFree: false,
     bar: true,
     transport: "metro: Florenc, linka B/C, tramvaj. zastávka Florenc - linka: 3, 8, 24, Těšnov - linka: 14 ",
+    link: "http://www.kinoatlas.cz/",
     movies: [
       ["Po", "22.6.2020", "#jsemtady", "17:30"],
       ["Po", "22.6.2020", "Emma", "18:30"],
@@ -216,6 +225,7 @@ const cinemaList = [
     barrierFree: false,
     bar: true,
     transport: "metro: Národní - linka B, Můstek - linka: A/B, tramvaj. zastávka Národní třída - linka: 1, 2, 9, 18, 22",
+    link: "http://www.evald.cz/",
     movies: [
       ["Po", "22.6.2020", "Sviňa", "18:00"],
       ["Po", "22.6.2020", "Kalifornský sen", "20:30"],
@@ -238,6 +248,7 @@ const cinemaList = [
     barrierFree: true, //částečně
     bar: true,
     transport: "metro: Národní, linka: B, tramvaj. zastávka: Národní třída - linka: 1, 2, 9, 18, 22",
+    link: "https://nfa.cz/cz/kino-ponrepo/program/",
     movies: [
       ["Po", "22.6.2020", "Jiří Menzel – Nicollò Machiavelli / Mandragora", "18:00"],
       ["Út", "23.6.2020", "Červená řeka", "20:30"],
@@ -261,6 +272,7 @@ const cinemaList = [
     barrierFree: true, //nemůžu to najít, ale myslím si, že je
     bar: true,
     transport: "tramvaj. zastávka: Malovanka - linka: 22, 23, 35, bus: Malovanka - linka: 143, 149 ",
+    link: "https://dlabacov.cz/",
     movies: [
       ["Po", "22.6.2020", "Vlastníci", "18:00"],
       ["Po", "22.6.2020", "V síti", "20:00"],
