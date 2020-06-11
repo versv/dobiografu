@@ -63,7 +63,7 @@ h1 {
 }
 
 .box img {
-  max-width: 120px;
+  max-width: 100px;
 }
 
 /*tlačítka*/
@@ -193,7 +193,7 @@ h1 {
 }
 
 .cinema-overview-header {
-  display: flex;
+  /*display: flex;*/
   justify-content: space-between;
   background-color: #3c444c;
   align-items: center;
@@ -405,7 +405,7 @@ h1 {
 .programme-header {
   color: white;
   padding: 5px;
-  background-color: #3c444c; 
+  background-color: #3c444c;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
@@ -450,47 +450,50 @@ h3 {
   color: white;
 }
 
-.tickets-button:hover {
+.tickets-button:active {
   background: linear-gradient(to right, #f27a54 25%, #a154f2 100%);
 }
 
 /* tablet */
 
 @media screen and (min-width: 541px) {
-h3 {
-  font-size: 18px;
-}
+  h3 {
+    font-size: 18px;
+  }
 
-.programme-day {
-  font-size: 16px;
-}
+  .programme-day {
+    font-size: 16px;
+  }
 
-.programme-day-date:after {
-  margin-top: 15px;
-}
-
+  .programme-day-date:after {
+    margin-top: 15px;
+  }
 }
 
 /* desktop */
 
 @media screen and (min-width: 961px) {
-h3 {
-  font-size: 20px;
-}
+  h3 {
+    font-size: 20px;
+  }
 
-.programme-day {
-  font-size: 18px;
-}
+  .programme-day {
+    font-size: 25px;
+  }
 
-.cinema-programme {
-  padding: 40px;
+  .cinema-programme {
+    padding: 40px;
+  }
 }
-}
-
 
 /* Program kin - dle data */
 
 /*mobil*/
+.ahoj {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
 .calendar-img img {
   width: 50px;
@@ -503,32 +506,30 @@ h3 {
 }
 
 .days {
-   padding: 0px 15px;
+  padding: 0px 15px;
 }
 
 .day {
-  
   padding: 15px 0px;
 }
 
 .days a {
   border-radius: 15px;
   background-color: #3c444c;
-  padding: 15px 20px;
   display: block;
-  height: 20px;
-  text-align: center;
-  min-width: 100px;
+  height: 40px;
+  flex-grow: 1;
+  box-shadow: 1px 1px 8px rgba(12, 12, 12, 0.523);
+  flex-basis: 200px;
 }
 
 .day a {
   text-decoration: none;
   color: #ffffff;
-  
 }
 
-.day a:hover {
-  border: 2px solid palevioletred;
+.day a:active {
+  background: linear-gradient(to right, #f27a54 25%, #a154f2 100%);
 }
 
 /* tablet */
@@ -545,46 +546,115 @@ h3 {
 /*desktop*/
 @media screen and (min-width: 961px) {
   .calendar-img img {
-    width: 100px;
+    width: 150px;
     margin-left: 10px;
   }
 
-  .days  {
+  .days {
     display: flex;
+    justify-content: space-between;
     min-height: 150px;
     padding: 0;
-    border: 2px solid red;
   }
-
 
   .days a {
     height: 100px;
     margin: 10px;
-    padding: 5px 0px; 
     flex-grow: 1;
-    border: 2px solid green;
-     
-
-    }
-   .day a {
-   
-   } 
-
-   .day {
-    border: 2px solid yellow;
-   }
-
   }
-
-  
-
-/*
 
   .day {
-    flex-shrink: 1;
-
-  
-    flex-basis: 14rem;
-    
-   
+    flex-basis: 100%;
   }
+}
+
+/* Seznam kin s programy dle data */
+
+/* mobil */
+.cinema-programme {
+  padding: 20px;
+}
+
+.programme-header {
+  color: white;
+  padding: 5px;
+  background-color: #3c444c;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+h3 {
+  font-style: italic;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.programme-day {
+  text-align: left;
+}
+
+.programme-cinema-name {
+  font-weight: bold;
+}
+
+.programme-cinema-name:after {
+  content: "";
+  background: linear-gradient(to right, #f27a54 25%, #a154f2 100%);
+  display: block;
+  height: 1.5px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.movie {
+  display: flex;
+  justify-content: space-between;
+}
+
+.movies-list {
+  margin-bottom: 15px;
+}
+
+.tickets-button {
+  max-width: 140px;
+  margin: 0 auto;
+  padding: 5px;
+  background: #3c444c;
+  color: white;
+}
+
+.tickets-button:active {
+  background: linear-gradient(to right, #f27a54 25%, #a154f2 100%);
+}
+
+/* tablet */
+
+@media screen and (min-width: 541px) {
+  h3 {
+    font-size: 18px;
+  }
+
+  .programme-day {
+    font-size: 16px;
+  }
+
+  .programme-cinema-name:after {
+    margin-top: 15px;
+  }
+}
+
+/* desktop */
+
+@media screen and (min-width: 961px) {
+  h3 {
+    font-size: 20px;
+  }
+
+  .programme-day {
+    font-size: 25px;
+  }
+
+  .cinema-programme {
+    padding: 40px;
+  }
+}
