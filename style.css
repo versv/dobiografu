@@ -27,6 +27,14 @@ body {
   box-shadow: 2px 2px 3px rgb(86, 89, 91);
 }
 
+.btn-hp i {
+  font-size: 30px;
+  color: white;
+  padding-top: 3px;
+  padding-right: 3px;
+  margin: 0 auto;
+}
+
 footer {
   display: none;
   font-size: 12px;
@@ -44,7 +52,7 @@ h1 {
   background: linear-gradient(to right, #f27a54 45%, #a154f2 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: 48px;
+  font-size: 35px;
 }
 
 /*-------------------------------------------------------------------------------------------------boxíky*/
@@ -108,7 +116,7 @@ h1 {
     height: 45px;
     border-radius: 0px 25px 25px 0px;
   }
-  ¨ .box {
+  .box {
     width: 400px;
     height: 300px;
     margin: 15px;
@@ -150,6 +158,13 @@ h1 {
     width: 140px;
     height: 55px;
     border-radius: 0px 25px 25px 0px;
+  }
+
+  .btn-hp i {
+    font-size: 40px;
+    color: white;
+    padding-top: 5px;
+    padding-right: 3px;
   }
 
   h1 {
@@ -202,6 +217,7 @@ h1 {
 }
 
 .camera-img-flipped img {
+  display: none;
   width: 50px;
   margin-right: 10px;
   transform: rotateY(180deg);
@@ -335,7 +351,8 @@ h1 {
 
   .camera-img img,
   .camera-img-flipped img {
-    width: 70px;
+    display: block;
+    width: 80px;
   }
 
   .cinema-item {
@@ -385,6 +402,12 @@ h1 {
   .cinema-photo {
     width: 50%;
     height: auto;
+  }
+
+  .camera-img img,
+  .camera-img-flipped img {
+    display: block;
+    width: 150px;
   }
 
   .cinema-info {
@@ -521,9 +544,13 @@ h3 {
 }
 
 .calendar-img img {
-  width: 50px;
+  width: 70px;
   margin-left: 10px;
   margin-right: 10px;
+}
+
+.calendar-img_b img {
+  display: none;
 }
 
 /*-----------------------------------------------------------------------------------------------------filtr*/
@@ -591,7 +618,24 @@ select::-ms-expand {
   width: 100%;
   margin-top: 10px;
 }
-/*-----------------------------------------------------------------------------------------------------DESKTOP*/
+
+/*-----------------------------------------------------------------------------------------------------TABLET*/
+@media screen and (min-width: 541px) {
+  .calendar-img img {
+    width: 80px;
+  }
+
+  .calendar-img_b img {
+    display: block;
+    width: 80px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .programme-cinema-name:after {
+    margin-top: 15px;
+  }
+} /*-----------------------------------------------------------------------------------------------------DESKTOP*/
 @media screen and (min-width: 961px) {
   select {
     font-size: 18px;
@@ -608,16 +652,12 @@ select::-ms-expand {
     width: 150px;
     margin-left: 10px;
   }
-}
 
-/*-----------------------------------------------------------------------------------------------------TABLET*/
-@media screen and (min-width: 541px) {
-  .calendar-img img {
-    width: 70px;
-  }
-
-  .programme-cinema-name:after {
-    margin-top: 15px;
+  .calendar-img_b img {
+    display: block;
+    width: 150px;
+    margin-left: 10px;
+    margin-right: 10px;
   }
 }
 
