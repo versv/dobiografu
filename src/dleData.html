@@ -3,14 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DoBiografu - Program kina</title>
     <link rel="stylesheet" href="style.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap"
       rel="stylesheet"
     />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <title>Program - dle data</title>
   </head>
   <body>
+    <div class="btn-hp">
+      <a href="#" class="hp">
+        <i class="my-home fa fa-home"></i>
+      </a>
+    </div>
     <!---Sekce hlavička-->
     <header>
       <div class="title">
@@ -24,21 +34,44 @@
     </header>
     <!--Konec sekce hlavička-->
 
-    <!--Program kina-->
+    <!--Sekce Vyber datum-->
 
     <section class="cinema-overview">
-      <div class="programme-header">
-        <h3>Kino Lucerna</h3>
-        <h2>PROGRAM</h2>
-      </div>
-      <!--Konec sekce Výběr kina-->
+      <div class="cinema-overview-header">
+        <div class="ahoj">
+          <div class="calendar-img">
+            <img src="assets/images/calendar.png" alt="ikonka kalendáře" />
+          </div>
 
-      <!--Sekce Seznam kin-->
+          <div class="filtr">
+            <h2>Vyber datum</h2>
+
+            <section class="select">
+              <select name="choose_day" id="choose_day">
+                <option class="day" value="today">Dnes</option>
+                <option class="day" value="tomorrow">Zítra</option>
+                <option class="day" value="day3">středa 26. 7. 2020</option>
+                <option class="day" value="day4">čtvrtek 26. 7. 2020</option>
+                <option class="day" value="day5">pátek 26. 7. 2020</option>
+                <option class="day" value="day6">sobota 26. 7. 2020</option>
+                <option class="day" value="day7">neděle 26. 7. 2020</option>
+              </select>
+            </section>
+          </div>
+
+          <div class="calendar-img_b">
+            <img src="assets/images/calendar.png" alt="ikonka kalendáře" />
+          </div>
+        </div>
+      </div>
+      <!--Konec sekce Vyber datum --->
+
+      <!--Seznam kin s programem-->
 
       <div class="cinema-programme">
         <div class="programme-day">
           <div class="programme-cinema-name">
-            Pátek 26. 6. 2020
+            Kino Pilotů
           </div>
           <div class="movies-list">
             <div class="movie">
@@ -58,7 +91,7 @@
 
         <div class="programme-day">
           <div class="programme-cinema-name">
-            Sobota 27. 6. 2020
+            Kino Lucerna
           </div>
           <div class="movies-list">
             <div class="movie">
@@ -83,7 +116,8 @@
         </div>
       </div>
     </section>
-    <!--Konec sekce Seznam kin-->
+
+    <!--Seznam kin s programem-->
 
     <!--začátek patičky-->
     <footer>

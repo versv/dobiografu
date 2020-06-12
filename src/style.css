@@ -1,0 +1,231 @@
+/*font-family: 'Montserrat', sans-serif;
+
+*/
+
+/*----------------------------------------------------------------------------------------------------------obecné*/
+
+/*-------------------------------------------------------------------------------------------------boxíky*/
+
+/*--------------------------------------------------------------------------------------tlačítka*/
+
+/* Přehled kin */
+
+/*mobil*/
+
+/*-------------------------------------------------------------------------------------------------- Program kina */
+
+/*-----------------------------------------------------------------------------------------------------Stránka s filtrem dle DATA*/
+/*-----------------------------------------------------------------------------------------------------MOBIL*/
+.ahoj {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.calendar-img img {
+  width: 70px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.calendar-img_b img {
+  display: none;
+}
+
+/*-----------------------------------------------------------------------------------------------------filtr*/
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: 0 !important;
+  background-image: none;
+  background-color: #e0d9d3;
+
+  flex: 1;
+  padding: 0 0.5em;
+  color: black;
+  cursor: pointer;
+  font-size: 1em;
+  font-family: "Montserrat", sans-serif;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+.select {
+  position: relative;
+  display: flex;
+  height: 2em;
+  line-height: 2;
+  background: #5c6664;
+  overflow: hidden;
+  border-radius: 0.25em;
+  margin-bottom: 10px;
+}
+
+.select::after {
+  content: "\25BC";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0 1em;
+  background: #2b2e2e;
+  cursor: pointer;
+  pointer-events: none;
+  transition: 0.25s all ease;
+}
+
+.select:hover::after {
+  color: #f27a54;
+}
+
+.programme-cinema-name {
+  font-weight: bold;
+}
+
+.programme-cinema-name:after {
+  content: "";
+  background: linear-gradient(to right, #f27a54 25%, #a154f2 100%);
+  display: block;
+  height: 2.5px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+/*-----------------------------------------------------------------------------------------------------TABLET*/
+@media screen and (min-width: 541px) {
+  .calendar-img img {
+    width: 80px;
+  }
+
+  .calendar-img_b img {
+    display: block;
+    width: 80px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .programme-cinema-name:after {
+    margin-top: 15px;
+  }
+} /*-----------------------------------------------------------------------------------------------------DESKTOP*/
+@media screen and (min-width: 961px) {
+  select {
+    font-size: 18px;
+  }
+
+  .select {
+    display: inline-flex;
+    height: 3em;
+    line-height: 3;
+    width: 30vh;
+  }
+
+  .calendar-img img {
+    width: 150px;
+    margin-left: 10px;
+  }
+
+  .calendar-img_b img {
+    display: block;
+    width: 150px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+
+/*---------------------------------------------------------------------------------------------------------- Stránka s filtrem dle FILMU*/
+
+.ticket-img img {
+  width: 70px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.ticket-img_b img {
+  display: none;
+}
+
+.programme-movie-name {
+  font-weight: bold;
+}
+
+.programme-movie-name:after {
+  content: "";
+  background: linear-gradient(to right, #f27a54 25%, #a154f2 100%);
+  display: block;
+  height: 2.5px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.schedule {
+  display: flex;
+  justify-content: space-between;
+  text-align: right;
+  border-bottom: wheat dotted 1px;
+}
+
+.cinemas {
+  margin-bottom: 15px;
+}
+
+/*tablet*/
+@media screen and (min-width: 541px) {
+  .programme-movie-name:after {
+    margin-top: 15px;
+  }
+
+  .ticket-img img {
+    width: 80px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .ticket-img_b img {
+    display: block;
+    width: 80px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+
+/*desktop*/
+@media screen and (min-width: 961px) {
+  .ticket-img img {
+    width: 150px;
+    margin-left: 10px;
+  }
+
+  .ticket-img_b img {
+    display: block;
+    width: 150px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .schedule {
+    justify-content: flex-start;
+  }
+
+  .schedule_cinema {
+    width: 100px;
+    text-align: left;
+  }
+
+  .date_time {
+    margin: 0 10px;
+  }
+
+  .schedule_day_time {
+    width: 100vh;
+
+    display: flex;
+    justify-content: flex-start;
+  }
+}
