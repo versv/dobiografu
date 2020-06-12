@@ -16,7 +16,12 @@
         </p>
       </div>
     </header>
-    <Homepage />
+
+    <router-link to="/"></router-link>
+    <router-view></router-view>
+
+
+     <!-- <Homepage /> -->
   </body>
 </div>
 </template>
@@ -26,9 +31,9 @@ import Homepage from "./components/Homepage.vue";
 
 export default {
   name: "App",
-  components: {
+  /*components: {
     Homepage: Homepage
-  }
+  }*/
 };
 </script>
 
