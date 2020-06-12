@@ -16,18 +16,18 @@
         </p>
       </div>
     </header>
-    <HP />
+    <Homepage />
   </body>
 </div>
 </template>
 
 <script>
-import HP from "./components/HP.vue";
+import Homepage from "./components/Homepage.vue";
 
 export default {
   name: "App",
   components: {
-    HP: HP
+    Homepage: Homepage
   }
 };
 </script>
