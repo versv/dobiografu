@@ -32,7 +32,23 @@
           <div class="calendar-img">
             <img src="images/calendar.png" alt="ikonka kalendáře" />
           </div>
-          <h2>Vyber datum</h2>
+
+          <div class="filtr">
+            <h2>Vyber datum</h2>
+
+            <section class="select">
+              <select name="choose_day" id="choose_day">
+                <option class="day" value="today">Dnes</option>
+                <option class="day" value="tomorrow">Zítra</option>
+                <option class="day" value="day3">středa 26. 7. 2020</option>
+                <option class="day" value="day4">čtvrtek 26. 7. 2020</option>
+                <option class="day" value="day5">pátek 26. 7. 2020</option>
+                <option class="day" value="day6">sobota 26. 7. 2020</option>
+                <option class="day" value="day7">neděle 26. 7. 2020</option>
+              </select>
+            </section>
+          </div>
+
           <div class="calendar-img">
             <img src="images/calendar.png" alt="ikonka kalendáře" />
           </div>
@@ -40,27 +56,11 @@
       </div>
       <!--Konec sekce Vyber datum --->
 
-      <!--Divy s daty -->
-
-      <section class="dates">
-        <div class="days">
-          <div class="day"><a href="">Dnes</a></div>
-          <div class="day"><a href="#">Zítra</a></div>
-          <div class="day"><a href="#">středa 26. 7. 2020</a></div>
-          <div class="day"><a href="#">čtvrtek 26. 7. 2020</a></div>
-          <div class="day"><a href="#">pátek 26. 7. 2020</a></div>
-          <div class="day"><a href="#">sobota 26. 7. 2020</a></div>
-          <div class="day"><a href="#">neděle 26. 7. 2020</a></div>
-        </div>
-      </section>
-
-      <!--Divy s daty-->
-
       <!--Seznam kin s programem-->
 
       <div class="cinema-programme">
         <div class="programme-day">
-          <div class="programme-day-date">
+          <div class="programme-cinema-name">
             Kino Pilotů
           </div>
           <div class="movies-list">
@@ -80,7 +80,7 @@
         </div>
 
         <div class="programme-day">
-          <div class="programme-day-date">
+          <div class="programme-cinema-name">
             Kino Lucerna
           </div>
           <div class="movies-list">

@@ -1,17 +1,30 @@
 /*font-family: 'Montserrat', sans-serif;
-font-family: 'Zilla Slab', serif;
+
 */
 :after,
 :before {
   box-sizing: border-box;
 }
-/*obecné*/
+/*----------------------------------------------------------------------------------------------------------obecné*/
 
 body {
   font-family: "Montserrat", sans-serif;
   background-color: #30363d;
   text-align: center;
   font-size: 14px;
+}
+
+.hp {
+  position: fixed;
+  width: 45px;
+  height: 40px;
+  bottom: 20px;
+  left: 0px;
+  background: linear-gradient(to bottom right, #f27a54 25%, #a154f2 100%);
+  color: #fff;
+  border-radius: 0px 25px 25px 0px;
+  text-align: center;
+  box-shadow: 2px 2px 3px rgb(86, 89, 91);
 }
 
 footer {
@@ -34,7 +47,7 @@ h1 {
   font-size: 48px;
 }
 
-/*boxíky*/
+/*-------------------------------------------------------------------------------------------------boxíky*/
 
 .boxy {
   display: flex;
@@ -66,7 +79,7 @@ h1 {
   max-width: 100px;
 }
 
-/*tlačítka*/
+/*--------------------------------------------------------------------------------------tlačítka*/
 
 .button {
   background-color: #e0d9d3;
@@ -90,7 +103,12 @@ h1 {
 
 /*tablet*/
 @media screen and (min-width: 541px) and (max-width: 960px) {
-  .box {
+  .hp {
+    width: 75px;
+    height: 45px;
+    border-radius: 0px 25px 25px 0px;
+  }
+  ¨ .box {
     width: 400px;
     height: 300px;
     margin: 15px;
@@ -112,7 +130,7 @@ h1 {
   }
 
   h1 {
-    font-size: 58px;
+    font-size: 48px;
     margin-bottom: 10px;
   }
 
@@ -126,6 +144,12 @@ h1 {
 @media screen and (min-width: 961px) {
   body {
     font-size: 16px;
+  }
+
+  .hp {
+    width: 140px;
+    height: 55px;
+    border-radius: 0px 25px 25px 0px;
   }
 
   h1 {
@@ -186,15 +210,16 @@ h1 {
 .cinema-overview {
   margin: 0 auto;
   padding: 0px;
-  width: 80%;
+  width: 70%;
   border-radius: 10px;
   box-shadow: 4px 4px 8px 0px rgba(50, 50, 50, 0.27);
   background-color: #b0adbe;
+  font-size: 12px;
 }
 
 .cinema-overview-header {
-  /*display: flex;*/
-  justify-content: space-between;
+  /*display: flex;
+  justify-content: space-between;*/
   background-color: #3c444c;
   align-items: center;
   padding: 10px;
@@ -253,7 +278,7 @@ h1 {
   color: white;
 }
 
-/*Detail kina */
+/*------------------------------------------------------------------------------------------------------Detail kina */
 
 .cinema-detail {
   background-color: #3c444c;
@@ -395,7 +420,7 @@ h1 {
   }
 }
 
-/* Program kina */
+/*-------------------------------------------------------------------------------------------------- Program kina */
 
 /* mobil */
 .cinema-programme {
@@ -428,7 +453,7 @@ h3 {
   content: "";
   background: linear-gradient(to right, #f27a54 25%, #a154f2 100%);
   display: block;
-  height: 1.5px;
+  height: 2.5px;
   width: 100%;
   margin-top: 10px;
 }
@@ -478,7 +503,7 @@ h3 {
   }
 
   .programme-day {
-    font-size: 25px;
+    font-size: 16px;
   }
 
   .cinema-programme {
@@ -486,9 +511,8 @@ h3 {
   }
 }
 
-/* Program kin - dle data */
-
-/*mobil*/
+/*-----------------------------------------------------------------------------------------------------Stránka s filtrem dle DATA*/
+/*-----------------------------------------------------------------------------------------------------MOBIL*/
 .ahoj {
   display: flex;
   justify-content: space-between;
@@ -501,96 +525,57 @@ h3 {
   margin-right: 10px;
 }
 
-.dates {
-  padding: 5px 20px;
+/*-----------------------------------------------------------------------------------------------------filtr*/
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: 0 !important;
+  background-image: none;
+  background-color: #e0d9d3;
+
+  flex: 1;
+  padding: 0 0.5em;
+  color: black;
+  cursor: pointer;
+  font-size: 1em;
+  font-family: "Montserrat", sans-serif;
 }
 
-.days {
-  padding: 0px 15px;
+select::-ms-expand {
+  display: none;
 }
 
-.day {
-  padding: 15px 0px;
+.select {
+  position: relative;
+  display: flex;
+  height: 2em;
+  line-height: 2;
+  background: #5c6664;
+  overflow: hidden;
+  border-radius: 0.25em;
+  margin-bottom: 10px;
 }
 
-.days a {
-  border-radius: 15px;
-  background-color: #3c444c;
-  display: block;
-  height: 40px;
-  flex-grow: 1;
-  box-shadow: 1px 1px 8px rgba(12, 12, 12, 0.523);
-  flex-basis: 200px;
+.select::after {
+  content: "\25BC";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0 1em;
+  background: #2b2e2e;
+  cursor: pointer;
+  pointer-events: none;
+  transition: 0.25s all ease;
 }
 
-.day a {
-  text-decoration: none;
-  color: #ffffff;
-}
-
-.day a:active {
-  background: linear-gradient(to right, #f27a54 25%, #a154f2 100%);
-}
-
-/* tablet */
-@media screen and (min-width: 541px) {
-  .calendar-img img {
-    width: 70px;
-  }
-
-  .day a {
-    font-size: 17px;
-  }
-}
-
-/*desktop*/
-@media screen and (min-width: 961px) {
-  .calendar-img img {
-    width: 150px;
-    margin-left: 10px;
-  }
-
-  .days {
-    display: flex;
-    justify-content: space-between;
-    min-height: 150px;
-    padding: 0;
-  }
-
-  .days a {
-    height: 100px;
-    margin: 10px;
-    flex-grow: 1;
-  }
-
-  .day {
-    flex-basis: 100%;
-  }
-}
-
-/* Seznam kin s programy dle data */
-
-/* mobil */
-.cinema-programme {
-  padding: 20px;
-}
-
-.programme-header {
-  color: white;
-  padding: 5px;
-  background-color: #3c444c;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-}
-
-h3 {
-  font-style: italic;
-  font-weight: 400;
-  font-size: 16px;
-}
-
-.programme-day {
-  text-align: left;
+.select:hover::after {
+  color: #f27a54;
 }
 
 .programme-cinema-name {
@@ -601,41 +586,33 @@ h3 {
   content: "";
   background: linear-gradient(to right, #f27a54 25%, #a154f2 100%);
   display: block;
-  height: 1.5px;
+  height: 2.5px;
   width: 100%;
   margin-top: 10px;
 }
-
-.movie {
-  display: flex;
-  justify-content: space-between;
-}
-
-.movies-list {
-  margin-bottom: 15px;
-}
-
-.tickets-button {
-  max-width: 140px;
-  margin: 0 auto;
-  padding: 5px;
-  background: #3c444c;
-  color: white;
-}
-
-.tickets-button:active {
-  background: linear-gradient(to right, #f27a54 25%, #a154f2 100%);
-}
-
-/* tablet */
-
-@media screen and (min-width: 541px) {
-  h3 {
+/*-----------------------------------------------------------------------------------------------------DESKTOP*/
+@media screen and (min-width: 961px) {
+  select {
     font-size: 18px;
   }
 
-  .programme-day {
-    font-size: 16px;
+  .select {
+    display: inline-flex;
+    height: 3em;
+    line-height: 3;
+    width: 30vh;
+  }
+
+  .calendar-img img {
+    width: 150px;
+    margin-left: 10px;
+  }
+}
+
+/*-----------------------------------------------------------------------------------------------------TABLET*/
+@media screen and (min-width: 541px) {
+  .calendar-img img {
+    width: 70px;
   }
 
   .programme-cinema-name:after {
@@ -643,18 +620,92 @@ h3 {
   }
 }
 
-/* desktop */
+/*---------------------------------------------------------------------------------------------------------- Stránka s filtrem dle FILMU*/
 
+.ticket-img img {
+  width: 70px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.ticket-img_b img {
+  display: none;
+}
+
+.programme-movie-name {
+  font-weight: bold;
+}
+
+.programme-movie-name:after {
+  content: "";
+  background: linear-gradient(to right, #f27a54 25%, #a154f2 100%);
+  display: block;
+  height: 2.5px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.schedule {
+  display: flex;
+  justify-content: space-between;
+  text-align: right;
+  border-bottom: wheat dotted 1px;
+}
+
+.cinemas {
+  margin-bottom: 15px;
+}
+
+/*tablet*/
+@media screen and (min-width: 541px) {
+  .programme-movie-name:after {
+    margin-top: 15px;
+  }
+
+  .ticket-img img {
+    width: 80px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .ticket-img_b img {
+    display: block;
+    width: 80px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+
+/*desktop*/
 @media screen and (min-width: 961px) {
-  h3 {
-    font-size: 20px;
+  .ticket-img img {
+    width: 150px;
+    margin-left: 10px;
   }
 
-  .programme-day {
-    font-size: 25px;
+  .ticket-img_b img {
+    display: block;
+    width: 150px;
+    margin-left: 10px;
+    margin-right: 10px;
   }
 
-  .cinema-programme {
-    padding: 40px;
+  .schedule {
+    justify-content: flex-start;
+  }
+
+  .schedule_cinema {
+    width: 100px;
+    text-align: left;
+  }
+
+  .date_time {
+    margin: 0 10px;
+  }
+
+  .schedule_day_time {
+    width: 100vh;
+
+    display: flex;
+    justify-content: flex-start;
   }
 }
