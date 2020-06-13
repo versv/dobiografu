@@ -19,7 +19,7 @@
         </div>
 
         <div class="button">
-          <router-link to="/SelectDate">Vyber datum</router-link>
+          <router-link to="/SelectDate">Vyber si datum</router-link>
         </div>
       </div>
 
