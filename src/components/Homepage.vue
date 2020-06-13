@@ -19,7 +19,7 @@
         </div>
 
         <div class="button">
-          <router-link to="/Date">Vyber datum</router-link>
+          <router-link to="/SelectDate">Vyber datum</router-link>
         </div>
       </div>
 
@@ -29,19 +29,16 @@
           <img src="assets/images/ticket.png" alt="logo lístku" />
         </div>
         <div class="button">
-          <router-link to="/MovieSelection">Vyber film</router-link>
+          <router-link to="/SelectMovie">Vyber film</router-link>
         </div>
       </div>
     </section>
   </div>
 </template>
 
-
-
-
 <script>
 export default {
-  name: "Homepage"
+  name: "Homepage",
 };
 </script>
 
@@ -89,25 +86,24 @@ export default {
   }
 }
 
-  @media screen and (min-width: 961px) {
-    .boxy {
-      flex-direction: row;
-      margin: 0px 30px;
-    }
-
-    .box img {
-      max-width: 50%;
-    }
-
-    .box {
-      margin: 15px;
-      width: 33%;
-      flex-grow: 1 1;
-    }
-
-    .box img {
-      max-width: 200px;
-    }
+@media screen and (min-width: 961px) {
+  .boxy {
+    flex-direction: row;
+    margin: 0px 30px;
   }
 
+  .box img {
+    max-width: 50%;
+  }
+
+  .box {
+    margin: 15px;
+    width: 33%;
+    flex-grow: 1 1;
+  }
+
+  .box img {
+    max-width: 200px;
+  }
+}
 </style>
