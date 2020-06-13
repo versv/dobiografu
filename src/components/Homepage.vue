@@ -93,6 +93,7 @@ export default {
 
 @media screen and (min-width: 961px) {
   .boxy {
+    justify-content: center;
     flex-direction: row;
     margin: 0px 30px;
   }
@@ -103,7 +104,7 @@ export default {
 
   .box {
     margin: 15px;
-    width: 33%;
+    max-width: 350px;
     flex-grow: 1 1;
   }
 
