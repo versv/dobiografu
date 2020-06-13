@@ -1,5 +1,10 @@
 <template>
   <div>
+    <div class="btn-hp">
+      <a href="#" class="hp">
+        <i class="my-home fa fa-home"></i>
+      </a>
+    </div>
     <section class="boxy">
       <!--dle kina-->
       <div class="box">
@@ -38,7 +43,7 @@
 
 <script>
 export default {
-  name: "Homepage",
+  name: "Homepage"
 };
 </script>
 

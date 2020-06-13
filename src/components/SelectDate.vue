@@ -68,10 +68,6 @@
             </div>
           </div>
         </div>
-
-        <div class="button tickets-button">
-          <a href="http://www.kinolucerna.cz/klient-263/kino-68/stranka-3705">Koupit lístky</a>
-        </div>
       </div>
     </section>
   </div>
