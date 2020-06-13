@@ -2,9 +2,9 @@
 <div>
   <body>
     <div class="btn-hp">
-      <a href="#" class="hp">
+      <router-link to="/" class="hp">
         <i class="my-home fa fa-home"></i>
-      </a>
+      </router-link>
     </div>
     <header>
       <div class="title">
