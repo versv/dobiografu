@@ -16,19 +16,24 @@
         </p>
       </div>
     </header>
-    <HP />
+
+    <router-link to="/"></router-link>
+    <router-view></router-view>
+
+
+     <!-- <Homepage /> -->
   </body>
 </div>
 </template>
 
 <script>
-import HP from "./components/HP.vue";
+import Homepage from "./components/Homepage.vue";
 
 export default {
   name: "App",
-  components: {
-    HP: HP
-  }
+  /*components: {
+    Homepage: Homepage
+  }*/
 };
 </script>
 

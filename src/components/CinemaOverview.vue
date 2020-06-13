@@ -49,7 +49,7 @@
           </div>
 
           <div class="button program-button">
-            <a href="#">Program kina</a>
+            <router-link to="CinemaProgramme">Program kina</router-link>
           </div>
         </div>
 

@@ -8,7 +8,7 @@
         </div>
 
         <div class="button">
-          <a href="#">Vyber kino</a>
+          <router-link to="/CinemaOverview">Vyber kino</router-link>
         </div>
       </div>
 
@@ -19,7 +19,7 @@
         </div>
 
         <div class="button">
-          <a href="#">Vyber datum</a>
+          <router-link to="/Date">Vyber datum</router-link>
         </div>
       </div>
 
@@ -29,7 +29,7 @@
           <img src="assets/images/ticket.png" alt="logo lístku" />
         </div>
         <div class="button">
-          <a href="#">Vyber film</a>
+          <router-link to="/MovieSelection">Vyber film</router-link>
         </div>
       </div>
     </section>
@@ -41,7 +41,7 @@
 
 <script>
 export default {
-  name: "HP"
+  name: "Homepage"
 };
 </script>
 
@@ -87,6 +87,7 @@ export default {
   .box img {
     max-width: 160px;
   }
+}
 
   @media screen and (min-width: 961px) {
     .boxy {
@@ -108,5 +109,5 @@ export default {
       max-width: 200px;
     }
   }
-}
+
 </style>
