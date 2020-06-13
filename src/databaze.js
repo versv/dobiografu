@@ -13,21 +13,9 @@ const cinemaList = [
     bar: true,
     transport: "metro: Můstek - linka A/B, tramvaj. zastávka: Vodičkova - linka: 3, 5, 6, 9, 14, 24",
     link: "https://www.kinosvetozor.cz/",
-    /*movies: [
-      ["Po", "22.6.2020", "Emma.", "15:00"],
-      ["Út", "23.6.2020", "Cyrano z Bergeracu (NT Live)", "20:00"],
-      ["St", "24.6.2020", "Vysoká dívka", "15:00"],
-      ["Čt", "25.6.2020", "Hamlet (NT Live)", "20:00"],
-      ["Pá", "26.6.2020", "Můj otec Antonín Kratochvíl", "15:00"],
-      ["Po", "29.6.2020", "Emma.", "15:00"],
-      ["Po", "29.6.2020", "Imunita z pohledu psychosomatiky", "18:00"],
-      ["Út", "30.6.2020", "Cyrano z Bergeracu (NT Live)", "20:00"],
-      ["Pá", "3.7.2020", "Než skončí léto", "20:00"],
-      ["So", "4.7.2020", "Jalda,noc odpuštění", "17:00"],
-      ["So", "4.7.2020", "Luxor", "20:00"],
-      ["Ne", "5.7.2020", "Mogul Mauglí", "17:00"],
-      ["Ne", "5.7.2020", "Jsme jedné krve", "20:00"],
-    ]*/
+    image: "/assets/images/Svetozor.jpg",
+    alt: "Kino Světozor",
+    copyright: "©Kino Světozor",
   },
 
   {
@@ -42,25 +30,9 @@ const cinemaList = [
     bar: true,
     transport: "metro: Můstek - linka A/B, tramvaj.zastávka: Vodičkova - linka: 3, 5, 6, 9, 14, 24",
     link: "http://www.kinolucerna.cz/klient-263/kino-68/stranka-3705",
-    /*movies: [
-      ["Po", "22.6.2020", "V síti (+15)", "13:30"],
-      ["Po", "22.6.2020", "Raoul Taburin", "15:30"],
-      ["Po", "22.6.2020", "Bourák", "17:00"],
-      ["Po", "22.6.2020", "Dokud se tančí", "17:45"],
-      ["Po", "22.6.2020", "Bourák", "19:30"],
-      ["Po", "22.6.2020", "Kalifornský sen", "20:15"],
-      ["Út", "23.6.2020", "Bourák", "15:30"],
-      ["Út", "23.6.2020", "V síti (+15)", "15:45"],
-      ["Út", "23.6.2020", "Bourák", "18:00"],
-      ["Út", "23.6.2020", "Raoul Taburin", "18:15"],
-      ["Út", "23.6.2020", "Kalifornský sen", "20:30"],
-      ["Út", "23.6.2020", "Bourák", "20:45"]
-      ["St", "24.6.2020", "Vysoká dívka", "15:00"],
-      ["Pá", "26.6.2020", "Trafikant", "13:30"],
-      ["So", "27.6.2020", "Lassie se vrací", "13:00"],
-      ["Ne", "28.6.2020", "Lassie se vrací", "13:00"],
-      ["Po", "29.6.2020", "Bourák", "13:30"]
-    ]*/
+    image: "/assets/images/lucerna.png",
+    alt: "Kino Lucerna",
+    copyright: "©Kino Lucerna",
   },
 
   {
@@ -75,16 +47,9 @@ const cinemaList = [
     bar: true,
     transport: "tramvaj. zastávka: Kamenická - linka: 1, 8, 12, 25, 26",
     link: "https://www.biooko.net/",
-    /*movies: [
-      ["Po", "22.6.2020", "Potvora (NT Live)", "21:00"],
-      ["Po", "29.6.2020", "Hamlet (NT Live)", "19:00"],
-      ["Út", "30.6.2020", "Můj otec Antonín Kratochvíl", "13:00"],
-      ["Pá", "3.7.2020", "Než skončí léto", "20:00"],
-      ["So", "4.7.2020", "Jalda, noc odpuštění", "17:00"],
-      ["So", "4.7.2020", "Luxor", "20:00"],
-      ["Ne", "5.7.2020", "Mogul Mauglí", "17:00"],
-      ["Ne", "5.7.2020", "Jsme jedné krve", "20:00"],
-    ]*/
+    image: "/assets/images/BioOko.jpg",
+    alt: "Bio Oko",
+    copyright: "©Bio Oko",
   },
 
   {
@@ -99,21 +64,9 @@ const cinemaList = [
     bar: true,
     transport: "tramvaj. zastávky: Biskupcova - linka: 9, 10, 11, 16; Ohrada - linka: 1, 9, 11, autobus č. 133, 136 207",
     link: "https://www.kinoaero.cz/",
-    /*movies: [
-      ["Po", "22.6.2020", "Barbarella", "20:30"],
-      ["Út", "23.6.2020", "1917", "10:00"],
-      ["Út", "23.6.2020", "Sám kolem světa: Stopem, s kalašnikovem a japonským pornem", "20:30"],
-      ["Čt", "25.6.2020", "Emma.", "13:30"],
-      ["Čt", "25.6.2020", "Cyrano z Bergeracu (NT Live)", "20:00"],
-      ["Po", "29.6.2020", "Thelma a Louise", "20:30"],
-      ["Út", "30.6.2020", "Malá lež", "10:00"],
-      ["Čt", "2.7.2020", "Vysoká dívka", "13:30"],
-      ["Pá", "3.7.2020", "Než skončí léto", "20:00"],
-      ["So", "4.7.2020", "Jalda, noc odpuštění", "17:00"],
-      ["So", "4.7.2020", "Luxor", "20:00"],
-      ["Ne", "5.7.2020", "Mogul Mauglí", "17:00"],
-      ["Ne", "5.7.2020", "Jsme jedné krve", "20:00"],
-    ]*/
+    image: "/assets/images/Aero.jpg",
+    alt: "Kino Aero",
+    copyright: "©Kino Aero",
   },
 
   {
@@ -128,12 +81,9 @@ const cinemaList = [
     bar: false,
     transport: "tramvaj. zastávka: Krymská - linka: 4, 22, autobus č. 135",
     link: "http://www.kinopilotu.cz/",
-    /*movies: [
-      ["Čt", "25.6.2020", "Pocta klasikám road movie - blok krátkáých filmů", "17:30"],
-      ["Čt", "25.6.2020", "Na vrchol Velkošvédska", "18:00"],
-      ["Čt", "25.6.2020", "Les", "19:00"],
-      ["Čt", "25.6.2020", "Rusko, sníh a rock'n'roll", "19:30"],
-    ]*/
+    image: "/assets/images/Kino_pilotu.jpg",
+    alt: "Kino Pilotů",
+    copyright: "©Kino Pilotů",
   },
 
   {
@@ -146,10 +96,9 @@ const cinemaList = [
     bar: true,
     transport: "tramvaj. zastávka: Husinecká - linka: 5, 9, 15, 26",
     link: "https://goout.net/cs/kina/pritomnost-boutique-cinema/stud/", /*nebo stránky kina?*/
-    /*movies: [
-      ["St", "24.6.2020", "Půlnoční projekce: Čarodějnice", "23:59"],
-      ["Ne", "28.6.2020", "Film & Breakfast: Prázdniny v Římě", "11:00"],
-    ]*/
+    image: "/assets/images/Pritomnost.jpg",
+    alt: "Přítomnost",
+    copyright: "©Přítomnost",
   },
   {
     name: "Kino Mat",
@@ -161,11 +110,9 @@ const cinemaList = [
     bar: true,
     transport: "metro: Karlovo náměstí, linka B, tramvaj. zastávka: Karlovo náměstí - linka: 2, 3, 6, 14, 18, 22",
     link: "http://www.mat.cz/kino/",
-    /*movies: [
-      ["Pá", "26.6.2020", "Vinnetou - Poslední výstřel", "18:30"],
-      ["So", "30.6.2020", "Poklad na stříbrném jezeře", "18:30"],
-
-    ]*/
+    image: "/assets/images/Mat.jpg",
+    alt: "Kino Mat",
+    copyright: "©Kino Mat",
   },
 
   {
@@ -179,11 +126,9 @@ const cinemaList = [
     bar: true,
     transport: "tramvaj. zastávka: Jindřišská - linka: 3, 6, 9, 14, 24",
     link: "https://goout.net/cs/kina/edison-filmhub/tekd/",
-    /*movies: [
-      ["Čt", "18.6.2020", "Gauguin z Národní galerie v Londýně", "19:00"],
-      ["Čt", "18.6.2020", "Gauguin", "21:00"],
-      ["Út", "30.6.2020", "Postřižiny", "19:00"],
-    ]*/
+    image: "/assets/images/Edison.jpeg",
+    alt: "Edison Filmhub",
+    copyright: "©Edison Filmhub",
   },
 
   {
@@ -198,17 +143,9 @@ const cinemaList = [
     bar: true,
     transport: "metro: Florenc, linka B/C, tramvaj. zastávka Florenc - linka: 3, 8, 24, Těšnov - linka: 14 ",
     link: "http://www.kinoatlas.cz/",
-    /*movies: [
-      ["Po", "22.6.2020", "#jsemtady", "17:30"],
-      ["Po", "22.6.2020", "Emma", "18:30"],
-      ["Út", "23.6.2020", "V síti", "17:30"],
-      ["Út", "23.6.2020", "Dokonalý pacient", "18:30"],
-      ["Út", "23.6.2020", "Bourák", "20:00"],
-      ["St", "24.6.2020", "Ženská na vrcholu", "14:30"],
-      ["St", "24.6.2020", "V síti: Za školou", "15:30"],
-      ["St", "24.6.2020", "Kalifornský sen", "17:30"],
-      ["St", "24.6.2020", "Problémissky", "20:00"],
-    ]*/
+    image: "/assets/images/Atlas.jpg",
+    alt: "Kino Atlas",
+    copyright: "©Kino Atlas",
   },
 
   {
@@ -223,15 +160,9 @@ const cinemaList = [
     bar: true,
     transport: "metro: Národní - linka B, Můstek - linka: A/B, tramvaj. zastávka Národní třída - linka: 1, 2, 9, 18, 22",
     link: "http://www.evald.cz/",
-    /*movies: [
-      ["Po", "22.6.2020", "Sviňa", "18:00"],
-      ["Po", "22.6.2020", "Kalifornský sen", "20:30"],
-      ["Út", "23.6.2020", "Modelář", "14:30"],
-      ["Út", "23.6.2020", "#jsemtady", "17:30"],
-      ["Út", "23.6.2020", "Emma", "20:00"],
-      ["St", "24.6.2020", "V síti", "18:00"],
-      ["St", "24.6.2020", "Bourák", "20:30"],
-    ]*/
+    image: "/assets/images/Evald.jpg",
+    alt: "Komorní kino Evald",
+    copyright: "©Komorní kino Evald",
   },
 
   {
@@ -246,15 +177,9 @@ const cinemaList = [
     bar: true,
     transport: "metro: Národní, linka: B, tramvaj. zastávka: Národní třída - linka: 1, 2, 9, 18, 22",
     link: "https://nfa.cz/cz/kino-ponrepo/program/",
-    /*movies: [
-      ["Po", "22.6.2020", "Jiří Menzel – Nicollò Machiavelli / Mandragora", "18:00"],
-      ["Út", "23.6.2020", "Červená řeka", "20:30"],
-      ["St", "24.6.2020", "Kdyby všichni chlapi světa", "18:00"],
-      ["Čt", "25.6.2020", "Bez lásky", "18:00"],
-      ["Pá", "26.6.2020", "Svatba jako řemen", "18:00"],
-      ["So", "27.6.2020", "Strašidelné léto", "20:30"],
-      ["Ne", "28.6.2020", "Tranzit", "20:30"],
-    ]*/
+    image: "/assets/images/Ponrepo.jpg",
+    alt: "Kino Ponrepo",
+    copyright: "©Kino Ponrepo",
   },
 
   {
@@ -265,24 +190,12 @@ const cinemaList = [
     specialProgrammeTypes: [
       "Divadlo v kine - NT Live", "Kino Senior", "Kino Junior", "Filmový klub", "Kino Junior", "Retrospektivy"
     ],
-    barrierFree: true, //nemůžu to najít, ale myslím si, že je
+    barrierFree: true, 
     bar: true,
     transport: "tramvaj. zastávka: Malovanka - linka: 22, 23, 35, bus: Malovanka - linka: 143, 149 ",
     link: "https://dlabacov.cz/",
-    /*movies: [
-      ["Po", "22.6.2020", "Vlastníci", "18:00"],
-      ["Po", "22.6.2020", "V síti", "20:00"],
-      ["Út", "23.6.2020", "Emma", "18:00"],
-      ["Út", "23.6.2020", "Maják", "20:00"],
-      ["St", "24.6.2020", "Daleko od Reykjavíku", "18:00"],
-      ["St", "24.6.2020", "Afrikou na pionýru", "20:00"],
-      ["Čt", "25.6.2020", "Afrikou na pionýru", "18:00"],
-      ["Čt", "25.6.2020", "Vysoká dívka", "20:00"],
-      ["Pá", "26.6.2020", "Příliš osobní známost", "18:00"],
-      ["Pá", "26.6.2020", "Hanební pancharti", "20:00"],
-      ["So", "27.6.2020", "Lassie se vrací", "16:00"],
-      ["So", "27.6.2020", "Osm hrozných", "20:00"],
-    ]*/
-
+    image: "/assets/images/Dlabacov.jpg",
+    alt: "Kino Dlabačov",
+    copyright: "©Kino Dlabačov",
   }
 ]
