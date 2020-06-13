@@ -1,5 +1,10 @@
 <template>
   <div>
+    <div class="btn-hp">
+      <a href="#" class="hp">
+        <i class="my-home fa fa-home"></i>
+      </a>
+    </div>
     <section class="boxy">
       <!--dle kina-->
       <div class="box">
@@ -38,7 +43,7 @@
 
 <script>
 export default {
-  name: "Homepage",
+  name: "Homepage"
 };
 </script>
 
@@ -88,6 +93,7 @@ export default {
 
 @media screen and (min-width: 961px) {
   .boxy {
+    justify-content: center;
     flex-direction: row;
     margin: 0px 30px;
   }
@@ -98,7 +104,7 @@ export default {
 
   .box {
     margin: 15px;
-    width: 33%;
+    max-width: 350px;
     flex-grow: 1 1;
   }
 

@@ -20,8 +20,7 @@
     <router-link to="/"></router-link>
     <router-view></router-view>
 
-
-     <!-- <Homepage /> -->
+    <!-- <Homepage /> -->
   </body>
 </div>
 </template>
@@ -30,7 +29,7 @@
 /*import Homepage from "./components/Homepage.vue";*/
 
 export default {
-  name: "App",
+  name: "App"
   /*components: {
     Homepage: Homepage
   }*/
@@ -53,6 +52,10 @@ export default {
   box-sizing: border-box;
 }
 
+.zmiz {
+  display: none;
+}
+
 .hp {
   position: fixed;
   width: 45px;
@@ -67,14 +70,12 @@ export default {
 }
 
 .btn-hp i {
-  display: none;
   font-size: 30px;
   color: white;
   padding-top: 5px;
   padding-right: 3px;
   margin: 0 auto;
 }
-
 
 body {
   font-family: "Montserrat", sans-serif;

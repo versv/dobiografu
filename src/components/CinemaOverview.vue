@@ -342,7 +342,7 @@ export default {
   padding: 0px;
   width: 70%;
   border-radius: 10px;
-  box-shadow: 4px 4px 8px 0px rgba(50, 50, 50, 0.27);
+  box-shadow: 1px 50px 30px 20px rgba(12, 12, 12, 0.523);
   background-color: #b0adbe;
   font-size: 12px;
 }
