@@ -1,17 +1,5 @@
 <template>
   <div>
-    <header>
-      <div class="title">
-        <!--místo pro logo-->
-        <h1>DO BIOGRAFU</h1>
-        <p>
-          Přehled malých artových kin v Praze a jejich aktuálních programů. Vše
-          na jednom místě.
-        </p>
-      </div>
-    </header>
-    <!--Konec sekce hlavička-->
-
     <!--Program kina-->
 
     <section class="cinema-overview">

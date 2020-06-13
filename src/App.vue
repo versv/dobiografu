@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import Homepage from "./components/Homepage.vue";
+/*import Homepage from "./components/Homepage.vue";*/
 
 export default {
   name: "App",
@@ -75,30 +75,6 @@ export default {
   margin: 0 auto;
 }
 
-/*tablet*/
-@media screen and (min-width: 541px) and (max-width: 960px) {
-  .hp {
-    width: 75px;
-    height: 45px;
-    border-radius: 0px 25px 25px 0px;
-  }
-}
-
-/*desktop*/
-@media screen and (min-width: 961px) {
-  .hp {
-    width: 140px;
-    height: 55px;
-    border-radius: 0px 25px 25px 0px;
-  }
-
-  .btn-hp i {
-    font-size: 40px;
-    color: white;
-    padding-top: 5px;
-    padding-right: 3px;
-  }
-}
 
 body {
   font-family: "Montserrat", sans-serif;
@@ -159,6 +135,12 @@ h1 {
     padding: 10px;
     font-size: 20px;
   }
+
+  .hp {
+    width: 75px;
+    height: 45px;
+    border-radius: 0px 25px 25px 0px;
+  }
 }
 
 @media screen and (min-width: 961px) {
@@ -180,6 +162,19 @@ h1 {
   .button a {
     padding: 10px;
     font-size: 20px;
+  }
+
+  .hp {
+    width: 140px;
+    height: 55px;
+    border-radius: 0px 25px 25px 0px;
+  }
+
+  .btn-hp i {
+    font-size: 40px;
+    color: white;
+    padding-top: 5px;
+    padding-right: 3px;
   }
 }
 </style>
