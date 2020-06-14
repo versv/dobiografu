@@ -116,6 +116,24 @@ h1 {
   padding: 5px;
 }
 
+.cinema-overview {
+  margin: 0 auto;
+  padding: 0px;
+  width: 70%;
+  border-radius: 10px;
+  box-shadow: 1px 50px 30px 20px rgba(12, 12, 12, 0.523);
+  background-color: #b0adbe;
+  font-size: 12px;
+}
+
+.cinema-overview-header {
+  background-color: #3c444c;
+  align-items: center;
+  padding: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
 @media screen and (min-width: 541px) and (max-width: 960px) {
   h1 {
     font-size: 48px;
