@@ -14,20 +14,28 @@
         </div>
 
         <div v-show="visible" class="cinema-detail">
-          <div class="cinema-photo"
-            v-bind:src="`${image}`" v-bind:alt="`${alt}`">
-            <div class="copyright">{{copyright}}</div>
-          </div>
+          <div class="cinema-wrap">
+            <div class="cinema-photo">
+              <img v-bind:src="`assets/images/${image}`" v-bind:alt="`${alt}`">
+              <div class="copyright">{{copyright}}</div>
+            </div>
 
-          <div class="address-details">
-            <p>{{address}}</p>
-            <p>{{transport}}</p>
+            <div class="address-details">
+              <p>{{address}}</p>
+              <ul>
+                <li v-for="means in transport" v-bind:key="means">{{means}}</li>
+              </ul>
+            </div>
           </div>
 
           <div class="cinema-info">
             <p><b>Občerstvení:</b> {{bar}} </p>
             <p><b>Bezbariérové:</b> {{barrierFree}}</p>
-            <p><b>Speciální program:</b> {{specialProgrammeTypes}}</p>
+            <p><b>Speciální program:</b> 
+            <ul>
+              <li v-for="type in specialProgrammeTypes" v-bind:key="type">{{type}}</li>
+            </ul>
+            </p>
           </div>
 
           <div class="button program-button">
@@ -99,6 +107,19 @@ export default {
   font-weight: bold;
 }
 
+.address-details li {
+  list-style-type: none;
+}
+
+.address-details ul {
+  padding: 0;
+  padding-left: 0;
+}
+
+.address-details {
+  text-align: center;
+  padding-left: 0;
+}
 /*------------------------------------------------------------------------------------------------------Detail kina */
 
 .cinema-detail {
@@ -112,10 +133,19 @@ export default {
   flex-wrap: wrap;
 }
 
+.cinema-wrap {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
 .cinema-photo {
   width: 100%;
   height: auto;
-  
+}
+
+.cinema-photo img {
+  width: 100%;
 }
 
 .copyright {
@@ -132,7 +162,7 @@ export default {
 .address-details {
   text-align: center;
   width: 100%;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .program-button {
@@ -143,7 +173,21 @@ export default {
   color: black;
 }
 
+.cinema-info li {
+  list-style-type: none;
+  display: inline-block;
+  margin: 5px 20px;
+}
+
+.cinema-info ul {
+  padding: 0;
+}
+
 @media screen and (min-width: 541px) {
+  .cinema-detail {
+  padding: 40px;
+  }
+
   .cinema-name p {
     font-size: 14px;
   }
@@ -166,8 +210,12 @@ export default {
   }
 
   .address-details {
-    font-size: 18px;
+    font-size: 16px;
   }
+  
+  .address-details ul {
+  padding-left: 0px;
+}
 
   .program-button a {
     padding: 10px;
@@ -180,6 +228,11 @@ export default {
 
 
 @media screen and (min-width: 961px) {
+
+  .cinema-wrap {
+    flex-direction: row;
+  }
+
   .cinema-name p {
     font-size: 16px;
   }
@@ -188,14 +241,16 @@ export default {
     height: auto;
   }
   .cinema-info {
-    font-size: 20x;
-    width: 50%;
+    font-size: 16px;
+    width: 100%;
     align-content: left;
   }
 
   .address-details {
-    font-size: 20px;
+    font-size: 16px;
     width: 50%;
+    margin-left: 20px;
+    margin-top: 50px;
   }
 
   .cinema-button {
@@ -208,17 +263,14 @@ export default {
   }
 
   .program-button a {
-    padding: 5px;
+    padding: 10px;
   }
 
   .copyright {
     font-size: 12px;
   }
 
-  .cinema-detail {
-    justify-content: space-between;
-    align-items: center;
-  }
+ 
 }
 
 </style>
