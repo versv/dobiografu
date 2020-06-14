@@ -175,6 +175,8 @@ export default {
 
 .cinema-info li {
   list-style-type: none;
+  display: inline-block;
+  margin: 5px 20px;
 }
 
 .cinema-info ul {
@@ -240,7 +242,7 @@ export default {
   }
   .cinema-info {
     font-size: 16px;
-    width: 50%;
+    width: 100%;
     align-content: left;
   }
 
@@ -248,6 +250,7 @@ export default {
     font-size: 16px;
     width: 50%;
     margin-left: 20px;
+    margin-top: 50px;
   }
 
   .cinema-button {
@@ -268,7 +271,7 @@ export default {
   }
 
   .cinema-detail {
-    justify-content: space-between;
+    justify-content: right;
     align-items: center;
   }
 }
