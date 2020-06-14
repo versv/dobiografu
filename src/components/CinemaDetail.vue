@@ -270,10 +270,7 @@ export default {
     font-size: 12px;
   }
 
-  .cinema-detail {
-    justify-content: right;
-    align-items: center;
-  }
+ 
 }
 
 </style>
