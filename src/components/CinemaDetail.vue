@@ -9,7 +9,7 @@
             <p>{{tagline}}</p>
           </div>
           <div class="button cinema-button">
-            <a href="#" v-on:click="visible= !visible">Detail kina</a>
+            <button v-on:click="visible= !visible">Detail kina</button>
           </div>
         </div>
 
@@ -99,7 +99,7 @@ export default {
   background-color: #3c444c;
 }
 
-.cinema-button a {
+.cinema-button button {
   color: white;
 }
 
