@@ -46,9 +46,7 @@
         </div>
 
         <div class="button program-button">
-          <router-link
-            :to="{ path: '/CinemaProgramme', params: { cinemaUrl: 'svetozor' }}"
-          >Program kina</router-link>
+          <router-link :to="`/CinemaProgramme/${url}`">Program kina</router-link>
         </div>
       </div>
     </div>
