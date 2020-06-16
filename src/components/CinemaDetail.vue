@@ -1,48 +1,57 @@
 <template>
   <div>
-     <!--Sekce Seznam kin-->
+    <!--Sekce Seznam kin-->
 
-      <div class="cinema-list">
-        <div class="cinema-item">
-          <div class="cinema-name">
-            <h2>{{name}}</h2>
-            <p>{{tagline}}</p>
-          </div>
-          <div class="button cinema-button">
-            <button v-on:click="visible= !visible">Detail kina</button>
-          </div>
+    <div class="cinema-list">
+      <div class="cinema-item">
+        <div class="cinema-name">
+          <h2>{{name}}</h2>
+          <p>{{tagline}}</p>
         </div>
-
-        <div v-show="visible" class="cinema-detail">
-          <div class="cinema-wrap">
-            <div class="cinema-photo">
-              <img v-bind:src="`assets/images/${image}`" v-bind:alt="`${alt}`">
-              <div class="copyright">{{copyright}}</div>
-            </div>
-
-            <div class="address-details">
-              <p>{{address}}</p>
-              <ul>
-                <li v-for="means in transport" v-bind:key="means">{{means}}</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="cinema-info">
-            <p><b>Občerstvení:</b> {{bar}} </p>
-            <p><b>Bezbariérové:</b> {{barrierFree}}</p>
-            <p><b>Speciální program:</b> 
-            <ul>
-              <li v-for="type in specialProgrammeTypes" v-bind:key="type">{{type}}</li>
-            </ul>
-            </p>
-          </div>
-
-          <div class="button program-button">
-            <router-link to="/CinemaProgramme">Program kina</router-link>
-          </div>
+        <div class="button cinema-button">
+          <button v-on:click="visible= !visible">Detail kina</button>
         </div>
       </div>
+
+      <div v-show="visible" class="cinema-detail">
+        <div class="cinema-wrap">
+          <div class="cinema-photo">
+            <img v-bind:src="`assets/images/${image}`" v-bind:alt="`${alt}`" />
+            <div class="copyright">{{copyright}}</div>
+          </div>
+
+          <div class="address-details">
+            <p>{{address}}</p>
+            <ul>
+              <li v-for="means in transport" v-bind:key="means">{{means}}</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="cinema-info">
+          <p>
+            <b>Občerstvení:</b>
+            {{bar}}
+          </p>
+          <p>
+            <b>Bezbariérové:</b>
+            {{barrierFree}}
+          </p>
+          <p>
+            <b>Speciální program:</b>
+          </p>
+          <ul>
+            <li v-for="type in specialProgrammeTypes" v-bind:key="type">{{type}}</li>
+          </ul>
+        </div>
+
+        <div class="button program-button">
+          <router-link
+            :to="{ path: '/CinemaProgramme', params: { cinemaUrl: 'svetozor' }}"
+          >Program kina</router-link>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -50,18 +59,30 @@
 <script>
 export default {
   name: "CinemaDetail",
-  props: ["name", "address", "tagline", "specialProgramme", "specialProgrammeTypes", "barrierFree", "bar", "transport", "link", "image", "alt", "copyright"],
+  props: [
+    "name",
+    "address",
+    "tagline",
+    "specialProgramme",
+    "specialProgrammeTypes",
+    "barrierFree",
+    "bar",
+    "transport",
+    "link",
+    "image",
+    "alt",
+    "copyright",
+    "url"
+  ],
   data() {
     return {
       visible: false
-    }
+    };
   }
-
-}
+};
 </script>
 
 <style scoped>
-
 .cinema-list {
   box-shadow: 4px 4px 8px 0px rgba(50, 50, 50, 0.27);
   padding-bottom: 1px;
@@ -185,7 +206,7 @@ export default {
 
 @media screen and (min-width: 541px) {
   .cinema-detail {
-  padding: 40px;
+    padding: 40px;
   }
 
   .cinema-name p {
@@ -212,10 +233,10 @@ export default {
   .address-details {
     font-size: 16px;
   }
-  
+
   .address-details ul {
-  padding-left: 0px;
-}
+    padding-left: 0px;
+  }
 
   .program-button a {
     padding: 10px;
@@ -226,9 +247,7 @@ export default {
   }
 }
 
-
 @media screen and (min-width: 961px) {
-
   .cinema-wrap {
     flex-direction: row;
   }
@@ -269,8 +288,5 @@ export default {
   .copyright {
     font-size: 12px;
   }
-
- 
 }
-
 </style>

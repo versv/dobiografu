@@ -3,6 +3,7 @@ export const cinemaList = [
 
   {
     name: "Kino Světozor",
+    url: "svetozor",
     address: "Vodičkova 791, Praha 1",
     tagline:
       "Domov slavného Kinoautomatu a bývalý kabaret. Kankán se tu už netancuje, ale atmosféra je pořád špičková.",
@@ -29,6 +30,7 @@ export const cinemaList = [
 
   {
     name: "Kino Lucerna",
+    url: "lucerna",
     address: "Vodičkova 704, Praha 1",
     tagline:
       "Elegance sama. V secesním kinosále si připadáte jako v divadle. V malém sále vám zase bude dělat společnost James Dean.",

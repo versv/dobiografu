@@ -25,6 +25,7 @@
       v-bind:image="cinema.image"
       v-bind:alt="cinema.alt"
       v-bind:copyright="cinema.copyright"
+      v-bind:url="cinema.url"
       v-bind:key="index"
     />
   </section>

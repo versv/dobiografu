@@ -6,6 +6,7 @@ import CinemaOverview from './components/CinemaOverview.vue';
 import CinemaProgramme from './components/CinemaProgramme.vue';
 import SelectDate from './components/SelectDate.vue';
 import SelectMovie from './components/SelectMovie.vue';
+
 import './index.html';
 
 Vue.use(VueRouter);
@@ -15,9 +16,9 @@ const router = new VueRouter({
   routes: [
     { path: '/', component: Homepage },
     { path: '/CinemaOverview', component: CinemaOverview },
-    { path: '/CinemaProgramme', component: CinemaProgramme },
-    { path: '/SelectDate', component: SelectDate},
-    { path: '/SelectMovie', component: SelectMovie},
+    { path: '/CinemaProgramme/:cinemaUrl', component: CinemaProgramme },
+    { path: '/SelectDate', component: SelectDate },
+    { path: '/SelectMovie', component: SelectMovie },
   ],
 });
 

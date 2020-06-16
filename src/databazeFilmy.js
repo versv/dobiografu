@@ -1,3 +1,110 @@
+export const loadMoviesForCinema = async (cinemaName) => {
+  await new Promise(r => setTimeout(r, 2000));
+  return [
+    {
+      date: "22.6.2020",
+      movies: [
+        {
+          movieName: "Emma",
+          time: "15:00",
+        },
+      ]
+    },
+    {
+      date: "23.6.2020",
+      movies: [
+        {
+          movieName: "Cyrano z Bergeracu (NT Live)",
+          time: "20:00",
+        },
+      ]
+    },
+    {
+      date: "24.6.2020",
+      movies: [
+        {
+          movieName: "Vysoká dívka",
+          time: "15:00",
+        },
+      ]
+    },
+    {
+      date: "25.6.2020",
+      movies: [
+        {
+          movieName: "Hamlet (NT Live)",
+          time: "20:00",
+        },
+      ]
+    },
+    {
+      date: "26.6.2020",
+      movies: [
+        {
+          movieName: "Můj otec Antonín Kratochvíl",
+          time: "15:00",
+        },
+      ]
+    },
+    {
+      date: "29.6.2020",
+      movies: [
+        {
+          movieName: "Emma",
+          time: "15:00",
+        },
+        {
+          movieName: "Imunita z pohledu psychosomatiky",
+          time: "18:00",
+        },
+      ]
+    },
+    {
+      date: "30.6.2020",
+      movies: [
+        {
+          movieName: "Cyrano z Bergeracu (NT Live)",
+          time: "20:00",
+        },
+      ]
+    },
+    {
+      date: "3.7.2020",
+      movies: [
+        {
+          movieName: "Než skončí léto",
+          time: "20:00",
+        },
+      ]
+    },
+    {
+      date: "4.7.2020",
+      movies: [
+        {
+          movieName: "Jalda, noc odpuštění",
+          time: "17:00"
+        },
+        {
+          movieName: "Luxor",
+          time: "20:00"
+        },
+      ]
+    },
+    {
+      date: "5.7.2020",
+      movies: [
+        {
+          movieName: "Mogul Mauglí",
+          time: "17:00"
+        },
+        {
+          movieName: "Jsme jedné krve",
+          time: "20:00"
+        },
+      ]
+    }
+  ]
+}
 const moviesList = [
   {
     name: "Kino Světozor",

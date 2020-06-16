@@ -1,6 +1,8 @@
 <template>
   <div>
     <!--Program kina-->
+    <div>{{$route.params.cinemaUrl}}</div>
+    <div>{{movies}}</div>
 
     <section class="cinema-overview">
       <div class="programme-header">
@@ -53,8 +55,24 @@
 </template>
 
 <script>
+import { loadMoviesForCinema } from "../databazeFilmy";
 export default {
-  name: "CinemaProgramme"
+  name: "CinemaProgramme",
+  data() {
+    return {
+      movies: []
+    };
+  },
+  created() {
+    this.getMovies();
+  },
+  methods: {
+    getMovies: function() {
+      loadMoviesForCinema("Světozor").then(movies => {
+        this.movies = movies;
+      });
+    }
+  }
 };
 </script>
 
