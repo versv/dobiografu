@@ -1,6 +1,5 @@
 <template>
-<div>
-  <body>
+  <div>
     <div class="btn-hp">
       <router-link to="/" class="hp">
         <i class="my-home fa fa-home"></i>
@@ -21,8 +20,7 @@
     <router-view></router-view>
 
     <!-- <Homepage /> -->
-  </body>
-</div>
+  </div>
 </template>
 
 <script>
@@ -52,10 +50,6 @@ export default {
   box-sizing: border-box;
 }
 
-.zmiz {
-  display: none;
-}
-
 .hp {
   position: fixed;
   width: 45px;
@@ -80,6 +74,7 @@ export default {
 body {
   font-family: "Montserrat", sans-serif;
   background-color: #30363d;
+  background-image: url("assets/images/background.jpg");
   text-align: center;
   font-size: 14px;
 }

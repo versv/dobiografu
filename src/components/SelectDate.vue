@@ -11,7 +11,7 @@
             <h2>Vyber datum</h2>
 
             <section class="select">
-              <select name="choose_day" id="choose_day">
+              <select name="choose_day" id="choose_day" v-model="chosenDay">
                 <option class="day" value="today">Dnes</option>
                 <option class="day" value="tomorrow">Zítra</option>
                 <option class="day" value="day3">středa 26. 7. 2020</option>
@@ -20,6 +20,11 @@
                 <option class="day" value="day6">sobota 26. 7. 2020</option>
                 <option class="day" value="day7">neděle 26. 7. 2020</option>
               </select>
+
+              <!---<select name="choose_day" id="choose_day" v-model="chosenDay">
+                <option class="day" v-for="option in options" v-bind:value="{{option.value}}">
+                  {{option.text}}
+              </option>--->
             </section>
           </div>
 
@@ -33,6 +38,7 @@
       <!--Seznam kin s programem-->
 
       <div class="cinema-programme">
+        <!--část kódu, která se zobrazí v závislti na vybraném daut .programme-day-->
         <div class="programme-day">
           <div class="programme-cinema-name">Kino Pilotů</div>
           <div class="movies-list">
@@ -50,7 +56,7 @@
             </div>
           </div>
         </div>
-
+        <!--část kódu, která se zobrazí v závislti na vybraném daut .programme-day-->
         <div class="programme-day">
           <div class="programme-cinema-name">Kino Lucerna</div>
           <div class="movies-list">
@@ -75,7 +81,17 @@
 
 <script>
 export default {
-  name: "SelectDate"
+  name: "SelectDate",
+  data() {
+    return {
+      chosenDay: "today"
+      /*options:[
+      {text: "dnes", value: "všechna kina dnes"},
+      {text: "zítra", value: "všechna kina zítra"},
+      {text: "dalších 7 dní", value: "všechna kina dalších 7 dní"},
+      {text: "vše", value: "celý program všech kin"},]*/
+    };
+  }
 };
 </script>
 

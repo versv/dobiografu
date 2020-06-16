@@ -11,8 +11,8 @@
             <h2>Vyber film</h2>
 
             <section class="select">
-              <select name="choose_movie" id="choose_movie">
-                <option selected disabled>Filmotéka</option>
+              <select name="choose_movie" id="choose_movie" v-model="chosenMovie">
+                <option selected disabled></option>
                 <option class="film" value="movie1">Film1</option>
                 <option class="film" value="movie2">Film2</option>
                 <option class="film" value="movie3">Film3</option>
@@ -36,8 +36,9 @@
 
       <div class="cinema-programme">
         <div class="programme-day">
-          <div class="programme-movie-name">Název filmu</div>
+          <div class="programme-movie-name">{{chosenMovie}}</div>
           <div class="cinemas">
+            <!-- níže je část kód která se zobrazí v závisloti na vybraném filmu-->
             <div class="schedule">
               <div class="schedule_cinema">
                 <p>Kino 1</p>
@@ -64,6 +65,8 @@
                 </div>
               </div>
             </div>
+            <!-- konec šablony-->
+
             <div class="schedule">
               <div class="schedule_cinema">
                 <p>Kino 2</p>
@@ -164,10 +167,6 @@
             </div>
           </div>
         </div>
-
-        <div class="button tickets-button">
-          <a href="http://www.kinolucerna.cz/klient-263/kino-68/stranka-3705">Koupit lístky</a>
-        </div>
       </div>
     </section>
   </div>
@@ -175,7 +174,12 @@
 
 <script>
 export default {
-  name: "SelectMovie"
+  name: "SelectMovie",
+  data() {
+    return {
+      chosenMovie: ""
+    };
+  }
 };
 </script>
 
