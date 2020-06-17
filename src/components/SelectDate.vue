@@ -105,6 +105,7 @@ export default {
     fetch(
       "https://api.apify.com/v2/datasets/mF3iLaWJ6zq5fUCSy/items?format=json&clean=1"
     )
+      .then((response) => response.json())
       .then((json) => {
         console.log(json);
         return json;
