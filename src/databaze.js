@@ -57,6 +57,7 @@ export const cinemaList = [
 
   {
     name: "Bio Oko",
+    url: "biooko",
     address: "Františka Křížka 460/15, Praha 7",
     tagline:
       "Oblíbené nejen letenskými hipstery. Je libo shlédnout film z pohodlí staré karosérie nebo plážového lehátka?",
@@ -82,6 +83,7 @@ export const cinemaList = [
 
   {
     name: "Kino Aero",
+    url: "aero",
     address: "Biskupcova 31, Praha 3",
     tagline:
       "Nenápadný žižkovský klenot s dvorem ve vnitrobloku, ideálním na pofilmové diskuze nad sklenkou vína.",
@@ -111,6 +113,7 @@ export const cinemaList = [
 
   {
     name: "Kino Pilotů",
+    url: "kinopilotu",
     address: "Donská 108, Praha 10",
     tagline:
       "I Vršovice už mají své artové kino. S vytříbenou dramaturgií a pohodlím multiplexu.",
@@ -133,6 +136,7 @@ export const cinemaList = [
 
   {
     name: "Přítomnost",
+    url: "pritomnost",
     address: "Siwiecova 1, Praha 3",
     tagline:
       "Funkcionalistický poklad v Domě Radosti s barem přímo v sále. Cashless.",
@@ -153,6 +157,7 @@ export const cinemaList = [
   },
   {
     name: "Kino Mat",
+    url: "mat",
     address: "Karlovo náměstí 19, Praha 2",
     tagline:
       "Opravdu komorní záležitost o 46 sedadlech. Takže lístky radši koupit dopředu.",
@@ -179,6 +184,7 @@ export const cinemaList = [
 
   {
     name: "Edison Filmhub",
+    url:"edison",
     address: "Jeruzalémská 2, Praha 1",
     tagline:
       "Tento relativně nedávný přírůstek k artovým kinum v centru sídlí v budově Edisonovy transformační stanice a jde ruku v ruce se stylovou kavárnou.",
@@ -201,6 +207,7 @@ export const cinemaList = [
 
   {
     name: "Kino Atlas",
+    url: "atlas",
     address: "Sokolovská 1, Praha 8",
     tagline: "Ideální na rande - v zadní řadě mají útulné dvojsedačky.",
     specialProgrammeTypes: ["✓ Bio Senior", "✓ Bio Junior"],
@@ -218,6 +225,7 @@ export const cinemaList = [
 
   {
     name: "Komorní kino Evald",
+    url: "evald",
     address: "Národní 28, Praha 1",
     tagline: "Tady si přijdou na své milovníci severských filmů.",
     specialProgrammeTypes: [
@@ -239,6 +247,7 @@ export const cinemaList = [
 
   {
     name: "Kino Ponrepo",
+    url: "ponrepo",
     address: "Bartolomějská 11, Praha 1",
     tagline:
       "Kino Národního filmového archivu, které promítá spoustu nejen českých pokladů.",
@@ -264,6 +273,7 @@ export const cinemaList = [
 
   {
     name: "Kino Dlabačov",
+    url: "dlabacov",
     address: "Bělohorská 24, Praha 6",
     tagline:
       "Pokud milujete tvorbu jednoho režiséra, bude se vám líbit cyklus Retrospektivy - nedávno promítali třeba všechny filmy Bratří Coenů.",
@@ -287,3 +297,14 @@ export const cinemaList = [
     copyright: "©Kino Dlabačov"
   }
 ]
+
+
+export const getCinemaByUrl = (url) => {
+  let i = 0;
+  while (i < cinemaList.length) {
+  if (cinemaList[i].url === url) {
+    return cinemaList[i];
+  }
+}
+};
+

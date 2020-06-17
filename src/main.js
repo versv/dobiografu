@@ -4,12 +4,15 @@ import App from './App.vue';
 import Homepage from './components/Homepage.vue';
 import CinemaOverview from './components/CinemaOverview.vue';
 import CinemaProgramme from './components/CinemaProgramme.vue';
+import ProgrammeByCinema from './components/ProgrammeByCinema.vue';
 import SelectDate from './components/SelectDate.vue';
 import SelectMovie from './components/SelectMovie.vue';
 
 import './index.html';
 
+
 Vue.use(VueRouter);
+
 
 const router = new VueRouter({
   mode: 'history',

@@ -9,10 +9,6 @@
       <div class="title">
         <!--místo pro logo-->
         <h1>DO BIOGRAFU</h1>
-        <p>
-          Přehled malých artových kin v Praze a jejich aktuálních programů. Vše
-          na jednom místě.
-        </p>
       </div>
     </header>
 
@@ -27,14 +23,12 @@
 /*import Homepage from "./components/Homepage.vue";*/
 
 export default {
-  name: "App"
+  name: "App",
   /*components: {
     Homepage: Homepage
   }*/
 };
 </script>
-
-
 
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swa");
