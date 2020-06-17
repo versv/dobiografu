@@ -1,12 +1,12 @@
 <template>
   <div>
     <!--Program kina-->
-    <div>{{$route.params.cinemaUrl}}</div>
-    <div>{{movies}}</div>
+    <div>{{ cinema.name }}</div>
+    <div>{{ movies }}</div>
 
     <section class="cinema-overview">
       <div class="programme-header">
-        <h3>Kino Lucerna</h3>
+        <h3>{{ cinema.name }}</h3>
         <h2>PROGRAM</h2>
       </div>
       <!--Konec sekce Výběr kina-->
@@ -56,11 +56,13 @@
 
 <script>
 import { loadMoviesForCinema } from "../databazeFilmy";
+import { getCinemaById, getCinemaByUrl } from "../databaze";
 export default {
   name: "CinemaProgramme",
   data() {
     return {
-      movies: []
+      movies: [],
+      cinema: getCinemaByUrl(this.$route.params.cinemaUrl),
     };
   },
   created() {
@@ -71,13 +73,10 @@ export default {
       loadMoviesForCinema(this.$route.params.cinemaUrl).then(movies => {
         this.movies = movies;
       });
-    }
+    },
   }
-};
+  };
 </script>
-
-
-
 
 <style>
 .cinema-programme {
