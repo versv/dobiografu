@@ -75,12 +75,16 @@ body {
   font-family: "Montserrat", sans-serif;
   background-color: #30363d;
   background-image: url("assets/images/background.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+
+  height: 50%;
   text-align: center;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .title {
-  padding: 10px 40px 10px 40px;
+  padding: 5px 5px 5px 5px;
   color: #ffffff;
 }
 
@@ -90,7 +94,8 @@ h1 {
   background: linear-gradient(to right, #f27a54 45%, #a154f2 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: 35px;
+  font-size: 28px;
+  margin-bottom: 0px;
 }
 
 .button {
@@ -107,14 +112,14 @@ h1 {
   color: black;
   display: block;
   text-align: center;
-  font-size: 14px;
+  font-size: 12px;
   padding: 5px;
 }
 
 .cinema-overview {
   margin: 0 auto;
   padding: 0px;
-  width: 70%;
+  width: 80%;
   border-radius: 10px;
   box-shadow: 1px 50px 30px 20px rgba(12, 12, 12, 0.523);
   background-color: #b0adbe;
@@ -122,6 +127,7 @@ h1 {
 }
 
 .cinema-overview-header {
+  color: white;
   background-color: #3c444c;
   align-items: center;
   padding: 10px;
@@ -130,13 +136,18 @@ h1 {
 }
 
 @media screen and (min-width: 541px) and (max-width: 960px) {
+  body {
+    height: 100%;
+    background-size: cover;
+  }
+
   h1 {
-    font-size: 48px;
+    font-size: 40px;
     margin-bottom: 10px;
   }
 
   p {
-    font-size: 18px;
+    font-size: 14px;
     margin-bottom: 15px;
   }
 
@@ -159,6 +170,8 @@ h1 {
 
 @media screen and (min-width: 961px) {
   body {
+    background-size: cover;
+    height: 100vh;
     font-size: 16px;
   }
 

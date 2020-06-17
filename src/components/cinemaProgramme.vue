@@ -68,7 +68,7 @@ export default {
   },
   methods: {
     getMovies: function() {
-      loadMoviesForCinema("Světozor").then(movies => {
+      loadMoviesForCinema(this.$route.params.cinemaUrl).then(movies => {
         this.movies = movies;
       });
     }
