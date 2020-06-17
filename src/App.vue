@@ -99,6 +99,16 @@ h1 {
   min-width: 120px;
   height: 30px;
   margin-bottom: 15px;
+  transition: background 250ms ease-in-out, transform 150ms ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  transition: background 250ms ease-in-out, transform 150ms ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.button:active {
+  transform: scale(0.99);
 }
 
 .button a {

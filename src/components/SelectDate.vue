@@ -204,6 +204,10 @@ select::-ms-expand {
 
 /*tablet*/
 @media screen and (min-width: 541px) {
+  h2 {
+    font-size: 28px;
+  }
+
   .calendar-img img {
     width: 80px;
   }
