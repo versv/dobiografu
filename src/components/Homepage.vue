@@ -1,5 +1,14 @@
 <template>
   <div>
+    <div class="title">
+      <!--místo pro logo-->
+
+      <p>
+        Přehled malých artových kin v Praze a jejich aktuálních programů. Vše
+        na jednom místě.
+      </p>
+    </div>
+
     <div class="btn-hp">
       <a href="#" class="hp">
         <i class="my-home fa fa-home"></i>
