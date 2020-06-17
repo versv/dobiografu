@@ -118,11 +118,33 @@ export default {
 
 .cinema-button {
   width: 60%;
-  background-color: #3c444c;
 }
 
 .cinema-button button {
   color: white;
+  border-radius: 15px;
+  display: inline-block;
+  border: none;
+  padding: 1rem 2rem;
+  margin: 0;
+  text-decoration: none;
+  background: #3c444c;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: center;
+  transition: background 250ms ease-in-out, transform 150ms ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.cinema-button button:focus {
+  outline: 0;
+  outline-offset: 0px;
+}
+
+.cinema-button button:active {
+  transform: scale(0.99);
 }
 
 .cinema-info-heading {
