@@ -6,7 +6,7 @@
 
     <section class="cinema-overview">
       <div class="programme-header">
-        <h3>Kino Lucerna</h3>
+        <h3>{{ cinema.name }}</h3>
         <h2>PROGRAM</h2>
       </div>
       <!--Konec sekce Výběr kina-->
@@ -62,7 +62,7 @@ export default {
   data() {
     return {
       movies: [],
-      cinema: [],
+      cinema: getCinemaByUrl(this.$route.params.cinemaUrl),
     };
   },
   created() {
@@ -74,12 +74,7 @@ export default {
         this.movies = movies;
       });
     },
-    getCinemaName: function () {
-      const urlPath = toString($route.params.cinemaUrl);
-      let cinema = getCinemaByUrl(urlPath);
-      this.cinema = cinema;
-    }
-    }
+  }
   };
 </script>
 
