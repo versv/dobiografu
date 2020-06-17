@@ -848,14 +848,5 @@ const moviesList = [
 ];
 
 
-export const displayApi = (json) => {
-  const apifyElm = document.querySelector(".apify")
-  apifyElm.textContent = json.data
-}
-
-
-fetch("https://api.apify.com/v2/datasets/mF3iLaWJ6zq5fUCSy/items?format=json&clean=1")
-  .then((resp) => resp.json())
-  .then((json) => console.log(json));
 
 

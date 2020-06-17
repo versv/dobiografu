@@ -10,7 +10,9 @@ import SelectMovie from './components/SelectMovie.vue';
 
 import './index.html';
 
+
 Vue.use(VueRouter);
+
 
 const router = new VueRouter({
   mode: 'history',

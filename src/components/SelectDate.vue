@@ -41,7 +41,7 @@
       <!--Seznam kin s programem-->
 
       <div class="cinema-programme">
-        <div class="apify">ahoj {{apiData}}</div>
+        <div class="apify">ahoj {{ apiData }}</div>
         <!--část kódu, která se zobrazí v závislti na vybraném daut .programme-day-->
         <div class="programme-day">
           <div class="programme-cinema-name">Kino Pilotů</div>
@@ -84,23 +84,13 @@
 </template>
 
 <script>
-import { displayApi } from "../databazeFilmy";
-
 export default {
   name: "SelectDate",
   data() {
     return {
       chosenDay: "today",
 
-      apiData: fetch(
-        "https://api.apify.com/v2/datasets/mF3iLaWJ6zq5fUCSy/items?format=json&clean=1"
-      )
-        .then(resp => resp.json())
-        .then(json => {
-          console.log(json);
-          return json;
-        })
-        .then(json => displayApi)
+      apiData: [],
 
       /*options: [
         { text: "dnes", value: "všechna kina dnes" },
@@ -111,15 +101,24 @@ export default {
     };
   },
 
+  created() {
+    fetch(
+      "https://api.apify.com/v2/datasets/mF3iLaWJ6zq5fUCSy/items?format=json&clean=1"
+    )
+      .then((json) => {
+        console.log(json);
+        return json;
+      })
+      .then((json) => this.displayApi(json));
+  },
+
   methods: {
     displayApi(json) {
-      this.apiData = json.data;
-    }
-  }
+      this.apiData = json;
+    },
+  },
 };
 </script>
-
-
 
 <style>
 .ahoj {

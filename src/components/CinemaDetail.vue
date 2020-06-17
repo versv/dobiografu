@@ -5,11 +5,11 @@
     <div class="cinema-list">
       <div class="cinema-item">
         <div class="cinema-name">
-          <h2>{{name}}</h2>
-          <p>{{tagline}}</p>
+          <h2>{{ name }}</h2>
+          <p>{{ tagline }}</p>
         </div>
         <div class="button cinema-button">
-          <button v-on:click="visible= !visible">Detail kina</button>
+          <button v-on:click="visible = !visible">Detail kina</button>
         </div>
       </div>
 
@@ -17,13 +17,13 @@
         <div class="cinema-wrap">
           <div class="cinema-photo">
             <img v-bind:src="`assets/images/${image}`" v-bind:alt="`${alt}`" />
-            <div class="copyright">{{copyright}}</div>
+            <div class="copyright">{{ copyright }}</div>
           </div>
 
           <div class="address-details">
-            <p>{{address}}</p>
+            <p>{{ address }}</p>
             <ul>
-              <li v-for="means in transport" v-bind:key="means">{{means}}</li>
+              <li v-for="means in transport" v-bind:key="means">{{ means }}</li>
             </ul>
           </div>
         </div>
@@ -31,28 +31,31 @@
         <div class="cinema-info">
           <p>
             <b>Občerstvení:</b>
-            {{bar}}
+            {{ bar }}
           </p>
           <p>
             <b>Bezbariérové:</b>
-            {{barrierFree}}
+            {{ barrierFree }}
           </p>
           <p>
             <b>Speciální program:</b>
           </p>
           <ul>
-            <li v-for="type in specialProgrammeTypes" v-bind:key="type">{{type}}</li>
+            <li v-for="type in specialProgrammeTypes" v-bind:key="type">
+              {{ type }}
+            </li>
           </ul>
         </div>
 
         <div class="button program-button">
-          <router-link :to="`/CinemaProgramme/${url}`">Program kina</router-link>
+          <router-link :to="`/CinemaProgramme/${url}`"
+            >Program kina</router-link
+          >
         </div>
       </div>
     </div>
   </div>
 </template>
-
 
 <script>
 export default {
@@ -70,13 +73,13 @@ export default {
     "image",
     "alt",
     "copyright",
-    "url"
+    "url",
   ],
   data() {
     return {
-      visible: false
+      visible: false,
     };
-  }
+  },
 };
 </script>
 
