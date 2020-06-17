@@ -1,8 +1,7 @@
 <template>
   <div>
-    <!--Program kina-->
-    <div>{{ cinema.name }}</div>
-    <div>{{ movies }}</div>
+    <!--Program kina <div>{{ movies }}</div> -->
+    
 
     <section class="cinema-overview">
       <div class="programme-header">
@@ -13,7 +12,7 @@
 
       <!--Sekce Seznam kin-->
 
-      <div class="cinema-programme">
+      <!-- <div class="cinema-programme">
         <div class="programme-day">
           <div class="programme-cinema-name">Pátek 26. 6. 2020</div>
           <div class="movies-list">
@@ -30,26 +29,23 @@
               <p>21:00</p>
             </div>
           </div>
-        </div>
+        </div> -->
 
-        <div class="programme-day">
-          <div class="programme-cinema-name">Sobota 27. 6. 2020</div>
-          <div class="movies-list">
-            <div class="movie">
-              <p>Bourák</p>
-              <p>15:30</p>
-            </div>
-            <div class="movie">
-              <p>Králíček Jojo</p>
-              <p>18:00</p>
-            </div>
-            <div class="movie">
-              <p>Emma</p>
-              <p>20:30</p>
-            </div>
-          </div>
+        <ProgrammeByCinema
+        v-for="(cinema, index) in movies"
+        v-bind:movieName="cinema.movieName"
+        v-bind:date="cinema.date"
+        v-bind:time="cinema.time"
+        v-bind:key="index"
+
+        />
+        
+        <div class="button tickets-button">
+          <a :href="`${cinema.link}`"
+            >Koupit lístky </a>
         </div>
-      </div>
+        
+      
     </section>
   </div>
 </template>
@@ -57,20 +53,25 @@
 <script>
 import { loadMoviesForCinema } from "../databazeFilmy";
 import { getCinemaById, getCinemaByUrl } from "../databaze";
+import ProgrammeByCinema from "./ProgrammeByCinema.vue";
 export default {
   name: "CinemaProgramme",
   data() {
     return {
       movies: [],
       cinema: getCinemaByUrl(this.$route.params.cinemaUrl),
+    
     };
+  },
+  components: {
+    ProgrammeByCinema: ProgrammeByCinema
   },
   created() {
     this.getMovies();
   },
   methods: {
     getMovies: function() {
-      loadMoviesForCinema("Světozor").then(movies => {
+      loadMoviesForCinema(this.cinema).then(movies => { //místo "Světozor" this.cinema?
         this.movies = movies;
       });
     },

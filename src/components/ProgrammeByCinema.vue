@@ -1,22 +1,27 @@
 <template>
   <div>
     <div class="programme-day">
-          <div class="programme-cinema-name">{{date}}</div>
-          <div class="movies-list">
-            <div class="movie">
-              <p>{{movieName}}</p>
-              <p>{{time}}</p>
-            </div>
-          </div>
+      <div class="programme-cinema-name">{{ date }}</div>
+      <div class="movies-list">
+        <div class="movie">
+          <ul>
+            <li v-for="(movieName, time, index) in movies" v-bind:key="index">>
+              <p>{{ movieName }}</p>
+              <p>{{ time }}</p>
+            </li>
+          </ul>
+          
         </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
   name: "ProgrammeByCinema",
-  props: ["date", "movieName", "time"]
-}
+  props: ["date", "movieName", "time"],
+};
 </script>
 
 <style>
