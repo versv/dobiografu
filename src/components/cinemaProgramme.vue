@@ -19,7 +19,7 @@
       />
 
       <div class="button tickets-button">
-        <a :href="`${cinema.link}`">Koupit lístky </a>
+        <a :href="`${cinema.link}`">Koupit lístky</a>
       </div>
     </section>
   </div>
@@ -34,27 +34,22 @@ export default {
   data() {
     return {
       dates: [],
-      cinema: getCinemaByUrl(this.$route.params.cinemaUrl),
+      cinema: getCinemaByUrl(this.$route.params.cinemaUrl)
     };
   },
   components: {
-    ProgrammeByCinema: ProgrammeByCinema,
+    ProgrammeByCinema: ProgrammeByCinema
   },
   created() {
     this.getMovies();
   },
   methods: {
     getMovies: function() {
-<<<<<<< HEAD
-      loadMoviesForCinema(this.$route.params.cinemaUrl).then(movies => {
-        this.movies = movies;
-=======
-      loadMoviesForCinema(this.cinema).then((cinema) => {
+      loadMoviesForCinema(this.cinema).then(cinema => {
         this.dates = cinema.dates;
->>>>>>> 1a90d71c4107686407bacf4bcf286a4276264f04
       });
-    },
-  },
+    }
+  }
 };
 </script>
 

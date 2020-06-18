@@ -1,13 +1,9 @@
 <template>
   <div>
-    <div class="title">
-      <!--místo pro logo-->
-
-      <p>
-        Přehled malých artových kin v Praze a jejich aktuálních programů. Vše na
-        jednom místě.
-      </p>
-    </div>
+    <p class="perex">
+      Přehled malých artových kin v Praze a jejich aktuálních programů. Vše na
+      jednom místě.
+    </p>
 
     <div class="btn-hp">
       <a href="#" class="hp">
@@ -53,11 +49,15 @@
 
 <script>
 export default {
-  name: "Homepage",
+  name: "Homepage"
 };
 </script>
 
 <style>
+.perex {
+  color: white;
+}
+
 .boxy {
   display: flex;
   flex-direction: column;
@@ -100,10 +100,6 @@ export default {
 }
 
 @media screen and (min-width: 961px) {
-  .title {
-    margin-bottom: 40px;
-  }
-
   .boxy {
     flex-direction: row;
     justify-content: center;

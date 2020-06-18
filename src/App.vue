@@ -6,10 +6,7 @@
       </router-link>
     </div>
     <header>
-      <div class="title">
-        <!--místo pro logo-->
-        <h1>DO BIOGRAFU</h1>
-      </div>
+      <h1>DO BIOGRAFU</h1>
     </header>
 
     <router-link to="/"></router-link>
@@ -23,7 +20,7 @@
 /*import Homepage from "./components/Homepage.vue";*/
 
 export default {
-  name: "App",
+  name: "App"
   /*components: {
     Homepage: Homepage
   }*/
@@ -68,18 +65,13 @@ export default {
 body {
   font-family: "Montserrat", sans-serif;
   background-color: #30363d;
-  background-image: url("assets/images/background.jpg");
+  /*background-image: url("assets/images/background.jpg");*/
   background-position: center;
   background-repeat: no-repeat;
 
   height: 50%;
   text-align: center;
   font-size: 12px;
-}
-
-.title {
-  padding: 5px 5px 5px 5px;
-  color: #ffffff;
 }
 
 h1 {
@@ -89,7 +81,8 @@ h1 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 28px;
-  margin-bottom: 0px;
+  padding-top: 20px;
+  margin-bottom: 20px;
 }
 
 .button {
@@ -147,7 +140,8 @@ h1 {
 
   h1 {
     font-size: 40px;
-    margin-bottom: 10px;
+    padding-top: 20px;
+    margin-bottom: 20px;
   }
 
   p {
@@ -181,7 +175,8 @@ h1 {
 
   h1 {
     font-size: 58px;
-    margin-bottom: 10px;
+    padding: 20px;
+    margin-bottom: 30px;
   }
 
   .button {

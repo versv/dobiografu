@@ -11,25 +11,11 @@
             <h2>Vyber datum</h2>
 
             <section class="select">
-              <select name="choose_day" id="choose_day" v-model="chosenDay">
-                <option class="day" value="today">Dnes</option>
-                <option class="day" value="tomorrow">Zítra</option>
-                <option class="day" value="day3">středa 26. 7. 2020</option>
-                <option class="day" value="day4">čtvrtek 26. 7. 2020</option>
-                <option class="day" value="day5">pátek 26. 7. 2020</option>
-                <option class="day" value="day6">sobota 26. 7. 2020</option>
-                <option class="day" value="day7">neděle 26. 7. 2020</option>
+              <select name="choose_day" id="choose_day">
+                <option v-for="Date in dates" :value="Date.id" :key="Date.id">{{ Date.name }}</option>
               </select>
             </section>
           </div>
-
-          <!--- <select name="choose_day" id="choose_day" v-model="chosenDay">
-                <option class="day" 
-                v-for="(option, index)in options" 
-                v-bind:value="option.value"
-                v-bind:key="index"
-                > {{option.text}}
-          </option>-->
 
           <div class="calendar-img_b">
             <img src="assets/images/calendar.png" alt="ikonka kalendáře" />
@@ -41,63 +27,41 @@
       <!--Seznam kin s programem-->
 
       <div class="cinema-programme">
-        <div class="apify">ahoj {{ apiData }}</div>
+        <div class="apify">{{ apiData }}</div>
         <!--část kódu, která se zobrazí v závislti na vybraném daut .programme-day-->
-        <div class="programme-day">
-          <div class="programme-cinema-name">Kino Pilotů</div>
-          <div class="movies-list">
-            <div class="movie">
-              <p>NT Live: Cyrano z Bergeracu</p>
-              <p>17:30</p>
-            </div>
-            <div class="movie">
-              <p>1917</p>
-              <p>19:30</p>
-            </div>
-            <div class="movie">
-              <p>Přežijí jen milenci</p>
-              <p>21:00</p>
-            </div>
-          </div>
-        </div>
-        <!--část kódu, která se zobrazí v závislti na vybraném daut .programme-day-->
-        <div class="programme-day">
-          <div class="programme-cinema-name">Kino Lucerna</div>
-          <div class="movies-list">
-            <div class="movie">
-              <p>Bourák</p>
-              <p>15:30</p>
-            </div>
-            <div class="movie">
-              <p>Králíček Jojo</p>
-              <p>18:00</p>
-            </div>
-            <div class="movie">
-              <p>Emma</p>
-              <p>20:30</p>
-            </div>
-          </div>
-        </div>
+        <MovieByDate />
       </div>
     </section>
   </div>
 </template>
 
 <script>
+import MovieByDate from "./MovieByDate.vue";
 export default {
   name: "SelectDate",
+  components: {
+    MovieByDate: MovieByDate
+  },
   data() {
     return {
       chosenDay: "today",
 
       apiData: [],
 
-      /*options: [
-        { text: "dnes", value: "všechna kina dnes" },
-        { text: "zítra", value: "všechna kina zítra" },
-        { text: "dalších 7 dní", value: "všechna kina dalších 7 dní" },
-        { text: "vše", value: "celý program všech kin" }
-      ]*/
+      dates: [
+        { name: "Dnes", id: 0 },
+        { name: "Zítra", id: 1 }
+      ],
+
+      weekdays: [
+        "Neděle",
+        "Pondělí",
+        "Úterý",
+        "Středa",
+        "Čtvrtek",
+        "Pátek",
+        "Sobota"
+      ]
     };
   },
 
@@ -105,19 +69,36 @@ export default {
     fetch(
       "https://api.apify.com/v2/datasets/mF3iLaWJ6zq5fUCSy/items?format=json&clean=1"
     )
-      .then((response) => response.json())
-      .then((json) => {
+      .then(response => response.json())
+      .then(json => {
         console.log(json);
         return json;
       })
-      .then((json) => this.displayApi(json));
+      .then(json => this.displayApi(json));
+
+    const today = new Date();
+    for (let i = 2; i <= 7; i++) {
+      let next = new Date();
+      next.setDate(today.getDate() + i);
+      this.dates.push({
+        name:
+          this.weekdays[next.getDay()] +
+          ", " +
+          next.getDate() +
+          "." +
+          next.getMonth() +
+          "." +
+          next.getFullYear(),
+        id: i
+      });
+    }
   },
 
   methods: {
     displayApi(json) {
       this.apiData = json;
-    },
-  },
+    }
+  }
 };
 </script>
 
