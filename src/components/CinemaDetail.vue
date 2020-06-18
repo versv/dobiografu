@@ -8,7 +8,7 @@
           <h2>{{ name }}</h2>
           <p>{{ tagline }}</p>
         </div>
-        <div class="button cinema-button">
+        <div class="cinema-button">
           <button v-on:click="visible = !visible">Detail kina</button>
         </div>
       </div>
@@ -97,13 +97,13 @@ export default {
 .cinema-item {
   display: flex;
   color: white;
-  height: 150px;
+  max-height: 200px;
   align-items: center;
   justify-content: space-around;
   flex-wrap: wrap;
   border-top: 1px solid #3c444c;
   margin-bottom: 10px;
-  padding: 0 20px 20px 20px;
+  padding: 10px 10px 10px 10px;
 }
 
 .cinema-name {
@@ -116,35 +116,32 @@ export default {
   width: 100%;
 }
 
-.cinema-button {
-  width: 60%;
-}
-
 .cinema-button button {
   color: white;
   border-radius: 15px;
   display: inline-block;
+  padding: 1em 3em;
   border: none;
-  padding: 1rem 2rem;
-  margin: 0;
   text-decoration: none;
   background: #3c444c;
   font-family: "Montserrat", sans-serif;
-  font-size: 1rem;
+  font-size: 12px;
   cursor: pointer;
   text-align: center;
-  transition: background 250ms ease-in-out, transform 150ms ease;
-  -webkit-appearance: none;
-  -moz-appearance: none;
+
+  outline: none;
 }
 
 .cinema-button button:focus {
   outline: 0;
-  outline-offset: 0px;
+  border-style: outset;
+  border: none;
 }
 
 .cinema-button button:active {
   transform: scale(0.99);
+  border-style: outset;
+  border: none;
 }
 
 .cinema-info-heading {
@@ -210,7 +207,6 @@ export default {
 }
 
 .program-button {
-  width: 60%;
 }
 
 .program-button a {
@@ -235,18 +231,17 @@ export default {
   .cinema-name p {
     font-size: 14px;
   }
-  .cinema-item {
+  /*.cinema-item {
     padding-bottom: 50px;
-  }
+  }*/
 
   .cinema-photo {
     width: 100%;
     height: auto;
   }
 
-  .cinema-button,
+  .cinema-button button,
   .program-button {
-    width: 50%;
   }
 
   .cinema-info {
@@ -295,8 +290,9 @@ export default {
     margin-top: 50px;
   }
 
-  .cinema-button {
-    width: 50%;
+  .cinema-button button {
+    padding: 1em 4em;
+    font-size: 16px;
   }
 
   .program-button {
@@ -305,7 +301,7 @@ export default {
   }
 
   .program-button a {
-    padding: 10px;
+    padding: 1em 4em;
   }
 
   .copyright {

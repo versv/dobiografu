@@ -4,8 +4,8 @@
       <!--místo pro logo-->
 
       <p>
-        Přehled malých artových kin v Praze a jejich aktuálních programů. Vše
-        na jednom místě.
+        Přehled malých artových kin v Praze a jejich aktuálních programů. Vše na
+        jednom místě.
       </p>
     </div>
 
@@ -53,7 +53,7 @@
 
 <script>
 export default {
-  name: "Homepage"
+  name: "Homepage",
 };
 </script>
 
