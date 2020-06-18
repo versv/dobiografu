@@ -5,9 +5,9 @@
       <div class="movies-list">
         <div class="movie">
           <ul>
-            <li v-for="(movieName, time, index) in movies" v-bind:key="index">>
-              <p>{{ movieName }}</p>
-              <p>{{ time }}</p>
+            <li v-for="(movie, index) in movies" v-bind:key="index">
+              <p>{{ movie.movieName }}</p>
+              <p>{{ movie.time }}</p>
             </li>
           </ul>
           
@@ -20,7 +20,7 @@
 <script>
 export default {
   name: "ProgrammeByCinema",
-  props: ["date", "movieName", "time"],
+  props: ["date", "movies"],
 };
 </script>
 
@@ -42,6 +42,9 @@ export default {
   margin-top: 10px;
 }
 
+.movie li {
+  list-style-type: none;
+}
 .movie {
   display: flex;
   justify-content: space-between;

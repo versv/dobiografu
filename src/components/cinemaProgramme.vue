@@ -1,7 +1,6 @@
 <template>
   <div>
     <!--Program kina <div>{{ movies }}</div> -->
-    
 
     <section class="cinema-overview">
       <div class="programme-header">
@@ -12,40 +11,16 @@
 
       <!--Sekce Seznam kin-->
 
-      <!-- <div class="cinema-programme">
-        <div class="programme-day">
-          <div class="programme-cinema-name">Pátek 26. 6. 2020</div>
-          <div class="movies-list">
-            <div class="movie">
-              <p>NT Live: Cyrano z Bergeracu</p>
-              <p>17:30</p>
-            </div>
-            <div class="movie">
-              <p>1917</p>
-              <p>19:30</p>
-            </div>
-            <div class="movie">
-              <p>Přežijí jen milenci</p>
-              <p>21:00</p>
-            </div>
-          </div>
-        </div> -->
-
-        <ProgrammeByCinema
-        v-for="(cinema, index) in movies"
-        v-bind:movieName="cinema.movieName"
-        v-bind:date="cinema.date"
-        v-bind:time="cinema.time"
+      <ProgrammeByCinema
+        v-for="(date, index) in dates"
+        v-bind:date="date.date"
+        v-bind:movies="date.movies"
         v-bind:key="index"
+      />
 
-        />
-        
-        <div class="button tickets-button">
-          <a :href="`${cinema.link}`"
-            >Koupit lístky </a>
-        </div>
-        
-      
+      <div class="button tickets-button">
+        <a :href="`${cinema.link}`">Koupit lístky </a>
+      </div>
     </section>
   </div>
 </template>
@@ -58,25 +33,24 @@ export default {
   name: "CinemaProgramme",
   data() {
     return {
-      movies: [],
+      dates: [],
       cinema: getCinemaByUrl(this.$route.params.cinemaUrl),
-    
     };
   },
   components: {
-    ProgrammeByCinema: ProgrammeByCinema
+    ProgrammeByCinema: ProgrammeByCinema,
   },
   created() {
     this.getMovies();
   },
   methods: {
     getMovies: function() {
-      loadMoviesForCinema(this.cinema).then(movies => { //místo "Světozor" this.cinema?
-        this.movies = movies;
+      loadMoviesForCinema(this.cinema).then((cinema) => {
+        this.dates = cinema.dates;
       });
     },
-  }
-  };
+  },
+};
 </script>
 
 <style>
