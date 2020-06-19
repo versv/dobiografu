@@ -113,7 +113,7 @@ const moviesList = [{
   ]
 },
 {
-  name: "Lucerna",
+  name: "Kino Lucerna",
   dates: [
     {
       date: "22.6.2020",

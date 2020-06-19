@@ -25,12 +25,14 @@ export default {
 </script>
 
 <style>
+
 .programme-day {
   text-align: left;
 }
 
 .programme-day-date {
   font-weight: bold;
+  padding: 10px;
 }
 
 .programme-day-date:after {
@@ -39,16 +41,24 @@ export default {
   display: block;
   height: 2.5px;
   width: 100%;
-  margin-top: 10px;
+  margin-top: 5px;
 }
 
 .movie li {
   list-style-type: none;
-}
-.movie {
   display: flex;
   justify-content: space-between;
 }
+
+.movie ul {
+  padding: 0;
+  width: 100%;
+}
+
+.movie p {
+  margin: 3px;
+}
+
 
 .movies-list {
   margin-bottom: 15px;
@@ -60,7 +70,7 @@ export default {
   }
 
   .programme-day-date:after {
-    margin-top: 15px;
+    margin-top: 10px;
   }
 }
 

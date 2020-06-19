@@ -300,8 +300,7 @@ export const cinemaList = [
 
 
 export const getCinemaByUrl = (url) => {
-  let i = 0;
-  while (i < cinemaList.length) {
+  for (let i = 0; i < cinemaList.length; i += 1) {
   if (cinemaList[i].url === url) {
     return cinemaList[i];
   }
