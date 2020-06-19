@@ -1,11 +1,11 @@
 <template>
   <div>
     <div class="programme-day">
-      <div class="programme-cinema-name">{{name}}</div>
+      <div class="programme-cinema-name">{{ cinema.name }}</div>
       <div class="movies-list">
-        <div class="movie">
-          <p>{{movieName}}</p>
-          <p>{{time}}</p>
+        <div class="movie" v-for="(movie, index) in cinema.movies" v-bind:key="index">
+          <p>{{ movie.name }}</p>
+          <p>{{ movie.time }}</p>
         </div>
       </div>
     </div>

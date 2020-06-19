@@ -6,6 +6,13 @@ export const loadMoviesForCinema = async (cinemaName) => {
     }
   };
 };
+
+export const getMoviesForDate = (date) => {
+  return moviesList.dates.movies
+}
+
+
+
 export const moviesList = [{
   name: "Kino Světozor",
   dates: [
