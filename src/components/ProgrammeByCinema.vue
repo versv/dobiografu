@@ -1,31 +1,38 @@
 <template>
   <div>
     <div class="programme-day">
-          <div class="programme-cinema-name">{{date}}</div>
-          <div class="movies-list">
-            <div class="movie">
-              <p>{{movieName}}</p>
-              <p>{{time}}</p>
-            </div>
-          </div>
+      <div class="programme-cinema-name">{{ date }}</div>
+      <div class="movies-list">
+        <div class="movie">
+          <ul>
+            <li v-for="(movie, index) in movies" v-bind:key="index">
+              <p>{{ movie.movieName }}</p>
+              <p>{{ movie.time }}</p>
+            </li>
+          </ul>
+          
         </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
   name: "ProgrammeByCinema",
-  props: ["date", "movieName", "time"]
-}
+  props: ["date", "movies"],
+};
 </script>
 
 <style>
+
 .programme-day {
   text-align: left;
 }
 
 .programme-day-date {
   font-weight: bold;
+  padding: 10px;
 }
 
 .programme-day-date:after {
@@ -34,13 +41,24 @@ export default {
   display: block;
   height: 2.5px;
   width: 100%;
-  margin-top: 10px;
+  margin-top: 5px;
 }
 
-.movie {
+.movie li {
+  list-style-type: none;
   display: flex;
   justify-content: space-between;
 }
+
+.movie ul {
+  padding: 0;
+  width: 100%;
+}
+
+.movie p {
+  margin: 3px;
+}
+
 
 .movies-list {
   margin-bottom: 15px;
@@ -52,7 +70,7 @@ export default {
   }
 
   .programme-day-date:after {
-    margin-top: 15px;
+    margin-top: 10px;
   }
 }
 

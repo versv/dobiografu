@@ -1,8 +1,6 @@
 <template>
   <div>
-    <!--Program kina-->
-    <div>{{ cinema.name }}</div>
-    <div>{{ movies }}</div>
+    <!--Program kina <div>{{ movies }}</div> -->
 
     <section class="cinema-overview">
       <div class="programme-header">
@@ -12,43 +10,17 @@
       <!--Konec sekce Výběr kina-->
 
       <!--Sekce Seznam kin-->
+      <div class="programme-wrapper">
+      <ProgrammeByCinema
+        v-for="(date, index) in dates"
+        v-bind:date="date.date"
+        v-bind:movies="date.movies"
+        v-bind:key="index"
+      />
 
-      <div class="cinema-programme">
-        <div class="programme-day">
-          <div class="programme-cinema-name">Pátek 26. 6. 2020</div>
-          <div class="movies-list">
-            <div class="movie">
-              <p>NT Live: Cyrano z Bergeracu</p>
-              <p>17:30</p>
-            </div>
-            <div class="movie">
-              <p>1917</p>
-              <p>19:30</p>
-            </div>
-            <div class="movie">
-              <p>Přežijí jen milenci</p>
-              <p>21:00</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="programme-day">
-          <div class="programme-cinema-name">Sobota 27. 6. 2020</div>
-          <div class="movies-list">
-            <div class="movie">
-              <p>Bourák</p>
-              <p>15:30</p>
-            </div>
-            <div class="movie">
-              <p>Králíček Jojo</p>
-              <p>18:00</p>
-            </div>
-            <div class="movie">
-              <p>Emma</p>
-              <p>20:30</p>
-            </div>
-          </div>
-        </div>
+      <div class="button tickets-button">
+        <a :href="`${cinema.link}`">Koupit lístky </a>
+      </div>
       </div>
     </section>
   </div>
@@ -57,31 +29,32 @@
 <script>
 import { loadMoviesForCinema } from "../databazeFilmy";
 import { getCinemaById, getCinemaByUrl } from "../databaze";
+import ProgrammeByCinema from "./ProgrammeByCinema.vue";
 export default {
   name: "CinemaProgramme",
   data() {
     return {
-      movies: [],
+      dates: [],
       cinema: getCinemaByUrl(this.$route.params.cinemaUrl),
     };
+  },
+  components: {
+    ProgrammeByCinema: ProgrammeByCinema,
   },
   created() {
     this.getMovies();
   },
   methods: {
     getMovies: function() {
-      loadMoviesForCinema(this.$route.params.cinemaUrl).then(movies => {
-        this.movies = movies;
+      loadMoviesForCinema(this.cinema).then((cinema) => {
+        this.dates = cinema.dates;
       });
     },
-  }
-  };
+  },
+};
 </script>
 
 <style>
-.cinema-programme {
-  padding: 20px;
-}
 
 .programme-header {
   color: white;
@@ -89,6 +62,10 @@ export default {
   background-color: #3c444c;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+}
+
+.programme-wrapper {
+  padding: 20px;
 }
 
 h3 {
@@ -144,6 +121,10 @@ h3 {
 
   .programme-day {
     font-size: 16px;
+  }
+
+  .programme-wrapper {
+    padding: 40px;
   }
 
   .programme-day-date:after {
