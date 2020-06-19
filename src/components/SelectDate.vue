@@ -20,13 +20,16 @@
                 <option class="day" value="day6">sobota 26. 7. 2020</option>
                 <option class="day" value="day7">neděle 26. 7. 2020</option>
               </select>
-
-              <!---<select name="choose_day" id="choose_day" v-model="chosenDay">
-                <option class="day" v-for="option in options" v-bind:value="{{option.value}}">
-                  {{option.text}}
-              </option>--->
             </section>
           </div>
+
+          <!--- <select name="choose_day" id="choose_day" v-model="chosenDay">
+                <option class="day" 
+                v-for="(option, index)in options" 
+                v-bind:value="option.value"
+                v-bind:key="index"
+                > {{option.text}}
+          </option>-->
 
           <div class="calendar-img_b">
             <img src="assets/images/calendar.png" alt="ikonka kalendáře" />
@@ -38,6 +41,7 @@
       <!--Seznam kin s programem-->
 
       <div class="cinema-programme">
+        <div class="apify">ahoj {{ apiData }}</div>
         <!--část kódu, která se zobrazí v závislti na vybraném daut .programme-day-->
         <div class="programme-day">
           <div class="programme-cinema-name">Kino Pilotů</div>
@@ -84,18 +88,38 @@ export default {
   name: "SelectDate",
   data() {
     return {
-      chosenDay: "today"
-      /*options:[
-      {text: "dnes", value: "všechna kina dnes"},
-      {text: "zítra", value: "všechna kina zítra"},
-      {text: "dalších 7 dní", value: "všechna kina dalších 7 dní"},
-      {text: "vše", value: "celý program všech kin"},]*/
+      chosenDay: "today",
+
+      apiData: [],
+
+      /*options: [
+        { text: "dnes", value: "všechna kina dnes" },
+        { text: "zítra", value: "všechna kina zítra" },
+        { text: "dalších 7 dní", value: "všechna kina dalších 7 dní" },
+        { text: "vše", value: "celý program všech kin" }
+      ]*/
     };
-  }
+  },
+
+  created() {
+    fetch(
+      "https://api.apify.com/v2/datasets/mF3iLaWJ6zq5fUCSy/items?format=json&clean=1"
+    )
+      .then((response) => response.json())
+      .then((json) => {
+        console.log(json);
+        return json;
+      })
+      .then((json) => this.displayApi(json));
+  },
+
+  methods: {
+    displayApi(json) {
+      this.apiData = json;
+    },
+  },
 };
 </script>
-
-
 
 <style>
 .ahoj {
@@ -180,6 +204,10 @@ select::-ms-expand {
 
 /*tablet*/
 @media screen and (min-width: 541px) {
+  h2 {
+    font-size: 28px;
+  }
+
   .calendar-img img {
     width: 80px;
   }

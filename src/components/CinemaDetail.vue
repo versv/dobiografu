@@ -5,11 +5,11 @@
     <div class="cinema-list">
       <div class="cinema-item">
         <div class="cinema-name">
-          <h2>{{name}}</h2>
-          <p>{{tagline}}</p>
+          <h2>{{ name }}</h2>
+          <p>{{ tagline }}</p>
         </div>
-        <div class="button cinema-button">
-          <button v-on:click="visible= !visible">Detail kina</button>
+        <div class="cinema-button">
+          <button v-on:click="visible = !visible">Detail kina</button>
         </div>
       </div>
 
@@ -17,13 +17,13 @@
         <div class="cinema-wrap">
           <div class="cinema-photo">
             <img v-bind:src="`assets/images/${image}`" v-bind:alt="`${alt}`" />
-            <div class="copyright">{{copyright}}</div>
+            <div class="copyright">{{ copyright }}</div>
           </div>
 
           <div class="address-details">
-            <p>{{address}}</p>
+            <p>{{ address }}</p>
             <ul>
-              <li v-for="means in transport" v-bind:key="means">{{means}}</li>
+              <li v-for="means in transport" v-bind:key="means">{{ means }}</li>
             </ul>
           </div>
         </div>
@@ -31,28 +31,31 @@
         <div class="cinema-info">
           <p>
             <b>Občerstvení:</b>
-            {{bar}}
+            {{ bar }}
           </p>
           <p>
             <b>Bezbariérové:</b>
-            {{barrierFree}}
+            {{ barrierFree }}
           </p>
           <p>
             <b>Speciální program:</b>
           </p>
           <ul>
-            <li v-for="type in specialProgrammeTypes" v-bind:key="type">{{type}}</li>
+            <li v-for="type in specialProgrammeTypes" v-bind:key="type">
+              {{ type }}
+            </li>
           </ul>
         </div>
 
         <div class="button program-button">
-          <router-link :to="`/CinemaProgramme/${url}`">Program kina</router-link>
+          <router-link :to="`/CinemaProgramme/${url}`"
+            >Program kina</router-link
+          >
         </div>
       </div>
     </div>
   </div>
 </template>
-
 
 <script>
 export default {
@@ -70,13 +73,13 @@ export default {
     "image",
     "alt",
     "copyright",
-    "url"
+    "url",
   ],
   data() {
     return {
-      visible: false
+      visible: false,
     };
-  }
+  },
 };
 </script>
 
@@ -94,13 +97,13 @@ export default {
 .cinema-item {
   display: flex;
   color: white;
-  height: 150px;
+  max-height: 200px;
   align-items: center;
   justify-content: space-around;
   flex-wrap: wrap;
   border-top: 1px solid #3c444c;
   margin-bottom: 10px;
-  padding: 0 20px 20px 20px;
+  padding: 10px 10px 10px 10px;
 }
 
 .cinema-name {
@@ -113,13 +116,32 @@ export default {
   width: 100%;
 }
 
-.cinema-button {
-  width: 60%;
-  background-color: #3c444c;
-}
-
 .cinema-button button {
   color: white;
+  border-radius: 15px;
+  display: inline-block;
+  padding: 1em 3em;
+  border: none;
+  text-decoration: none;
+  background: #3c444c;
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  cursor: pointer;
+  text-align: center;
+
+  outline: none;
+}
+
+.cinema-button button:focus {
+  outline: 0;
+  border-style: outset;
+  border: none;
+}
+
+.cinema-button button:active {
+  transform: scale(0.99);
+  border-style: outset;
+  border: none;
 }
 
 .cinema-info-heading {
@@ -185,7 +207,6 @@ export default {
 }
 
 .program-button {
-  width: 60%;
 }
 
 .program-button a {
@@ -210,18 +231,17 @@ export default {
   .cinema-name p {
     font-size: 14px;
   }
-  .cinema-item {
+  /*.cinema-item {
     padding-bottom: 50px;
-  }
+  }*/
 
   .cinema-photo {
     width: 100%;
     height: auto;
   }
 
-  .cinema-button,
+  .cinema-button button,
   .program-button {
-    width: 50%;
   }
 
   .cinema-info {
@@ -270,8 +290,9 @@ export default {
     margin-top: 50px;
   }
 
-  .cinema-button {
-    width: 50%;
+  .cinema-button button {
+    padding: 1em 4em;
+    font-size: 16px;
   }
 
   .program-button {
@@ -280,7 +301,7 @@ export default {
   }
 
   .program-button a {
-    padding: 10px;
+    padding: 1em 4em;
   }
 
   .copyright {

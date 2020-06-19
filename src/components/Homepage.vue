@@ -1,10 +1,20 @@
 <template>
   <div>
+    <div class="title">
+      <!--místo pro logo-->
+
+      <p>
+        Přehled malých artových kin v Praze a jejich aktuálních programů. Vše na
+        jednom místě.
+      </p>
+    </div>
+
     <div class="btn-hp">
       <a href="#" class="hp">
         <i class="my-home fa fa-home"></i>
       </a>
     </div>
+
     <section class="boxy">
       <!--dle kina-->
       <div class="box">
@@ -24,7 +34,7 @@
         </div>
 
         <div class="button">
-          <router-link to="/SelectDate">Vyber si datum</router-link>
+          <router-link to="/SelectDate">Vyber datum</router-link>
         </div>
       </div>
 
@@ -43,7 +53,7 @@
 
 <script>
 export default {
-  name: "Homepage"
+  name: "Homepage",
 };
 </script>
 
@@ -52,26 +62,19 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 40px;
 }
 
 .box {
   background-color: #3c444c;
   box-shadow: 4px 4px 8px 0px rgba(12, 12, 12, 0.523);
   border-radius: 5px;
-  margin: 10px 50px;
+  margin: 5px;
   padding: 5px;
   flex: 1 1;
+  width: 95%;
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.cameraImg,
-.ticketImg,
-.calendarImg {
-  height: 60%;
-  margin: 0 30px;
 }
 
 .box img {
@@ -79,11 +82,16 @@ export default {
 }
 
 @media screen and (min-width: 541px) and (max-width: 960px) {
+  .cameraImg,
+  .ticketImg,
+  .calendarImg {
+    height: 50%;
+  }
+
   .box {
-    width: 400px;
-    height: 300px;
-    margin: 15px;
-    padding: 5px;
+    width: 80%;
+    margin: 10px;
+    padding: 10px;
   }
 
   .box img {
@@ -92,10 +100,13 @@ export default {
 }
 
 @media screen and (min-width: 961px) {
+  .title {
+    margin-bottom: 40px;
+  }
+
   .boxy {
-    justify-content: center;
     flex-direction: row;
-    margin: 0px 30px;
+    justify-content: center;
   }
 
   .box img {
