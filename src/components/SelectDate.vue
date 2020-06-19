@@ -27,9 +27,9 @@
       <!--Seznam kin s programem-->
       <div class="cinema-programme">
         <MovieByDate
-          v-for="(film, index) in movieList"
-          v-bind:cinema="film.name"
-          v-bind:title="film.dates[0].movies[0].movieName"
+          v-for="(film, index) in moviesList"
+          v-bind:name="film.name"
+          v-bind:movieName="film.dates[0].movies [0].movieName"
           v-bind:time="film.dates[0].movies[0].time"
           v-bind:idx="index"
           v-bind:key="index"
@@ -45,7 +45,7 @@
 
 <script>
 import MovieByDate from "./MovieByDate.vue";
-import { loadMoviesForCinema } from "../databazeFilmy";
+import moviesList from "../databazeFilmy";
 export default {
   name: "SelectDate",
   components: {
@@ -53,7 +53,8 @@ export default {
   },
   data() {
     return {
-      movieList: [
+      moviesList: moviesList,
+      /*movieList: [
         {
           name: "Kino Světozor",
           dates: [
@@ -269,7 +270,7 @@ export default {
             }
           ]
         }
-      ],
+      ],*/
 
       apiData: [],
 

@@ -2,10 +2,11 @@ export const loadMoviesForCinema = async (cinemaName) => {
   await new Promise(r => setTimeout(r, 2000));
   for (let i = 0; i < moviesList.length; i += 1) {
     if (moviesList[i].name === cinemaName.name) {
-      return moviesList[i]}
+      return moviesList[i]
+    }
   };
 };
-const moviesList = [{
+export const moviesList = [{
   name: "Kino Světozor",
   dates: [
     {
