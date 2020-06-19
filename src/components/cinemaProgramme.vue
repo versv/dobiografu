@@ -46,7 +46,7 @@ export default {
   },
   methods: {
     getMovies: function() {
-      loadMoviesForCinema(this.cinema).then(cinema => {
+      loadMoviesForCinema(this.cinema).then(movies => {
         this.dates = cinema.dates;
       });
     }

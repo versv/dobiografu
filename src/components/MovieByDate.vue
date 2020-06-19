@@ -4,7 +4,7 @@
       <div class="programme-cinema-name">{{ cinema.name }}</div>
       <div class="movies-list">
         <div class="movie" v-for="(movie, index) in cinema.movies" v-bind:key="index">
-          <p>{{ movie.name }}</p>
+          <p>{{ movie.movieName }}</p>
           <p>{{ movie.time }}</p>
         </div>
       </div>
@@ -15,7 +15,7 @@
 <script>
 export default {
   name: "MovieByDate",
-  props: ["name", "movieName", "time", "idx"]
+  props: ["cinema"]
 };
 </script>
 

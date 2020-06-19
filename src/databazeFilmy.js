@@ -7,13 +7,55 @@ export const loadMoviesForCinema = async (cinemaName) => {
   };
 };
 
-export const getMoviesForDate = (date) => {
-  return moviesList.dates.movies
-}
+export const getMoviesForDate = async (date) => {
+  return moviesListNew
+};
+
+
+const moviesListNew = [
+  {
+    "name": "Kino Světozor",
+    "movies": [
+      {
+        "movieName": "Emma",
+        "time": "15:00"
+      }
+    ]
+  },
+  {
+    "name": "Kino Lucerna",
+    "movies": [
+      {
+        "movieName": "V síti (+15)",
+        "time": "13:30",
+      },
+      {
+        "movieName": "Raoul Taburin",
+        "time": "15:30",
+      },
+      {
+        "movieName": "Bourák",
+        "time": "17:00",
+      },
+      {
+        "movieName": "Dokud se tančí",
+        "time": "17:45",
+      },
+      {
+        "movieName": "Bourák",
+        "time": "19:30",
+      },
+      {
+        "movieName": "Kalifornský sen",
+        "time": "20:15",
+      },
+    ]
+  },
+];
 
 
 
-export const moviesList = [{
+const moviesList = [{
   name: "Kino Světozor",
   dates: [
     {

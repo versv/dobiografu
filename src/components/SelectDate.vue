@@ -25,11 +25,16 @@
       <!--Konec sekce Vyber datum --->
 
       <!--Seznam kin s programem-->
+
       <div class="cinema-programme">
-        <MovieByDate v-for="(cinema, index) in cinemasWithMovies" v-bind:key="index" />
+        <MovieByDate
+          v-for="(cinema, index) in cinemaToday"
+          v-bind:key="index"
+          v-bind:cinema="cinema"
+        />
 
         <!--data z API-->
-        <div class="apify">{{ apiData }}</div>
+        <!-- <div class="apify">{{ apiData }}</div> -->
         <!--část kódu, která se zobrazí v závislti na vybraném daut .programme-day-->
       </div>
     </section>
@@ -38,8 +43,8 @@
 
 <script>
 import MovieByDate from "./MovieByDate.vue";
-import { moviesList } from "../databazeFilmy";
 import { getMoviesForDate } from "../databazeFilmy";
+
 export default {
   name: "SelectDate",
   components: {
@@ -47,7 +52,9 @@ export default {
   },
   data() {
     return {
-      moviesList: moviesList,
+      cinemasWithMovies: [],
+
+      cinemaToday: [],
 
       chosenDate: "",
 
@@ -97,6 +104,8 @@ export default {
         id: i
       });
     }
+
+    this.get();
   },
 
   methods: {
@@ -104,8 +113,10 @@ export default {
       this.apiData = json;
     },
 
-    cinemasWithMovies: function() {
-      getMoviesForDate(i);
+    get: function() {
+      getMoviesForDate(this.date).then(cinema => {
+        this.cinemaToday = cinema;
+      });
     }
   }
 };
