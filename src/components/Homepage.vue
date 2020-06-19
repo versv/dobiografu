@@ -62,13 +62,14 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 85vh;
 }
 
 .box {
   background-color: #3c444c;
   box-shadow: 4px 4px 8px 0px rgba(12, 12, 12, 0.523);
   border-radius: 5px;
-  margin: 5px;
+  margin: 3px;
   padding: 5px;
   flex: 1 1;
   width: 95%;
@@ -78,7 +79,7 @@ export default {
 }
 
 .box img {
-  max-width: 100px;
+  max-width: 120px;
 }
 
 @media screen and (min-width: 541px) and (max-width: 960px) {
@@ -90,7 +91,7 @@ export default {
 
   .box {
     width: 80%;
-    margin: 10px;
+    margin: 5px;
     padding: 10px;
   }
 
@@ -101,6 +102,7 @@ export default {
 
 @media screen and (min-width: 961px) {
   .boxy {
+    height: 100%;
     flex-direction: row;
     justify-content: center;
   }

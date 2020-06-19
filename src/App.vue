@@ -65,11 +65,12 @@ export default {
 body {
   font-family: "Montserrat", sans-serif;
   background-color: #30363d;
-  /*background-image: url("assets/images/background.jpg");*/
-  background-position: center;
+  background-image: url("assets/images/background.jpg");
+  background-position: center center;
+  background-size: cover;
   background-repeat: no-repeat;
+  background-attachment: fixed;
 
-  height: 50%;
   text-align: center;
   font-size: 12px;
 }
@@ -81,8 +82,8 @@ h1 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 28px;
-  padding-top: 20px;
-  margin-bottom: 20px;
+  padding-top: 0px;
+  margin-bottom: 0px;
 }
 
 .button {
@@ -150,6 +151,7 @@ h1 {
   }
 
   .button {
+    margin-top: 40px;
     width: 240px;
     height: 50px;
   }

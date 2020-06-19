@@ -41,16 +41,12 @@
             <b>Speciální program:</b>
           </p>
           <ul>
-            <li v-for="type in specialProgrammeTypes" v-bind:key="type">
-              {{ type }}
-            </li>
+            <li v-for="type in specialProgrammeTypes" v-bind:key="type">{{ type }}</li>
           </ul>
         </div>
 
         <div class="button program-button">
-          <router-link :to="`/CinemaProgramme/${url}`"
-            >Program kina</router-link
-          >
+          <router-link :to="`/CinemaProgramme/${url}`">Program kina</router-link>
         </div>
       </div>
     </div>
@@ -73,13 +69,13 @@ export default {
     "image",
     "alt",
     "copyright",
-    "url",
+    "url"
   ],
   data() {
     return {
-      visible: false,
+      visible: false
     };
-  },
+  }
 };
 </script>
 
@@ -296,12 +292,11 @@ export default {
   }
 
   .program-button {
-    width: 50%;
+    width: 20%;
     margin-right: 30px;
   }
 
   .program-button a {
-    padding: 1em 4em;
   }
 
   .copyright {
