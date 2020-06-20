@@ -2,9 +2,59 @@ export const loadMoviesForCinema = async (cinemaName) => {
   await new Promise(r => setTimeout(r, 2000));
   for (let i = 0; i < moviesList.length; i += 1) {
     if (moviesList[i].name === cinemaName.name) {
-      return moviesList[i]}
+      return moviesList[i]
+    }
   };
 };
+
+export const getMoviesForDate = async (date) => {
+  return moviesListNew
+};
+
+
+const moviesListNew = [
+  {
+    "name": "Kino Světozor",
+    "movies": [
+      {
+        "movieName": "Emma",
+        "time": "15:00"
+      }
+    ]
+  },
+  {
+    "name": "Kino Lucerna",
+    "movies": [
+      {
+        "movieName": "V síti (+15)",
+        "time": "13:30",
+      },
+      {
+        "movieName": "Raoul Taburin",
+        "time": "15:30",
+      },
+      {
+        "movieName": "Bourák",
+        "time": "17:00",
+      },
+      {
+        "movieName": "Dokud se tančí",
+        "time": "17:45",
+      },
+      {
+        "movieName": "Bourák",
+        "time": "19:30",
+      },
+      {
+        "movieName": "Kalifornský sen",
+        "time": "20:15",
+      },
+    ]
+  },
+];
+
+
+
 const moviesList = [{
   name: "Kino Světozor",
   dates: [

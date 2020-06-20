@@ -11,8 +11,8 @@
             <h2>Vyber datum</h2>
 
             <section class="select">
-              <select name="choose_day" id="choose_day">
-                <option v-for="Date in dates" :value="Date.id" :key="Date.id">{{ Date.name }}</option>
+              <select v-model="chosenDate" name="choose_day" id="choose_day">
+                <option v-for="date in dates" :value="date.id" :key="date.id">{{ date.name }}</option>
               </select>
             </section>
           </div>
@@ -25,18 +25,16 @@
       <!--Konec sekce Vyber datum --->
 
       <!--Seznam kin s programem-->
+
       <div class="cinema-programme">
         <MovieByDate
-          v-for="(film, index) in movieList"
-          v-bind:cinema="film.name"
-          v-bind:title="film.dates[0].movies[0].movieName"
-          v-bind:time="film.dates[0].movies[0].time"
-          v-bind:idx="index"
+          v-for="(cinema, index) in cinemaToday"
           v-bind:key="index"
+          v-bind:cinema="cinema"
         />
 
         <!--data z API-->
-        <div class="apify">{{ apiData }}</div>
+        <!-- <div class="apify">{{ apiData }}</div> -->
         <!--část kódu, která se zobrazí v závislti na vybraném daut .programme-day-->
       </div>
     </section>
@@ -45,7 +43,8 @@
 
 <script>
 import MovieByDate from "./MovieByDate.vue";
-import { loadMoviesForCinema } from "../databazeFilmy";
+import { getMoviesForDate } from "../databazeFilmy";
+
 export default {
   name: "SelectDate",
   components: {
@@ -53,223 +52,11 @@ export default {
   },
   data() {
     return {
-      movieList: [
-        {
-          name: "Kino Světozor",
-          dates: [
-            {
-              date: "22.6.2020",
-              movies: [
-                {
-                  movieName: "Emma",
-                  time: "15:00"
-                }
-              ]
-            },
-            {
-              date: "23.6.2020",
-              movies: [
-                {
-                  movieName: "Cyrano z Bergeracu (NT Live)",
-                  time: "20:00"
-                }
-              ]
-            },
-            {
-              date: "24.6.2020",
-              movies: [
-                {
-                  movieName: "Vysoká dívka",
-                  time: "15:00"
-                }
-              ]
-            },
-            {
-              date: "25.6.2020",
-              movies: [
-                {
-                  movieName: "Hamlet (NT Live)",
-                  time: "20:00"
-                }
-              ]
-            },
-            {
-              date: "26.6.2020",
-              movies: [
-                {
-                  movieName: "Můj otec Antonín Kratochvíl",
-                  time: "15:00"
-                }
-              ]
-            },
-            {
-              date: "29.6.2020",
-              movies: [
-                {
-                  movieName: "Emma",
-                  time: "15:00"
-                },
-                {
-                  movieName: "Imunita z pohledu psychosomatiky",
-                  time: "18:00"
-                }
-              ]
-            },
-            {
-              date: "30.6.2020",
-              movies: [
-                {
-                  movieName: "Cyrano z Bergeracu (NT Live)",
-                  time: "20:00"
-                }
-              ]
-            },
-            {
-              date: "3.7.2020",
-              movies: [
-                {
-                  movieName: "Než skončí léto",
-                  time: "20:00"
-                }
-              ]
-            },
-            {
-              date: "4.7.2020",
-              movies: [
-                {
-                  movieName: "Jalda, noc odpuštění",
-                  time: "17:00"
-                },
-                {
-                  movieName: "Luxor",
-                  time: "20:00"
-                }
-              ]
-            },
-            {
-              date: "5.7.2020",
-              movies: [
-                {
-                  movieName: "Mogul Mauglí",
-                  time: "17:00"
-                },
-                {
-                  movieName: "Jsme jedné krve",
-                  time: "20:00"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          name: "Lucerna",
-          dates: [
-            {
-              date: "22.6.2020",
-              movies: [
-                {
-                  movieName: "V síti (+15)",
-                  time: "13:30"
-                },
-                {
-                  movieName: "Raoul Taburin",
-                  time: "15:30"
-                },
-                {
-                  movieName: "Bourák",
-                  time: "17:00"
-                },
-                {
-                  movieName: "Dokud se tančí",
-                  time: "17:45"
-                },
-                {
-                  movieName: "Bourák",
-                  time: "19:30"
-                },
-                {
-                  movieName: "Kalifornský sen",
-                  time: "20:15"
-                }
-              ]
-            },
-            {
-              date: "23.6.2020",
-              movies: [
-                {
-                  movieName: "Bourák",
-                  time: "15:30"
-                },
-                {
-                  movieName: "V síti (+15)",
-                  time: "15:45"
-                },
-                {
-                  movieName: "Bourák",
-                  time: "18:00"
-                },
-                {
-                  movieName: "Raoul Taburin",
-                  time: "18:15"
-                },
-                {
-                  movieName: "Kalifornský sen",
-                  time: "20:30"
-                },
-                {
-                  movieName: "Bourák",
-                  time: "20:45"
-                }
-              ]
-            },
-            {
-              date: "24.6.2020",
-              movies: [
-                {
-                  movieName: "Vysoká dívka",
-                  time: "15:00"
-                }
-              ]
-            },
-            {
-              date: "26.6.2020",
-              movies: [
-                {
-                  movieName: "Trafikant",
-                  time: "13:30"
-                }
-              ]
-            },
-            {
-              date: "27.6.2020",
-              movies: [
-                {
-                  movieName: "Lassie se vrací",
-                  time: "13:00"
-                }
-              ]
-            },
-            {
-              date: "28.6.2020",
-              movies: [
-                {
-                  movieName: "Lassie se vrací",
-                  time: "13:00"
-                }
-              ]
-            },
-            {
-              date: "29.6.2020",
-              movies: [
-                {
-                  movieName: "Bourák",
-                  time: "13:30"
-                }
-              ]
-            }
-          ]
-        }
-      ],
+      cinemasWithMovies: [],
+
+      cinemaToday: [],
+
+      chosenDate: "",
 
       apiData: [],
 
@@ -317,11 +104,19 @@ export default {
         id: i
       });
     }
+
+    this.get();
   },
 
   methods: {
     displayApi(json) {
       this.apiData = json;
+    },
+
+    get: function() {
+      getMoviesForDate(this.date).then(cinema => {
+        this.cinemaToday = cinema;
+      });
     }
   }
 };
