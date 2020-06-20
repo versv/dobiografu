@@ -11,16 +11,16 @@
 
       <!--Sekce Seznam kin-->
       <div class="programme-wrapper">
-      <ProgrammeByCinema
-        v-for="(date, index) in dates"
-        v-bind:date="date.date"
-        v-bind:movies="date.movies"
-        v-bind:key="index"
-      />
+        <ProgrammeByCinema
+          v-for="(date, index) in dates"
+          v-bind:date="date.date"
+          v-bind:movies="date.movies"
+          v-bind:key="index"
+        />
 
-      <div class="button tickets-button">
-        <a :href="`${cinema.link}`">Koupit lístky</a>
-      </div>
+        <div class="button tickets-button">
+          <a :href="`${cinema.link}`">Koupit lístky</a>
+        </div>
       </div>
     </section>
   </div>
@@ -46,11 +46,7 @@ export default {
   },
   methods: {
     getMovies: function() {
-<<<<<<< HEAD
       loadMoviesForCinema(this.cinema).then(cinema => {
-=======
-      loadMoviesForCinema(this.cinema).then((cinema) => {
->>>>>>> b2cf68ac6a9d57ad40cac561014bb2f4042ee141
         this.dates = cinema.dates;
       });
     }
@@ -59,7 +55,6 @@ export default {
 </script>
 
 <style>
-
 .programme-header {
   color: white;
   padding: 5px;

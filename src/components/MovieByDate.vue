@@ -7,8 +7,6 @@
           <p>{{title}}</p>
           <p>{{time}}</p>
         </div>
-     
-        </div>
       </div>
     </div>
   </div>
