@@ -192,7 +192,7 @@ export const cinemaList = [
   {
     name: "Edison Filmhub",
     apiName: "Praha - Edison Filmhub",
-    url:"edison",
+    url: "edison",
     address: "Jeruzalémská 2, Praha 1",
     tagline:
       "Tento relativně nedávný přírůstek k artovým kinum v centru sídlí v budově Edisonovy transformační stanice a jde ruku v ruce se stylovou kavárnou.",
@@ -313,9 +313,17 @@ export const cinemaList = [
 
 export const getCinemaByUrl = (url) => {
   for (let i = 0; i < cinemaList.length; i += 1) {
-  if (cinemaList[i].url === url) {
-    return cinemaList[i];
+    if (cinemaList[i].url === url) {
+      return cinemaList[i];
+    }
   }
-}
 };
 
+export const cinemaExists = (apiName) => {
+  for (let i = 0; i < cinemaList.length; i += 1) {
+    if (cinemaList[i].apiName === apiName) {
+      return true;
+    }
+  }
+  return false;
+};

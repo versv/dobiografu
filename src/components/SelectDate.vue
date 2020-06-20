@@ -105,7 +105,7 @@ export default {
     },
 
     get: function() {
-      getMoviesForDate(this.date).then(cinema => {
+      getMoviesForDate("pondělí 15.6.2020").then(cinema => {
         this.cinemaToday = cinema;
       });
     }
