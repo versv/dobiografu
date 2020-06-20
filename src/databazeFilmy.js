@@ -1,4 +1,5 @@
 import { cinemaExists } from './databaze';
+import { renameCinema } from './databaze';
 
 const fetchData = () => {
   return fetch(
@@ -32,8 +33,9 @@ export const getMoviesForDate = async (date) => {
       for (let j = 0; j < cinema.info.length; j += 1) {
         if (cinema.info[j].datum === date) {
           console.log(cinema.title, cinema.info[j]);
-          cinemaListByDate.push({
-            name: cinema.title,
+          
+          cinemaListByDate.push({ 
+            name: renameCinema(cinema.title), 
             movies: transformMovies(cinema.info[j].movies)
           })
         }

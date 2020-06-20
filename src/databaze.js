@@ -292,7 +292,6 @@ export const cinemaList = [
     specialProgrammeTypes: [
       "✓ Divadlo v kine - NT Live",
       "✓ Kino Senior",
-      "✓ Kino Junior",
       "✓ Filmový klub",
       "✓ Kino Junior",
       "✓ Retrospektivy"
@@ -327,3 +326,12 @@ export const cinemaExists = (apiName) => {
   }
   return false;
 };
+
+export const renameCinema = (title) => {
+ for (let i = 0; i < cinemaList.length; i += 1) {
+   if (cinemaList[i].apiName === title) {
+     title = cinemaList[i].name;
+     return title;
+   }
+ }
+}
