@@ -3,13 +3,14 @@ import { renameCinema } from './databaze';
 
 const fetchData = () => {
   return fetch(
-    "https://api.apify.com/v2/datasets/mF3iLaWJ6zq5fUCSy/items?format=json&clean=1"
+    "https://api.apify.com/v2/datasets/DxRocmUewqLGkrHP4/items?format=json&clean=1&desc=true&limit=1"
   )
     .then(response => response.json())
     .then(json => {
       console.log("Stáhnul jsem data z apify", json);
       return json;
     })
+    .then(json => json[0].cinemas)
 
 };
 
@@ -33,9 +34,9 @@ export const getMoviesForDate = async (date) => {
       for (let j = 0; j < cinema.info.length; j += 1) {
         if (cinema.info[j].datum === date) {
           console.log(cinema.title, cinema.info[j]);
-          
-          cinemaListByDate.push({ 
-            name: renameCinema(cinema.title), 
+
+          cinemaListByDate.push({
+            name: renameCinema(cinema.title),
             movies: transformMovies(cinema.info[j].movies)
           })
         }
@@ -83,22 +84,32 @@ const getSchedules = (movieName, apiInfo) => {
   console.log(apiInfo);
   for (let i = 0; i < apiInfo.length; i += 1) {
     const apiMovie = apiInfo[i].movies.find(apiMovie => apiMovie.name === movieName);
-    if (apiMovie != undefined ) {
-      schedule.push({date: apiInfo[i].datum, times: apiMovie.times})
+    if (apiMovie != undefined) {
+      schedule.push({ date: apiInfo[i].datum, times: apiMovie.times })
     }
-   
-  } 
+
+  }
   return schedule;
+
 }
+
 
 export const getScheduleByMovie = async (movieName) => {
   const apiSchedules = await fetchData();
   const schedules = [];
   for (let i = 0; i < apiSchedules.length; i += 1) {
-    schedules.push({
-      cinemaName: apiSchedules[i].title,
-      schedule: getSchedules(movieName, apiSchedules[i].info)
-     })
+    const cinema = apiSchedules[i];
+    if (cinemaExists(cinema.title) === true) {
+      const schedules2 = getSchedules(movieName, apiSchedules[i].info)
+      if (schedules2.length > 0) {
+        console.log("jsem tady")
+        schedules.push({
+          cinemaName: renameCinema(cinema.title),
+          schedule: schedules2
+        })
+      }
+    }
   }
+
   return schedules
 }

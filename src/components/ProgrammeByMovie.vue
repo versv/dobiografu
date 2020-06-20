@@ -8,9 +8,9 @@
       <div class="schedule_day_time">
         <div class="date_time" v-for="(schedule, index) in schedules" v-bind:key="index">
           <p>
-            <strong>{{schedule.date}}</strong>
+            <strong>{{schedule.date.split(" ")[1]}}</strong>
           </p>
-          <p>{{schedule.times}}</p>
+          <p>{{schedule.times.join(", ")}}</p>
         </div>
       </div>
     </div>

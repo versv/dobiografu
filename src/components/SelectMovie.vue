@@ -12,9 +12,11 @@
 
             <section class="select">
               <select name="choose_movie" id="choose_movie" v-model="chosenMovie">
-                <option v-for="movie in uniqueMovies" v-bind:key="movie" v-bind:value="movie">
-                    {{movie}}
-                </option>
+                <option
+                  v-for="movie in uniqueMovies"
+                  v-bind:key="movie"
+                  v-bind:value="movie"
+                >{{ movie }}</option>
               </select>
             </section>
           </div>
@@ -30,17 +32,15 @@
 
       <div class="cinema-programme">
         <div class="programme-day">
-          <div class="programme-movie-name">{{chosenMovie}}</div>
+          <div class="programme-movie-name">{{ chosenMovie }}</div>
           <div class="cinemas">
-           
             <!-- níže je část kód která se zobrazí v závisloti na vybraném filmu-->
-            <ProgrammeByMovie 
-            v-for="(schedule, index) in schedules" 
-            v-bind:key="index"
-            v-bind:cinemaName="schedule.cinemaName"
-            v-bind:schedules="schedule.schedule"
+            <ProgrammeByMovie
+              v-for="(schedule, index) in schedules"
+              v-bind:key="index"
+              v-bind:cinemaName="schedule.cinemaName"
+              v-bind:schedules="schedule.schedule"
             />
-            
           </div>
         </div>
       </div>
@@ -51,6 +51,7 @@
 <script>
 import ProgrammeByMovie from "../components/ProgrammeByMovie.vue";
 import { getUniqueMovies, getScheduleByMovie } from "../databazeFilmy";
+
 export default {
   name: "SelectMovie",
   components: {
@@ -63,12 +64,13 @@ export default {
 
       uniqueMovies: [],
 
-      schedules: [],
+      schedules: []
     };
   },
   watch: {
     chosenMovie: function(newChosenMovie) {
       getScheduleByMovie(newChosenMovie).then(schedule => {
+        console.log("sifhsifhsuifh", schedule);
         this.schedules = schedule;
       });
     }
@@ -81,8 +83,6 @@ export default {
   }
 };
 </script>
-
-
 
 <style>
 .ahoj {
