@@ -92,7 +92,7 @@ const transformMovies = (apiMovies) => {
 */
 
 
-const moviesList = [{
+/*const moviesList = [{
   name: "Kino Světozor",
   dates: [
     {
@@ -831,7 +831,4 @@ const moviesList = [{
   ],
 }
 ];
-
-
-
-
+*/

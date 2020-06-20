@@ -12,7 +12,9 @@
 
             <section class="select">
               <select v-model="chosenDate" name="choose_day" id="choose_day">
-                <option v-for="date in dates" :value="date.id" :key="date.id">{{ date.name }}</option>
+                <option v-for="date in dates" :value="date.name" :key="date.id">{{
+                 date.displayName
+                }}</option>
               </select>
             </section>
           </div>
@@ -48,7 +50,7 @@ import { getMoviesForDate } from "../databazeFilmy";
 export default {
   name: "SelectDate",
   components: {
-    MovieByDate: MovieByDate
+    MovieByDate: MovieByDate,
   },
   data() {
     return {
@@ -60,43 +62,56 @@ export default {
 
       apiData: [],
 
-      dates: [
-        { name: "Dnes", id: 0 },
-        { name: "Zítra", id: 1 }
-      ],
+      dates: [],
 
       weekdays: [
-        "Neděle",
-        "Pondělí",
-        "Úterý",
-        "Středa",
-        "Čtvrtek",
-        "Pátek",
-        "Sobota"
-      ]
+        "neděle",
+        "pondělí",
+        "úterý",
+        "středa",
+        "čtvrtek",
+        "pátek",
+        "sobota",
+      ],
     };
   },
 
+  watch: {
+    chosenDate: function (newChosenDate, chosenDate) {
+      this.get(newChosenDate);
+    }
+  },
+
   created() {
-   
     const today = new Date();
-    for (let i = 2; i <= 7; i++) {
+    for (let i = 0; i <= 7; i++) {
       let next = new Date();
       next.setDate(today.getDate() + i);
+      const name =
+        this.weekdays[next.getDay()] +
+        " " +
+        next.getDate() +
+        "." +
+        (next.getMonth() + 1) +
+        "." +
+        next.getFullYear();
+      let displayName = "";
+      if (i === 0) {
+        displayName = "Dnes"
+      } else if (i === 1) {
+        displayName = "Zítra"
+      } else {displayName = name};
       this.dates.push({
-        name:
-          this.weekdays[next.getDay()] +
-          ", " +
-          next.getDate() +
-          "." +
-          next.getMonth() +
-          "." +
-          next.getFullYear(),
-        id: i
+        name: name,
+        displayName: displayName,
+        id: i,
       });
     }
 
-    this.get();
+    const todayName = this.dates[0].name;
+    this.get(todayName);
+    this.chosenDate = todayName;
+    
   },
 
   methods: {
@@ -104,12 +119,12 @@ export default {
       this.apiData = json;
     },
 
-    get: function() {
-      getMoviesForDate("pondělí 15.6.2020").then(cinema => {
+    get: function(date) {
+      getMoviesForDate(date).then((cinema) => {
         this.cinemaToday = cinema;
       });
-    }
-  }
+    },
+  },
 };
 </script>
 

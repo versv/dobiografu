@@ -9,7 +9,9 @@
           <p>{{ tagline }}</p>
         </div>
         <div class="cinema-button">
-          <button v-on:click="visible = !visible">Detail kina</button>
+          <button v-on:click="visible = !visible">Detail kina 
+            
+          </button>
         </div>
       </div>
 
@@ -202,9 +204,6 @@ export default {
   font-size: 12px;
 }
 
-.program-button {
-}
-
 .program-button a {
   color: black;
 }
@@ -236,9 +235,6 @@ export default {
     height: auto;
   }
 
-  .cinema-button button,
-  .program-button {
-  }
 
   .cinema-info {
     font-size: 16px;
@@ -296,8 +292,6 @@ export default {
     margin-right: 30px;
   }
 
-  .program-button a {
-  }
 
   .copyright {
     font-size: 12px;
