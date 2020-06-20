@@ -3,6 +3,7 @@ export const cinemaList = [
 
   {
     name: "Kino Světozor",
+    apiName: "Praha - Světozor",
     url: "svetozor",
     address: "Vodičkova 791, Praha 1",
     tagline:
@@ -30,6 +31,7 @@ export const cinemaList = [
 
   {
     name: "Kino Lucerna",
+    apiName: "Praha - Kino Lucerna",
     url: "lucerna",
     address: "Vodičkova 704, Praha 1",
     tagline:
@@ -57,6 +59,7 @@ export const cinemaList = [
 
   {
     name: "Bio Oko",
+    apiName: "Praha - Bio Oko",
     url: "biooko",
     address: "Františka Křížka 460/15, Praha 7",
     tagline:
@@ -83,6 +86,7 @@ export const cinemaList = [
 
   {
     name: "Kino Aero",
+    apiName: "Praha - Aero",
     url: "aero",
     address: "Biskupcova 31, Praha 3",
     tagline:
@@ -113,6 +117,7 @@ export const cinemaList = [
 
   {
     name: "Kino Pilotů",
+    apiName: "Praha - Kino Pilotů",
     url: "kinopilotu",
     address: "Donská 108, Praha 10",
     tagline:
@@ -136,6 +141,7 @@ export const cinemaList = [
 
   {
     name: "Přítomnost",
+    apiName: "Praha - Přítomnost",
     url: "pritomnost",
     address: "Siwiecova 1, Praha 3",
     tagline:
@@ -157,6 +163,7 @@ export const cinemaList = [
   },
   {
     name: "Kino Mat",
+    apiName: "Praha - Mat",
     url: "mat",
     address: "Karlovo náměstí 19, Praha 2",
     tagline:
@@ -184,6 +191,7 @@ export const cinemaList = [
 
   {
     name: "Edison Filmhub",
+    apiName: "Praha - Edison Filmhub",
     url:"edison",
     address: "Jeruzalémská 2, Praha 1",
     tagline:
@@ -207,6 +215,7 @@ export const cinemaList = [
 
   {
     name: "Kino Atlas",
+    apiName: "Praha - Atlas",
     url: "atlas",
     address: "Sokolovská 1, Praha 8",
     tagline: "Ideální na rande - v zadní řadě mají útulné dvojsedačky.",
@@ -225,6 +234,7 @@ export const cinemaList = [
 
   {
     name: "Komorní kino Evald",
+    apiName: "Praha - Evald",
     url: "evald",
     address: "Národní 28, Praha 1",
     tagline: "Tady si přijdou na své milovníci severských filmů.",
@@ -247,6 +257,7 @@ export const cinemaList = [
 
   {
     name: "Kino Ponrepo",
+    apiName: "Praha - Ponrepo",
     url: "ponrepo",
     address: "Bartolomějská 11, Praha 1",
     tagline:
@@ -273,6 +284,7 @@ export const cinemaList = [
 
   {
     name: "Kino Dlabačov",
+    apiName: null,
     url: "dlabacov",
     address: "Bělohorská 24, Praha 6",
     tagline:

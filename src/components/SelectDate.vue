@@ -78,16 +78,7 @@ export default {
   },
 
   created() {
-    fetch(
-      "https://api.apify.com/v2/datasets/mF3iLaWJ6zq5fUCSy/items?format=json&clean=1"
-    )
-      .then(response => response.json())
-      .then(json => {
-        console.log(json);
-        return json;
-      })
-      .then(json => this.displayApi(json));
-
+   
     const today = new Date();
     for (let i = 2; i <= 7; i++) {
       let next = new Date();

@@ -1,8 +1,20 @@
-export const loadMoviesForCinema = async (cinemaName) => {
-  await new Promise(r => setTimeout(r, 2000));
-  for (let i = 0; i < moviesList.length; i += 1) {
-    if (moviesList[i].name === cinemaName.name) {
-      return moviesList[i]
+const fetchData = () => {
+  return fetch(
+    "https://api.apify.com/v2/datasets/mF3iLaWJ6zq5fUCSy/items?format=json&clean=1"
+  )
+  .then(response => response.json())
+  .then(json => {
+    console.log("Stáhnul jsem data z apify", json);
+    return json;
+  })
+  
+};
+
+export const loadMoviesForCinema = async (cinema) => {
+  const data = await fetchData();
+  for (let i = 0; i < data.length; i += 1) {
+    if (data[i].title === cinema.apiName) {
+      return data[i]
     }
   };
 };

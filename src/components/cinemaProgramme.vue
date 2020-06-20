@@ -13,7 +13,7 @@
       <div class="programme-wrapper">
         <ProgrammeByCinema
           v-for="(date, index) in dates"
-          v-bind:date="date.date"
+          v-bind:date="date.datum"
           v-bind:movies="date.movies"
           v-bind:key="index"
         />
@@ -48,7 +48,7 @@ export default {
     getMovies: function() {
       loadMoviesForCinema(this.cinema).then(cinema => {
         //to cinema je moje pojmenování těch dat, které mi ta funkce vrátila, čili celé to pole
-        this.dates = cinema.dates; //tady pak k těm datům přistupuju
+        this.dates = cinema.info; //tady pak k těm datům přistupuju
       });
     }
   }

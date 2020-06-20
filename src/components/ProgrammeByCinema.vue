@@ -6,8 +6,8 @@
         <div class="movie">
           <ul>
             <li v-for="(movie, index) in movies" v-bind:key="index">
-              <p>{{ movie.movieName }}</p>
-              <p>{{ movie.time }}</p>
+              <p>{{ movie.name }}</p>
+              <p><span class="comma"  v-for="(time, index) in movie.times" v-bind:key="index">{{ time }}</span></p>
             </li>
           </ul>
           
@@ -57,6 +57,10 @@ export default {
 
 .movie p {
   margin: 3px;
+}
+
+.comma:not(:first-child):before {
+  content: ", ";
 }
 
 
