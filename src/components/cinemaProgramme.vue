@@ -47,12 +47,8 @@ export default {
   methods: {
     getMovies: function() {
       loadMoviesForCinema(this.cinema).then(cinema => {
-<<<<<<< HEAD
-        this.dates = cinema.dates;
-=======
         //to cinema je moje pojmenování těch dat, které mi ta funkce vrátila, čili celé to pole
         this.dates = cinema.dates; //tady pak k těm datům přistupuju
->>>>>>> 02b544096bfe4fb9c6e3982ef1f249ca87d6c6a8
       });
     }
   }
