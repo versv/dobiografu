@@ -31,7 +31,7 @@ import { loadMoviesForCinema } from "../databazeFilmy";
 import { getCinemaById, getCinemaByUrl } from "../databaze";
 import ProgrammeByCinema from "./ProgrammeByCinema.vue";
 export default {
-  name: "CinemaProgramme",
+  name: "CinemaProgram",
   data() {
     return {
       dates: [],

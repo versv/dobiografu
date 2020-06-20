@@ -12,15 +12,9 @@
 
             <section class="select">
               <select name="choose_movie" id="choose_movie" v-model="chosenMovie">
-                <option selected disabled></option>
-                <option class="film" value="movie1">Film1</option>
-                <option class="film" value="movie2">Film2</option>
-                <option class="film" value="movie3">Film3</option>
-                <option class="film" value="movie4">Film4</option>
-                <option class="film" value="movie5">Film5</option>
-                <option class="film" value="movie6">Film6</option>
-                <option class="film" value="movie7">Film7</option>
-                <option class="film" value="movie8">Film8</option>
+                <option v-for="movie in uniqueMovies" v-bind:key="movie" v-bind:value="movie">
+                    {{movie}}
+                </option>
               </select>
             </section>
           </div>
@@ -38,9 +32,15 @@
         <div class="programme-day">
           <div class="programme-movie-name">{{chosenMovie}}</div>
           <div class="cinemas">
-            <div>{{uniqueMovies}}</div>
+           
             <!-- níže je část kód která se zobrazí v závisloti na vybraném filmu-->
-            <cinemasByMovie />
+            <ProgrammeByMovie 
+            v-for="(schedule, index) in schedules" 
+            v-bind:key="index"
+            v-bind:cinemaName="schedule.cinemaName"
+            v-bind:schedules="schedule.schedule"
+            />
+            
           </div>
         </div>
       </div>
@@ -49,20 +49,29 @@
 </template>
 
 <script>
-import cinemasByMovie from "../components/cinemasByMovie.vue";
-import getUniqueMovies from "../databazeFilmy";
+import ProgrammeByMovie from "../components/ProgrammeByMovie.vue";
+import { getUniqueMovies, getScheduleByMovie } from "../databazeFilmy";
 export default {
   name: "SelectMovie",
   components: {
-    cinemasByMovie: cinemasByMovie
+    ProgrammeByMovie: ProgrammeByMovie
   },
 
   data() {
     return {
       chosenMovie: "",
 
-      uniqueMovies: []
+      uniqueMovies: [],
+
+      schedules: [],
     };
+  },
+  watch: {
+    chosenMovie: function(newChosenMovie) {
+      getScheduleByMovie(newChosenMovie).then(schedule => {
+        this.schedules = schedule;
+      });
+    }
   },
 
   created() {

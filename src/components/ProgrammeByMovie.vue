@@ -2,27 +2,15 @@
   <div>
     <div class="schedule">
       <div class="schedule_cinema">
-        <p>Kino 1</p>
+        <p>{{ cinemaName }}</p>
       </div>
 
       <div class="schedule_day_time">
-        <div class="date_time">
+        <div class="date_time" v-for="(schedule, index) in schedules" v-bind:key="index">
           <p>
-            <strong>1/1/2021</strong>
+            <strong>{{schedule.date}}</strong>
           </p>
-          <p>17:30</p>
-        </div>
-        <div class="date_time">
-          <p>
-            <strong>1/1/2021</strong>
-          </p>
-          <p>17:30</p>
-        </div>
-        <div class="date_time">
-          <p>
-            <strong>1/1/2021</strong>
-          </p>
-          <p>17:30</p>
+          <p>{{schedule.times}}</p>
         </div>
       </div>
     </div>
@@ -31,7 +19,8 @@
 
 <script>
 export default {
-  name: "cinemasByMovie"
+  name: "ProgrammeByMovie",
+  props: ["cinemaName", "schedules"]
 };
 </script>
 

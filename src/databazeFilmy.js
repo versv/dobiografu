@@ -73,5 +73,32 @@ export const getUniqueMovies = async () => {
       }
     }
   }
-  return uniqueMovies;
+  return [...new Set(uniqueMovies)].sort((a, b) => {
+    return a.localeCompare(b)
+  });
+}
+
+const getSchedules = (movieName, apiInfo) => {
+  const schedule = [];
+  console.log(apiInfo);
+  for (let i = 0; i < apiInfo.length; i += 1) {
+    const apiMovie = apiInfo[i].movies.find(apiMovie => apiMovie.name === movieName);
+    if (apiMovie != undefined ) {
+      schedule.push({date: apiInfo[i].datum, times: apiMovie.times})
+    }
+   
+  } 
+  return schedule;
+}
+
+export const getScheduleByMovie = async (movieName) => {
+  const apiSchedules = await fetchData();
+  const schedules = [];
+  for (let i = 0; i < apiSchedules.length; i += 1) {
+    schedules.push({
+      cinemaName: apiSchedules[i].title,
+      schedule: getSchedules(movieName, apiSchedules[i].info)
+     })
+  }
+  return schedules
 }
