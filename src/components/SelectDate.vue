@@ -12,9 +12,11 @@
 
             <section class="select">
               <select v-model="chosenDate" name="choose_day" id="choose_day">
-                <option v-for="date in dates" :value="date.name" :key="date.id">{{
-                 date.displayName
-                }}</option>
+                <option v-for="date in dates" :value="date.name" :key="date.id">
+                  {{
+                  date.displayName
+                  }}
+                </option>
               </select>
             </section>
           </div>
@@ -35,8 +37,6 @@
           v-bind:cinema="cinema"
         />
 
-        <!--data z API-->
-        <!-- <div class="apify">{{ apiData }}</div> -->
         <!--část kódu, která se zobrazí v závislti na vybraném daut .programme-day-->
       </div>
     </section>
@@ -50,7 +50,7 @@ import { getMoviesForDate } from "../databazeFilmy";
 export default {
   name: "SelectDate",
   components: {
-    MovieByDate: MovieByDate,
+    MovieByDate: MovieByDate
   },
   data() {
     return {
@@ -71,13 +71,13 @@ export default {
         "středa",
         "čtvrtek",
         "pátek",
-        "sobota",
-      ],
+        "sobota"
+      ]
     };
   },
 
   watch: {
-    chosenDate: function (newChosenDate, chosenDate) {
+    chosenDate: function(newChosenDate, chosenDate) {
       this.get(newChosenDate);
     }
   },
@@ -97,21 +97,22 @@ export default {
         next.getFullYear();
       let displayName = "";
       if (i === 0) {
-        displayName = "Dnes"
+        displayName = "Dnes";
       } else if (i === 1) {
-        displayName = "Zítra"
-      } else {displayName = name};
+        displayName = "Zítra";
+      } else {
+        displayName = name;
+      }
       this.dates.push({
         name: name,
         displayName: displayName,
-        id: i,
+        id: i
       });
     }
 
     const todayName = this.dates[0].name;
     this.get(todayName);
     this.chosenDate = todayName;
-    
   },
 
   methods: {
@@ -120,15 +121,19 @@ export default {
     },
 
     get: function(date) {
-      getMoviesForDate(date).then((cinema) => {
+      getMoviesForDate(date).then(cinema => {
         this.cinemaToday = cinema;
       });
-    },
-  },
+    }
+  }
 };
 </script>
 
 <style>
+.cinema-programme {
+  padding: 20px;
+}
+
 .ahoj {
   display: flex;
   justify-content: space-between;
@@ -206,7 +211,6 @@ select::-ms-expand {
   display: block;
   height: 2.5px;
   width: 100%;
-  margin-top: 10px;
 }
 
 /*tablet*/

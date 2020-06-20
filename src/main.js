@@ -8,6 +8,7 @@ import ProgrammeByCinema from './components/ProgrammeByCinema.vue';
 import SelectDate from './components/SelectDate.vue';
 import SelectMovie from './components/SelectMovie.vue';
 import MovieByDate from './components/MovieByDate.vue';
+import cinemasByMovie from './components/cinemasByMovie.vue';
 
 import './index.html';
 

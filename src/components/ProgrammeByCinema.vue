@@ -5,12 +5,17 @@
       <div class="movies-list">
         <div class="movie">
           <ul>
-            <li v-for="(movie, index) in movies" v-bind:key="index">
+            <li v-for="(movie, index) in sortedMovies" v-bind:key="index">
               <p>{{ movie.name }}</p>
-              <p><span class="comma"  v-for="(time, index) in movie.times" v-bind:key="index">{{ time }}</span></p>
+              <p>
+                <span
+                  class="comma"
+                  v-for="(time, index) in movie.times"
+                  v-bind:key="index"
+                >{{ time }}</span>
+              </p>
             </li>
           </ul>
-          
         </div>
       </div>
     </div>
@@ -21,11 +26,17 @@
 export default {
   name: "ProgrammeByCinema",
   props: ["date", "movies"],
+  data() {
+    return {
+      sortedMovies: [...this.movies].sort((a, b) => {
+        return a.times[0].localeCompare(b.times[0]);
+      })
+    };
+  }
 };
 </script>
 
 <style>
-
 .programme-day {
   text-align: left;
 }
@@ -62,7 +73,6 @@ export default {
 .comma:not(:first-child):before {
   content: ", ";
 }
-
 
 .movies-list {
   margin-bottom: 15px;
