@@ -16,7 +16,8 @@
                   v-for="date in dates"
                   :value="date.name"
                   :key="date.id"
-                >{{ date.displayName }}</option>
+                  >{{ date.displayName }}</option
+                >
               </select>
             </section>
           </div>
@@ -50,7 +51,7 @@ import { getMoviesForDate, formatDate } from "../databazeFilmy";
 export default {
   name: "SelectDate",
   components: {
-    MovieByDate: MovieByDate
+    MovieByDate: MovieByDate,
   },
   data() {
     return {
@@ -71,15 +72,15 @@ export default {
         "středa",
         "čtvrtek",
         "pátek",
-        "sobota"
-      ]
+        "sobota",
+      ],
     };
   },
 
   watch: {
     chosenDate: function(newChosenDate, chosenDate) {
       this.get(newChosenDate);
-    }
+    },
   },
 
   created() {
@@ -99,7 +100,7 @@ export default {
       this.dates.push({
         name: name,
         displayName: displayName,
-        id: i
+        id: i,
       });
     }
 
@@ -114,11 +115,11 @@ export default {
     },
 
     get: function(date) {
-      getMoviesForDate(date).then(cinema => {
+      getMoviesForDate(date).then((cinema) => {
         this.cinemaToday = cinema;
       });
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -126,6 +127,7 @@ export default {
 .cinema-overview-header {
   background-color: black;
   color: white;
+  width: 100%;
 }
 
 .cinema-programme {
@@ -136,7 +138,6 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 2px solid;
 }
 
 .calendar-img img {
@@ -208,15 +209,16 @@ select::-ms-expand {
 @media screen and (min-width: 541px) {
   h2 {
     font-size: 28px;
+    text-align: center;
   }
 
   .calendar-img img {
-    width: 150px;
+    width: 100px;
   }
 
   .calendar-img_b img {
     display: block;
-    width: 150px;
+    width: 100px;
     margin-left: 10px;
     margin-right: 10px;
   }
@@ -236,19 +238,18 @@ select::-ms-expand {
     display: inline-flex;
     height: 3em;
     line-height: 3;
-    width: 30vh;
+    width: 20vh;
   }
 
   .calendar-img img {
-    width: 150px;
+    width: 120px;
     margin-left: 20px;
   }
 
   .calendar-img_b img {
     display: block;
-    width: 150px;
-    margin-left: 10px;
-    margin-right: 10px;
+    width: 120px;
+    margin: 0px 10px;
   }
 
   .programme-cinema-name {

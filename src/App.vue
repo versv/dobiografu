@@ -8,7 +8,9 @@
     <header>
       <div class="topnav" id="myTopnav">
         <div class="title">
-          <router-link to="/"><h1>DO&nbsp;BIOGRAFU</h1></router-link>
+          <router-link to="/">
+            <h1>DO&nbsp;BIOGRAFU</h1>
+          </router-link>
         </div>
         <!-- <a href="#home" class="active">DO BIOGRAFU</a>-->
 
@@ -140,7 +142,6 @@ body {
 
   .title h1 {
     font-size: 32px;
-    
   }
 }
 
@@ -364,4 +365,70 @@ footer a {
     padding-right: 3px;
   }
 }
+
+/*SELECT
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: 0 !important;
+  background-image: none;
+  background-color: #e0d9d3;
+
+  flex: 1;
+  padding: 0 0.5em;
+  color: black;
+  cursor: pointer;
+  font-size: 1em;
+  font-family: "Montserrat", sans-serif;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+.select {
+  position: relative;
+  display: flex;
+  height: 2em;
+  line-height: 2;
+  background: #e0d9d3;
+  overflow: hidden;
+  border-radius: 0.25em;
+  margin-bottom: 10px;
+}
+
+.select::after {
+  content: "\25BC";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0 1em;
+  background: #2b2e2e;
+  cursor: pointer;
+  pointer-events: none;
+  transition: 0.25s all ease;
+}
+
+.select:hover::after {
+  color: #f27a54;
+}
+
+@media screen and (min-width: 961px) {
+ /* select {
+    font-size: 18px;
+  }
+
+  .select {
+    display: inline-flex;
+    height: 3em;
+    line-height: 3;
+    width: 30vh;
+  }
+}*/
 </style>

@@ -11,12 +11,17 @@
             <h2>Vyber film</h2>
 
             <section class="select">
-              <select name="choose_movie" id="choose_movie" v-model="chosenMovie">
+              <select
+                name="choose_movie"
+                id="choose_movie"
+                v-model="chosenMovie"
+              >
                 <option
                   v-for="movie in uniqueMovies"
                   v-bind:key="movie"
                   v-bind:value="movie"
-                >{{ movie }}</option>
+                  >{{ movie }}</option
+                >
               </select>
             </section>
           </div>
@@ -45,6 +50,9 @@
         </div>
       </div>
     </section>
+    <div class="animated">
+      <img id="cam" src="assets/images/stativ.png" alt="kamera" />
+    </div>
   </div>
 </template>
 
@@ -55,7 +63,7 @@ import { getUniqueMovies, getScheduleByMovie } from "../databazeFilmy";
 export default {
   name: "SelectMovie",
   components: {
-    ProgrammeByMovie: ProgrammeByMovie
+    ProgrammeByMovie: ProgrammeByMovie,
   },
 
   data() {
@@ -64,27 +72,37 @@ export default {
 
       uniqueMovies: [],
 
-      schedules: []
+      schedules: [],
     };
   },
   watch: {
     chosenMovie: function(newChosenMovie) {
-      getScheduleByMovie(newChosenMovie).then(schedule => {
+      getScheduleByMovie(newChosenMovie).then((schedule) => {
         console.log("sifhsifhsuifh", schedule);
         this.schedules = schedule;
       });
-    }
+    },
   },
 
   created() {
-    getUniqueMovies().then(apiMovies => {
+    getUniqueMovies().then((apiMovies) => {
       this.uniqueMovies = apiMovies;
     });
-  }
+  },
 };
 </script>
 
 <style>
+.cinema-overview-header {
+  background-color: black;
+  color: white;
+  width: 100%;
+}
+
+.cinema-programme {
+  padding: 5px;
+}
+
 .ahoj {
   display: flex;
   justify-content: space-between;
@@ -105,7 +123,7 @@ select {
   padding: 0 0.5em;
   color: black;
   cursor: pointer;
-  font-size: 1em;
+  font-size: 14px;
   font-family: "Montserrat", sans-serif;
 }
 
@@ -122,6 +140,7 @@ select::-ms-expand {
   overflow: hidden;
   border-radius: 0.25em;
   margin-bottom: 10px;
+  width: 25vh;
 }
 
 .select::after {
@@ -140,9 +159,8 @@ select::-ms-expand {
 .select:hover::after {
   color: #f27a54;
 }
-
 .ticket-img img {
-  width: 70px;
+  width: 90px;
   margin-left: 10px;
   margin-right: 10px;
 }
@@ -150,32 +168,31 @@ select::-ms-expand {
   display: none;
 }
 
-.schedule {
-  display: flex;
-  justify-content: space-between;
-  text-align: right;
-  border-bottom: wheat dotted 1px;
-}
-
 .cinemas {
   margin-bottom: 15px;
 }
 
+.programme-movie-name {
+  padding: 10px;
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
 /*tablet*/
 @media screen and (min-width: 541px) {
-  .programme-movie-name:after {
-    margin-top: 15px;
+  h2 {
+    font-size: 28px;
+    text-align: center;
   }
 
   .ticket-img img {
-    width: 80px;
-    margin-left: 10px;
-    margin-right: 10px;
+    width: 100px;
   }
 
   .ticket-img_b img {
     display: block;
-    width: 80px;
+    width: 100px;
     margin-left: 10px;
     margin-right: 10px;
   }
@@ -191,19 +208,33 @@ select::-ms-expand {
     display: inline-flex;
     height: 3em;
     line-height: 3;
-    width: 30vh;
+    width: 20vh;
   }
 
   .ticket-img img {
     width: 150px;
-    margin-left: 10px;
+    margin-left: 30px;
   }
 
   .ticket-img_b img {
     display: block;
     width: 150px;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-right: 30px;
+  }
+  .schedule {
+    display: flex;
+  }
+  .programme-movie-name {
+    display: none;
+  }
+
+  .animated {
+    text-align: center;
+  }
+
+  #cam {
+    width: 100px;
+    margin-top: 30px;
   }
 }
 </style>

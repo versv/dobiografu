@@ -3,7 +3,11 @@
     <div class="programme-day">
       <div class="programme-cinema-name">{{ cinema.name }}</div>
       <div class="movies-list">
-        <div class="program-of-cinema" v-for="(movie, index) in cinema.movies" v-bind:key="index">
+        <div
+          class="program-of-cinema"
+          v-for="(movie, index) in cinema.movies"
+          v-bind:key="index"
+        >
           <p>{{ movie.movieName }}</p>
           <p>{{ movie.time }}</p>
         </div>
@@ -15,10 +19,9 @@
 <script>
 export default {
   name: "MovieByDate",
-  props: ["cinema"]
+  props: ["cinema"],
 };
 </script>
-
 
 <style>
 .programme-cinema-name {
@@ -47,9 +50,14 @@ export default {
     display: flex;
   }
 
+  /*.programme-movie-name {
+    display: none;
+  }*/
+
   .programme-cinema-name {
     flex-basis: 20%;
     text-align: right;
+    margin-right: 10px;
   }
   .movies-list {
     flex-grow: 2;

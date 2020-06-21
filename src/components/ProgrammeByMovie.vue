@@ -6,11 +6,15 @@
       </div>
 
       <div class="schedule_day_time">
-        <div class="date_time" v-for="(schedule, index) in schedules" v-bind:key="index">
-          <p>
-            <strong>{{schedule.date.split(" ")[1]}}</strong>
+        <div
+          class="date_time"
+          v-for="(schedule, index) in schedules"
+          v-bind:key="index"
+        >
+          <p class="p-date">
+            <strong>{{ schedule.date.split(" ")[1] }}</strong>
           </p>
-          <p>{{schedule.times.join(", ")}}</p>
+          <p class="p-times">{{ schedule.times.join(", ") }}</p>
         </div>
       </div>
     </div>
@@ -20,21 +24,45 @@
 <script>
 export default {
   name: "ProgrammeByMovie",
-  props: ["cinemaName", "schedules"]
+  props: ["cinemaName", "schedules"],
 };
 </script>
-
 
 <style>
 .schedule {
   display: flex;
-  justify-content: space-between;
-  text-align: right;
-  border-bottom: wheat dotted 1px;
+  flex-direction: column;
+  border-bottom: 1px dashed #e0d9d3;
+  padding: 0 10px;
 }
 
-.cinemas {
+.schedule_cinema {
+  text-align: left;
+}
+
+.schedule_cinema p {
+  margin-bottom: 0;
+  font-weight: bold;
+}
+
+.schedule_day_time {
+  text-align: left;
+}
+
+.schedule_day_time p {
+  text-align: left;
+}
+
+.schedule_day_time .cinemas {
   margin-bottom: 15px;
+}
+
+.p-date {
+  margin-bottom: 0;
+}
+
+.p-times {
+  margin-top: 3px;
 }
 
 @media screen and (min-width: 541px) {
@@ -42,34 +70,43 @@ export default {
     font-weight: bold;
   }
 
-  .programme-movie-name:after {
+  /*.programme-movie-name:after {
     content: "";
     background: linear-gradient(to right, #f27a54 25%, #a154f2 100%);
     display: block;
     height: 2.5px;
     width: 100%;
     margin-top: 10px;
-  }
+  }*/
 }
 
 @media screen and (min-width: 961px) {
   .schedule {
-    justify-content: flex-start;
+    border: none;
+    flex-direction: row;
+    margin: 10px 0px;
   }
 
   .schedule_cinema {
-    width: 100px;
-    text-align: left;
+    width: 200px;
+    text-align: right;
+    text-transform: uppercase;
   }
 
   .date_time {
     margin: 0 10px;
+    display: flex;
+  }
+
+  .p-date p {
+    width: 10%;
+    margin-right: 10px;
+    text-align: right;
   }
 
   .schedule_day_time {
     width: 100vh;
-
-    display: flex;
+    border-bottom: 1px dashed #e0d9d3;
     justify-content: flex-start;
   }
 }
