@@ -59,7 +59,7 @@
           v-bind:key="index"
         />
 
-        <div class="button tickets-button">
+        <div class="tickets-button">
           <a :href="`${cinema.link}`">Koupit lístky</a>
         </div>
       </div>
@@ -150,11 +150,23 @@ h3 {
 }
 
 .tickets-button {
-  max-width: 140px;
+  max-width: 40%;
   margin: 0 auto;
-  padding: 5px;
-  background: #3c444c;
+  background: black;
+  text-align: center;
+  padding: 0px;
+  text-transform: uppercase;
+}
+
+.tickets-button a {
   color: white;
+  padding: 10px;
+  text-decoration: none;
+  display: block;
+}
+
+.tickets-button a:hover {
+  font-weight: bold;
 }
 
 /* info */
@@ -251,6 +263,10 @@ h3 {
   .copyright {
     font-size: 10px;
   }
+
+  .tickets-button {
+    width: 30%;
+  }
 }
 
 /* desktop */
@@ -329,6 +345,10 @@ h3 {
 
   .cinema-info-line {
     display: block;
+  }
+
+  .tickets-button a {
+    font-size: 18px;
   }
 }
 </style>

@@ -25,20 +25,11 @@
 <script>
 export default {
   name: "CinemaDetail",
-  props: [
-    "name",
-    "tagline",
-    "link",
-    "image",
-    "alt",
-    "copyright",
-    "url",
-  ],
+  props: ["name", "tagline", "link", "image", "alt", "copyright", "url"],
 };
 </script>
 
 <style scoped>
-
 .cinema-list {
   box-shadow: 4px 4px 8px 0px rgba(50, 50, 50, 0.27);
   padding: 0;
@@ -91,7 +82,7 @@ export default {
 }
 
 .program-button a:hover {
-  color:  #ffd671;
+  color: #ffd671;
 }
 
 /*.cinema-button button {
@@ -161,19 +152,10 @@ export default {
   top: -40px;
 }
 
-
-
-
-
 @media screen and (min-width: 541px) {
-  
-
   .cinema-name p {
     font-size: 14px;
   }
-  /*.cinema-item {
-    padding-bottom: 50px;
-  }*/
 
   .cinema-photo {
     width: 100%;
@@ -186,7 +168,6 @@ export default {
 }
 
 @media screen and (min-width: 961px) {
-  
   .cinema-wrap {
     flex-direction: row;
   }
@@ -203,15 +184,6 @@ export default {
     top: 0;
   }
 
-  .cinema-button button {
-    padding: 1em 4em;
-    font-size: 16px;
-  }
-
-  .button.program-button {
-    font-size: 16px;
-  }
-
   .copyright {
     font-size: 12px;
   }
@@ -221,7 +193,7 @@ export default {
     z-index: 100;
     width: 40%;
   }
-  
+
   .cinema-item {
     height: 250px;
   }
