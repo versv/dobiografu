@@ -1,49 +1,32 @@
 <template>
   <div>
-    <p class="perex">
-      Přehled malých artových kin v Praze a jejich aktuálních programů. Vše na
-      jednom místě.
-    </p>
-
-    <div class="btn-hp">
-      <a href="#" class="hp">
-        <i class="my-home fa fa-home"></i>
-      </a>
+    <div class="background-pic">
+      <img src="assets/images/cameraBackground1.jpg" alt="obrázek kamery" />
+      <div class="perex">
+        <p>
+          Přehled malých artových kin v Praze a jejich aktuálních programů. Vše na
+          jednom místě.
+        </p>
+      </div>
     </div>
 
-    <section class="boxy">
-      <!--dle kina-->
-      <div class="box">
-        <div class="cameraImg">
-          <img src="assets/images/camera.png" alt="logo kamery" />
-        </div>
+    <!--dle kina-->
 
-        <div class="button">
-          <router-link to="/CinemaOverview">Vyber kino</router-link>
-        </div>
-      </div>
+    <div class="button">
+      <router-link to="/CinemaOverview">Vyber kino</router-link>
+    </div>
 
-      <!--dle data-->
-      <div class="box">
-        <div class="calendarImg">
-          <img src="assets/images/calendar.png" alt="logo kalendáře" />
-        </div>
+    <!--dle data-->
 
-        <div class="button">
-          <router-link to="/SelectDate">Vyber datum</router-link>
-        </div>
-      </div>
+    <div class="button">
+      <router-link to="/SelectDate">Vyber datum</router-link>
+    </div>
 
-      <!--dle filmu-->
-      <div class="box">
-        <div class="ticketImg">
-          <img src="assets/images/ticket.png" alt="logo lístku" />
-        </div>
-        <div class="button">
-          <router-link to="/SelectMovie">Vyber film</router-link>
-        </div>
-      </div>
-    </section>
+    <!--dle filmu-->
+
+    <div class="button">
+      <router-link to="/SelectMovie">Vyber film</router-link>
+    </div>
   </div>
 </template>
 
@@ -54,6 +37,50 @@ export default {
 </script>
 
 <style>
+.background-pic img {
+  width: 100%;
+  height: auto;
+}
+
+.background-pic {
+  position: relative;
+}
+
+.perex {
+  color: black;
+  position: absolute;
+  width: 40%;
+  bottom: 0%;
+  text-align: left;
+  padding-left: 10px;
+  font-style: italic;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+@media screen and (min-width: 541px) and (max-width: 960px) {
+  .perex p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .perex {
+    bottom: 5%;
+  }
+}
+
+@media screen and (min-width: 961px) {
+  .perex p {
+    font-size: 24px;
+    line-height: 2;
+  }
+  .perex {
+    bottom: 0%;
+    padding-left: 30px;
+  }
+}
+
+/*
 .perex {
   color: white;
 }
@@ -120,5 +147,5 @@ export default {
   .box img {
     max-width: 200px;
   }
-}
+}*/
 </style>

@@ -1,36 +1,166 @@
 <template>
   <div>
-    <div class="btn-hp">
+    <!--<div class="btn-hp">
       <router-link to="/" class="hp">
         <i class="my-home fa fa-home"></i>
       </router-link>
-    </div>
+    </div>-->
     <header>
-      <h1>DO BIOGRAFU</h1>
+      <div class="topnav" id="myTopnav">
+        <div class="title">
+          <h1>DO BIOGRAFU</h1>
+        </div>
+        <!-- <a href="#home" class="active">DO BIOGRAFU</a>-->
+
+        <div class="nav-bars">
+          <a href="#news">Přehled kin</a>
+          <a href="#contact">Program</a>
+          <a href="#about">Přehled filmů</a>
+
+          <a href="javascript:void(0);" class="icon" v-on:click="myFunction()">
+            <i class="fa fa-bars"></i>
+          </a>
+        </div>
+      </div>
     </header>
 
     <router-link to="/"></router-link>
     <router-view></router-view>
 
-    <!-- <Homepage /> -->
+    <footer>
+      <a
+        href="https://www.freepik.com/free-photos-vectors/space"
+      >Space photo created by freepik - www.freepik.com</a>
+    </footer>
   </div>
 </template>
 
 <script>
-/*import Homepage from "./components/Homepage.vue";*/
-
 export default {
-  name: "App"
-  /*components: {
-    Homepage: Homepage
-  }*/
+  name: "App",
+  methods: {
+    myFunction: function() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    }
+  }
 };
 </script>
 
 <style>
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swa");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap");
 
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+
+#app {
+  font-family: "Montserrat", sans-serif;
+}
+
+:after,
+:before {
+  box-sizing: border-box;
+}
+
+.perex {
+  font-family: "Montserrat", sans-serif;
+}
+
+.title {
+  margin: 0px;
+  padding: 0px;
+  width: 40%;
+  flex-grow: 1;
+}
+
+.nav-bars {
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 20px;
+}
+
+.nav-bars a {
+  width: 33%;
+  height: 40px;
+  border-top: 2px solid white;
+}
+
+/* STYLE NAV BAR*/
+/* Add a black background color to the top navigation */
+
+.topnav {
+  background-color: white;
+  overflow: hidden;
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+/* Change the color of links on hover */
+.nav-bars a:hover {
+  border-top: black solid 2px;
+  color: black;
+  font-weight: bold;
+}
+
+/* Add an active class to highlight the current page */
+.topnav a.active {
+  background-color: white;
+  color: black;
+}
+
+/* Hide the link that should open and close the topnav on small screens */
+.topnav .icon {
+  display: none;
+}
+
+@media screen and (max-width: 541px) {
+  .topnav a {
+    display: none;
+  }
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+@media screen and (max-width: 541px) {
+  .topnav.responsive {
+    position: relative;
+  }
+  .topnav.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
+/*KONEC STYLE  NAV
+
+
+
+
+
 
 #app {
   font-family: "Montserrat", sans-serif;
@@ -64,27 +194,23 @@ export default {
 
 body {
   font-family: "Montserrat", sans-serif;
-  background-color: #30363d;
-  background-image: url("assets/images/background.jpg");
+
+  /*background-image: url("assets/images/background.jpg");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
 
-  text-align: center;
-  font-size: 12px;
-}
-
 h1 {
   font-family: "Montserrat", sans-serif;
-  font-weight: bold;
-  background: linear-gradient(to right, #f27a54 45%, #a154f2 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  font-weight: 500;
+  color: black;
+  text-align: left;
+
   font-size: 28px;
   padding-top: 0px;
   margin-bottom: 0px;
-}
+}*/
 
 .button {
   background-color: #e0d9d3;
@@ -139,17 +265,6 @@ h1 {
     background-size: cover;
   }
 
-  h1 {
-    font-size: 40px;
-    padding-top: 20px;
-    margin-bottom: 20px;
-  }
-
-  p {
-    font-size: 14px;
-    margin-bottom: 15px;
-  }
-
   .button {
     margin-top: 40px;
     width: 240px;
@@ -169,18 +284,6 @@ h1 {
 }
 
 @media screen and (min-width: 961px) {
-  body {
-    background-size: cover;
-    height: 100vh;
-    font-size: 16px;
-  }
-
-  h1 {
-    font-size: 58px;
-    padding: 20px;
-    margin-bottom: 30px;
-  }
-
   .button {
     min-width: 220px;
     max-width: 280px;
