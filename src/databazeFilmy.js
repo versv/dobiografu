@@ -125,12 +125,12 @@ export const formatDate = (date) => {
     "sobota",
   ];
   const name =
-        weekdays[date.getDay()] +
-        " " +
-        date.getDate() +
-        "." +
-        (date.getMonth() + 1) +
-        "." +
-        date.getFullYear();
+    weekdays[date.getDay()] +
+    " " +
+    date.getDate() +
+    "." +
+    (date.getMonth() + 1) +
+    "." +
+    date.getFullYear();
   return name
 };

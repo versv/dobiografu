@@ -150,6 +150,17 @@ select::-ms-expand {
   display: none;
 }
 
+.schedule {
+  display: flex;
+  justify-content: space-between;
+  text-align: right;
+  border-bottom: wheat dotted 1px;
+}
+
+.cinemas {
+  margin-bottom: 15px;
+}
+
 /*tablet*/
 @media screen and (min-width: 541px) {
   .programme-movie-name:after {

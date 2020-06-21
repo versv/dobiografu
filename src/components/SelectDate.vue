@@ -12,9 +12,11 @@
 
             <section class="select">
               <select v-model="chosenDate" name="choose_day" id="choose_day">
-                <option v-for="date in dates" :value="date.name" :key="date.id">
-                  {{ date.displayName }}
-                </option>
+                <option
+                  v-for="date in dates"
+                  :value="date.name"
+                  :key="date.id"
+                >{{ date.displayName }}</option>
               </select>
             </section>
           </div>
@@ -43,13 +45,12 @@
 
 <script>
 import MovieByDate from "./MovieByDate.vue";
-import { getMoviesForDate,  formatDate } from "../databazeFilmy";
-
+import { getMoviesForDate, formatDate } from "../databazeFilmy";
 
 export default {
   name: "SelectDate",
   components: {
-    MovieByDate: MovieByDate,
+    MovieByDate: MovieByDate
   },
   data() {
     return {
@@ -70,15 +71,15 @@ export default {
         "středa",
         "čtvrtek",
         "pátek",
-        "sobota",
-      ],
+        "sobota"
+      ]
     };
   },
 
   watch: {
     chosenDate: function(newChosenDate, chosenDate) {
       this.get(newChosenDate);
-    },
+    }
   },
 
   created() {
@@ -98,7 +99,7 @@ export default {
       this.dates.push({
         name: name,
         displayName: displayName,
-        id: i,
+        id: i
       });
     }
 
@@ -113,11 +114,11 @@ export default {
     },
 
     get: function(date) {
-      getMoviesForDate(date).then((cinema) => {
+      getMoviesForDate(date).then(cinema => {
         this.cinemaToday = cinema;
       });
-    },
-  },
+    }
+  }
 };
 </script>
 
