@@ -8,16 +8,14 @@
     <header>
       <div class="topnav" id="myTopnav">
         <div class="title">
-          <router-link to="/"><h1>DO BIOGRAFU</h1></router-link>
+          <router-link to="/"><h1>DO&nbsp;BIOGRAFU</h1></router-link>
         </div>
         <!-- <a href="#home" class="active">DO BIOGRAFU</a>-->
 
         <div class="nav-bars">
-          <div class="bars">
-            <router-link to="/CinemaOverview">Přehled kin</router-link>
-            <router-link to="/SelectDate">Program</router-link>
-            <router-link to="/SelectMovie">Přehled filmů</router-link>
-          </div>
+          <router-link to="/CinemaOverview">Přehled kin</router-link>
+          <router-link to="/SelectDate">Program</router-link>
+          <router-link to="/SelectMovie">Přehled filmů</router-link>
         </div>
 
         <a href="javascript:void(0);" class="icon" v-on:click="myFunction()">
@@ -95,7 +93,6 @@ export default {
 
 .topnav {
   background-color: white;
-  overflow: hidden;
   font-family: "Montserrat", sans-serif;
   display: flex;
 }
@@ -130,6 +127,21 @@ export default {
   display: none;
 }
 
+@media screen and (max-width: 840px) {
+  .nav-bars a {
+    font-size: 14px;
+  }
+
+  .nav-bars {
+    width: 50%;
+  }
+
+  .title h1 {
+    font-size: 32px;
+    
+  }
+}
+
 /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
 @media screen and (max-width: 541px) {
   .nav-bars {
@@ -147,7 +159,7 @@ export default {
   .title {
     width: 100%;
   }
-  
+
   .topnav.responsive {
     position: relative;
   }
@@ -161,8 +173,10 @@ export default {
     display: block;
     text-align: left;
     flex: none;
-    position: relative;
-    top: 40px;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    z-index: 1;
   }
 
   .topnav.responsive .nav-bars .bars {
@@ -182,7 +196,6 @@ export default {
 
   .topnav.responsive .nav-bars a:hover {
     border: none;
-    
   }
 
   .topnav.responsive .nav-bars a:first-child {
