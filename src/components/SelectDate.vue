@@ -123,18 +123,24 @@ export default {
 </script>
 
 <style>
+.cinema-overview-header {
+  background-color: black;
+  color: white;
+}
+
 .cinema-programme {
-  padding: 20px;
+  padding: 5px;
 }
 
 .ahoj {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 2px solid;
 }
 
 .calendar-img img {
-  width: 70px;
+  width: 90px;
   margin-left: 10px;
   margin-right: 10px;
 }
@@ -171,7 +177,7 @@ select::-ms-expand {
   display: flex;
   height: 2em;
   line-height: 2;
-  background: #5c6664;
+  background: #e0d9d3;
   overflow: hidden;
   border-radius: 0.25em;
   margin-bottom: 10px;
@@ -198,14 +204,6 @@ select::-ms-expand {
   font-weight: bold;
 }
 
-.programme-cinema-name:after {
-  content: "";
-  background: linear-gradient(to right, #f27a54 25%, #a154f2 100%);
-  display: block;
-  height: 2.5px;
-  width: 100%;
-}
-
 /*tablet*/
 @media screen and (min-width: 541px) {
   h2 {
@@ -213,23 +211,23 @@ select::-ms-expand {
   }
 
   .calendar-img img {
-    width: 80px;
+    width: 150px;
   }
 
   .calendar-img_b img {
     display: block;
-    width: 80px;
+    width: 150px;
     margin-left: 10px;
     margin-right: 10px;
-  }
-
-  .programme-cinema-name:after {
-    margin-top: 15px;
   }
 }
 
 /*desktop*/
 @media screen and (min-width: 961px) {
+  .cinema-overview {
+    margin: 0 50px;
+  }
+
   select {
     font-size: 18px;
   }
@@ -243,7 +241,7 @@ select::-ms-expand {
 
   .calendar-img img {
     width: 150px;
-    margin-left: 10px;
+    margin-left: 20px;
   }
 
   .calendar-img_b img {
@@ -251,6 +249,13 @@ select::-ms-expand {
     width: 150px;
     margin-left: 10px;
     margin-right: 10px;
+  }
+
+  .programme-cinema-name {
+    height: 30px;
+  }
+  .cinema-programme {
+    padding: 0;
   }
 }
 </style>

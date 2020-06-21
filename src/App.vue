@@ -59,7 +59,9 @@ export default {
 #app {
   font-family: "Montserrat", sans-serif;
 }
-
+body {
+  font-family: "Montserrat", sans-serif;
+}
 :after,
 :before {
   box-sizing: border-box;
@@ -294,7 +296,7 @@ footer a {
   font-size: 12px;
   padding: 5px;
 }
-
+/*
 .cinema-overview {
   margin: 0 auto;
   padding: 0px;
@@ -318,24 +320,23 @@ footer a {
   body {
     height: 100%;
     background-size: cover;
-  }
+  }*/
 
-  .button {
-    margin-top: 40px;
-    width: 240px;
-    height: 50px;
-  }
+.button {
+  margin-top: 40px;
+  width: 240px;
+  height: 50px;
+}
 
-  .button a {
-    padding: 10px;
-    font-size: 20px;
-  }
+.button a {
+  padding: 10px;
+  font-size: 20px;
+}
 
-  .hp {
-    width: 75px;
-    height: 45px;
-    border-radius: 0px 25px 25px 0px;
-  }
+.hp {
+  width: 75px;
+  height: 45px;
+  border-radius: 0px 25px 25px 0px;
 }
 
 @media screen and (min-width: 961px) {
