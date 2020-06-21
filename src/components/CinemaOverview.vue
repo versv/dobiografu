@@ -12,22 +12,26 @@
       </div>
     </div>
 
-    <CinemaDetail
-      v-for="(cinema, index) in cinemaList"
-      v-bind:name="cinema.name"
-      v-bind:address="cinema.address"
-      v-bind:tagline="cinema.tagline"
-      v-bind:specialProgramme="cinema.SpecialProgramme"
-      v-bind:specialProgrammeTypes="cinema.specialProgrammeTypes"
-      v-bind:barrierFree="cinema.barrierFree"
-      v-bind:bar="cinema.bar"
-      v-bind:transport="cinema.transport"
-      v-bind:image="cinema.image"
-      v-bind:alt="cinema.alt"
-      v-bind:copyright="cinema.copyright"
-      v-bind:url="cinema.url"
-      v-bind:key="index"
-    />
+    <div class="cinema-list-items">
+      <CinemaDetail 
+        v-for="(cinema, index) in cinemaList"
+        v-bind:name="cinema.name"
+        v-bind:address="cinema.address"
+        v-bind:tagline="cinema.tagline"
+        v-bind:specialProgramme="cinema.SpecialProgramme"
+        v-bind:specialProgrammeTypes="cinema.specialProgrammeTypes"
+        v-bind:barrierFree="cinema.barrierFree"
+        v-bind:bar="cinema.bar"
+        v-bind:transport="cinema.transport"
+        v-bind:image="cinema.image"
+        v-bind:alt="cinema.alt"
+        v-bind:copyright="cinema.copyright"
+        v-bind:url="cinema.url"
+        v-bind:key="index"
+        
+        
+      />
+    </div>
   </section>
 </template>
 
@@ -39,12 +43,12 @@ export default {
   name: "CinemaOverview",
   data() {
     return {
-      cinemaList: cinemaList
+      cinemaList: cinemaList,
     };
   },
   components: {
-    CinemaDetail: CinemaDetail
-  }
+    CinemaDetail: CinemaDetail,
+  },
 };
 </script>
 
@@ -77,6 +81,8 @@ export default {
     display: block;
     width: 80px;
   }
+
+  
 }
 
 /*desktop*/
@@ -93,5 +99,16 @@ export default {
     display: block;
     width: 150px;
   }
+
+  .cinema-list-items {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .cinema-list-items > div {
+    flex: 0 0 50%;
+  }
+
+  
 }
 </style>
