@@ -8,19 +8,21 @@
     <header>
       <div class="topnav" id="myTopnav">
         <div class="title">
-          <h1>DO BIOGRAFU</h1>
+          <router-link to="/"><h1>DO BIOGRAFU</h1></router-link>
         </div>
         <!-- <a href="#home" class="active">DO BIOGRAFU</a>-->
 
         <div class="nav-bars">
-          <a href="#news">Přehled kin</a>
-          <a href="#contact">Program</a>
-          <a href="#about">Přehled filmů</a>
-
-          <a href="javascript:void(0);" class="icon" v-on:click="myFunction()">
-            <i class="fa fa-bars"></i>
-          </a>
+          <div class="bars">
+            <router-link to="/CinemaOverview">Přehled kin</router-link>
+            <router-link to="/SelectDate">Program</router-link>
+            <router-link to="/SelectMovie">Přehled filmů</router-link>
+          </div>
         </div>
+
+        <a href="javascript:void(0);" class="icon" v-on:click="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
       </div>
     </header>
 
@@ -28,9 +30,9 @@
     <router-view></router-view>
 
     <footer>
-      <a
-        href="https://www.freepik.com/free-photos-vectors/space"
-      >Space photo created by freepik - www.freepik.com</a>
+      <a href="https://www.freepik.com/free-photos-vectors/space"
+        >Space photo created by freepik - www.freepik.com</a
+      >
     </footer>
   </div>
 </template>
@@ -46,8 +48,8 @@ export default {
       } else {
         x.className = "topnav";
       }
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -128,10 +130,12 @@ export default {
   display: none;
 }
 
+/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
 @media screen and (max-width: 541px) {
-  .topnav a {
+  .nav-bars {
     display: none;
   }
+
   .topnav a.icon {
     float: right;
     display: block;
@@ -140,6 +144,10 @@ export default {
 
 /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
 @media screen and (max-width: 541px) {
+  .title {
+    width: 100%;
+  }
+  
   .topnav.responsive {
     position: relative;
   }
@@ -148,10 +156,37 @@ export default {
     right: 0;
     top: 0;
   }
-  .topnav.responsive a {
+  .topnav.responsive .nav-bars {
     float: none;
     display: block;
     text-align: left;
+    flex: none;
+    position: relative;
+    top: 40px;
+  }
+
+  .topnav.responsive .nav-bars .bars {
+    margin: 5px;
+  }
+
+  .topnav.responsive .nav-bars a {
+    width: 100%;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+    background-color: lightgrey;
+    border: none;
+    height: 30px;
+    text-align: center;
+  }
+
+  .topnav.responsive .nav-bars a:hover {
+    border: none;
+    
+  }
+
+  .topnav.responsive .nav-bars a:first-child {
+    padding-top: 10px;
   }
 }
 
@@ -211,6 +246,13 @@ h1 {
   padding-top: 0px;
   margin-bottom: 0px;
 }*/
+
+footer a {
+  text-decoration: none;
+  color: black;
+  font-family: "Montserrat", sans-serif;
+  font-size: 8px;
+}
 
 .button {
   background-color: #e0d9d3;

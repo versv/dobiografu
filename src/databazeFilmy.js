@@ -113,3 +113,24 @@ export const getScheduleByMovie = async (movieName) => {
 
   return schedules
 }
+
+export const formatDate = (date) => {
+  const weekdays = [
+    "neděle",
+    "pondělí",
+    "úterý",
+    "středa",
+    "čtvrtek",
+    "pátek",
+    "sobota",
+  ];
+  const name =
+        weekdays[date.getDay()] +
+        " " +
+        date.getDate() +
+        "." +
+        (date.getMonth() + 1) +
+        "." +
+        date.getFullYear();
+  return name
+};

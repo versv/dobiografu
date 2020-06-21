@@ -10,29 +10,45 @@
       </div>
     </div>
 
-    <!--dle kina-->
+     <div class="cinema-programme">
+        <MovieByDate
+          v-for="(cinema, index) in cinemaToday"
+          v-bind:key="index"
+          v-bind:cinema="cinema"
+        />
 
-    <div class="button">
-      <router-link to="/CinemaOverview">Vyber kino</router-link>
-    </div>
+        <!--část kódu, která se zobrazí v závislti na vybraném daut .programme-day-->
+      </div>
 
-    <!--dle data-->
-
-    <div class="button">
-      <router-link to="/SelectDate">Vyber datum</router-link>
-    </div>
-
-    <!--dle filmu-->
-
-    <div class="button">
-      <router-link to="/SelectMovie">Vyber film</router-link>
-    </div>
   </div>
 </template>
 
 <script>
+import MovieByDate from "./MovieByDate.vue";
+import { getMoviesForDate,  formatDate } from "../databazeFilmy";
+
 export default {
-  name: "Homepage"
+  name: "Homepage",
+  components: {
+    MovieByDate: MovieByDate,
+  },
+  data() {
+    return {
+      cinemaToday: [],
+    };
+  },
+
+  created() {
+    this.get();
+  },
+
+  methods: {
+      get: function() {
+      getMoviesForDate(formatDate(new Date())).then((cinema) => {
+        this.cinemaToday = cinema;
+      });
+    },
+  },
 };
 </script>
 

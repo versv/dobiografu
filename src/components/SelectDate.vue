@@ -13,9 +13,7 @@
             <section class="select">
               <select v-model="chosenDate" name="choose_day" id="choose_day">
                 <option v-for="date in dates" :value="date.name" :key="date.id">
-                  {{
-                  date.displayName
-                  }}
+                  {{ date.displayName }}
                 </option>
               </select>
             </section>
@@ -45,12 +43,13 @@
 
 <script>
 import MovieByDate from "./MovieByDate.vue";
-import { getMoviesForDate } from "../databazeFilmy";
+import { getMoviesForDate,  formatDate } from "../databazeFilmy";
+
 
 export default {
   name: "SelectDate",
   components: {
-    MovieByDate: MovieByDate
+    MovieByDate: MovieByDate,
   },
   data() {
     return {
@@ -71,15 +70,15 @@ export default {
         "středa",
         "čtvrtek",
         "pátek",
-        "sobota"
-      ]
+        "sobota",
+      ],
     };
   },
 
   watch: {
     chosenDate: function(newChosenDate, chosenDate) {
       this.get(newChosenDate);
-    }
+    },
   },
 
   created() {
@@ -87,14 +86,7 @@ export default {
     for (let i = 0; i <= 7; i++) {
       let next = new Date();
       next.setDate(today.getDate() + i);
-      const name =
-        this.weekdays[next.getDay()] +
-        " " +
-        next.getDate() +
-        "." +
-        (next.getMonth() + 1) +
-        "." +
-        next.getFullYear();
+      const name = formatDate(next);
       let displayName = "";
       if (i === 0) {
         displayName = "Dnes";
@@ -106,7 +98,7 @@ export default {
       this.dates.push({
         name: name,
         displayName: displayName,
-        id: i
+        id: i,
       });
     }
 
@@ -121,11 +113,11 @@ export default {
     },
 
     get: function(date) {
-      getMoviesForDate(date).then(cinema => {
+      getMoviesForDate(date).then((cinema) => {
         this.cinemaToday = cinema;
       });
-    }
-  }
+    },
+  },
 };
 </script>
 
