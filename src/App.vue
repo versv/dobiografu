@@ -270,7 +270,7 @@ footer a {
   font-size: 8px;
 }
 
-.button {
+/*.button {
   background-color: #e0d9d3;
   font-family: "Montserrat", sans-serif;
   border-radius: 15px;
@@ -283,7 +283,7 @@ footer a {
   transition: background 250ms ease-in-out, transform 150ms ease;
   -webkit-appearance: none;
   -moz-appearance: none;
-}
+}*/
 
 .button:active {
   transform: scale(0.99);
@@ -324,15 +324,20 @@ footer a {
   }*/
 
 .button {
-  margin-top: 40px;
-  width: 240px;
-  height: 50px;
+  color: black;
+  border-radius: 15px;
+  display: inline-block;
+  padding: 1em 3em;
+  border: none;
+  text-decoration: none;
+  background: white;
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  cursor: pointer;
+  text-align: center;
+  outline: none;
 }
 
-.button a {
-  padding: 10px;
-  font-size: 20px;
-}
 
 .hp {
   width: 75px;

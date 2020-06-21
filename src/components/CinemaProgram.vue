@@ -5,9 +5,40 @@
     <section class="cinema-overview">
       <div class="programme-header">
         <h3>{{ cinema.name }}</h3>
-        <h2>PROGRAM</h2>
+        <h2>INFO & PROGRAM</h2>
       </div>
       <!--Konec sekce Výběr kina-->
+
+      <div class="cinema-detail">
+        <div class="cinema-wrap">
+          <div class="address-details">
+            <p>{{ cinema.address }}</p>
+            <ul>
+              <li v-for="means in cinema.transport" v-bind:key="means">{{ means }}</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="cinema-info">
+          <p>
+            <b>Občerstvení:</b>
+            {{ cinema.bar }}
+          </p>
+          <p>
+            <b>Bezbariérové:</b>
+            {{ cinema.barrierFree }}
+          </p>
+          <p>
+            <b>Speciální program:</b>
+          </p>
+          <ul>
+            <li v-for="type in cinema.specialProgrammeTypes" v-bind:key="type">
+              {{ type }}
+            </li>
+          </ul>
+        </div>
+        
+      </div>
 
       <!--Sekce Seznam kin-->
       <div class="programme-wrapper">
@@ -59,9 +90,7 @@ export default {
 .programme-header {
   color: white;
   padding: 5px;
-  background-color: #3c444c;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  background-color:black;
 }
 
 .programme-wrapper {
@@ -112,6 +141,42 @@ h3 {
   background: linear-gradient(to right, #f27a54 25%, #a154f2 100%);
 }
 
+/* info */
+.cinema-detail {
+  background-color: #ffd671;
+  margin: 0px;
+  padding: 20px;
+  color:black;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-bottom: 5px;
+}
+
+.cinema-info {
+  text-align: left;
+  font-size: 12px;
+  width: 100%;
+}
+
+.address-details {
+  text-align: center;
+  width: 100%;
+  font-size: 12px;
+}
+
+.cinema-info li,
+.cinema-detail li {
+  list-style-type: none;
+  display: inline-block;
+  margin: 5px 20px;
+}
+
+.cinema-info ul,
+.cinema-detail ul {
+  padding: 0;
+}
+
 /* tablet */
 
 @media screen and (min-width: 541px) {
@@ -130,6 +195,18 @@ h3 {
   .programme-day-date:after {
     margin-top: 15px;
   }
+
+  .cinema-info {
+    font-size: 16px;
+  }
+
+  .address-details {
+    font-size: 16px;
+  }
+
+  .address-details ul {
+    padding-left: 0px;
+  }
 }
 
 /* desktop */
@@ -145,6 +222,19 @@ h3 {
 
   .cinema-programme {
     padding: 40px;
+  }
+
+  .cinema-info {
+    font-size: 16px;
+    width: 100%;
+    align-content: left;
+  }
+
+  .address-details {
+    font-size: 16px;
+    width: 50%;
+    margin-left: 20px;
+    margin-top: 50px;
   }
 }
 </style>

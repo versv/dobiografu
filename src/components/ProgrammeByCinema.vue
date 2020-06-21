@@ -1,5 +1,6 @@
 <template>
   <div>
+    
     <div class="programme-day">
       <div class="programme-cinema-name">{{ date }}</div>
       <div class="movies-list">
@@ -23,15 +24,33 @@
 </template>
 
 <script>
+import { cinemaList } from "../databaze";
 export default {
   name: "ProgrammeByCinema",
-  props: ["date", "movies"],
+  props: [
+    "date",
+   "movies",
+    "address",
+    "tagline",
+    "specialProgramme",
+    "specialProgrammeTypes",
+    "barrierFree",
+    "bar",
+    "transport",
+    "link",
+    "image",
+    "alt",
+    "copyright",
+    "url",
+   ],
   data() {
     return {
       sortedMovies: [...this.movies].sort((a, b) => {
         return a.times[0].localeCompare(b.times[0]);
-      })
+      }),
+      cinemaList: cinemaList,
     };
+    
   }
 };
 </script>
