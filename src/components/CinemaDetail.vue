@@ -6,16 +6,15 @@
       <div class="cinema-item">
         <div class="cinema-photo">
           <img v-bind:src="`assets/images/${image}`" v-bind:alt="`${alt}`" />
-          <div class="copyright">{{ copyright }}</div>
         </div>
         <div class="cinema-name">
           <h2>{{ name }}</h2>
           <p>{{ tagline }}</p>
         </div>
 
-        <div class="button program-button">
+        <div class="program-button">
           <router-link :to="`/CinemaProgramme/${url}`"
-            >Info & program</router-link
+            >Info & program »</router-link
           >
         </div>
       </div>
@@ -39,9 +38,7 @@ export default {
 </script>
 
 <style scoped>
-.button.program-button {
-  z-index: 200;
-}
+
 .cinema-list {
   box-shadow: 4px 4px 8px 0px rgba(50, 50, 50, 0.27);
   padding: 0;
@@ -66,7 +63,7 @@ export default {
   align-items: center;
   justify-content: space-around;
   flex-wrap: wrap;
-  padding: 10px 10px 10px 10px;
+  padding: 10px 10px 20px 10px;
   position: relative;
   overflow: hidden;
 }
@@ -83,11 +80,21 @@ export default {
   width: 100%;
 }
 
-.cinema-button {
+.program-button {
   z-index: 5;
 }
 
-.cinema-button button {
+.program-button a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.program-button a:hover {
+  color:  #ffd671;
+}
+
+/*.cinema-button button {
   color: black;
   border-radius: 15px;
   display: inline-block;
@@ -113,6 +120,7 @@ export default {
   border-style: outset;
   border: none;
 }
+*/
 
 .cinema-info-heading {
   font-weight: bold;
@@ -131,12 +139,7 @@ export default {
   text-align: center;
   padding-left: 0;
 }
-.button.program-button {
-  padding: 0;
-}
-.button.program-button a {
-  padding: 1em 3em;
-}
+
 /*------------------------------------------------------------------------------------------------------Detail kina */
 
 .cinema-wrap {
@@ -154,14 +157,11 @@ export default {
   width: 100%;
   position: absolute;
   left: 0;
-  filter: brightness(50%);
+  filter: brightness(35%);
   top: -40px;
 }
 
-.copyright {
-  font-size: 8px;
-  font-style: italic;
-}
+
 
 
 
@@ -186,6 +186,7 @@ export default {
 }
 
 @media screen and (min-width: 961px) {
+  
   .cinema-wrap {
     flex-direction: row;
   }
@@ -196,6 +197,10 @@ export default {
   .cinema-photo {
     width: 50%;
     height: auto;
+  }
+
+  .cinema-photo img {
+    top: 0;
   }
 
   .cinema-button button {
@@ -215,6 +220,10 @@ export default {
     position: absolute;
     z-index: 100;
     width: 40%;
+  }
+  
+  .cinema-item {
+    height: 250px;
   }
 }
 </style>

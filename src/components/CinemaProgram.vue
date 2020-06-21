@@ -11,23 +11,34 @@
 
       <div class="cinema-detail">
         <div class="cinema-wrap">
+          <div class="cinema-photo">
+            <img
+              v-bind:src="`../assets/images/${cinema.image}`"
+              v-bind:alt="`${alt}`"
+            />
+            <div class="copyright">{{ cinema.copyright }}</div>
+          </div>
           <div class="address-details">
             <p>{{ cinema.address }}</p>
             <ul>
-              <li v-for="means in cinema.transport" v-bind:key="means">{{ means }}</li>
+              <li v-for="means in cinema.transport" v-bind:key="means">
+                {{ means }}
+              </li>
             </ul>
           </div>
         </div>
 
         <div class="cinema-info">
-          <p>
-            <b>Občerstvení:</b>
-            {{ cinema.bar }}
-          </p>
-          <p>
-            <b>Bezbariérové:</b>
-            {{ cinema.barrierFree }}
-          </p>
+          <div class="cinema-info-line">
+            <p>
+              <b>Občerstvení:</b>
+              {{ cinema.bar }}
+            </p>
+            <p>
+              <b>Bezbariérové:</b>
+              {{ cinema.barrierFree }}
+            </p>
+          </div>
           <p>
             <b>Speciální program:</b>
           </p>
@@ -37,7 +48,6 @@
             </li>
           </ul>
         </div>
-        
       </div>
 
       <!--Sekce Seznam kin-->
@@ -66,23 +76,23 @@ export default {
   data() {
     return {
       dates: [],
-      cinema: getCinemaByUrl(this.$route.params.cinemaUrl)
+      cinema: getCinemaByUrl(this.$route.params.cinemaUrl),
     };
   },
   components: {
-    ProgrammeByCinema: ProgrammeByCinema
+    ProgrammeByCinema: ProgrammeByCinema,
   },
   created() {
     this.getMovies();
   },
   methods: {
     getMovies: function() {
-      loadMoviesForCinema(this.cinema).then(cinema => {
+      loadMoviesForCinema(this.cinema).then((cinema) => {
         //to cinema je moje pojmenování těch dat, které mi ta funkce vrátila, čili celé to pole
         this.dates = cinema.info; //tady pak k těm datům přistupuju
       });
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -90,11 +100,21 @@ export default {
 .programme-header {
   color: white;
   padding: 5px;
-  background-color:black;
+  background-color: black;
 }
 
 .programme-wrapper {
   padding: 20px;
+}
+
+.cinema-photo img {
+  width: 100%;
+  height: auto;
+}
+
+.copyright {
+  font-size: 8px;
+  font-style: italic;
 }
 
 h3 {
@@ -137,16 +157,17 @@ h3 {
   color: white;
 }
 
-.tickets-button:active {
-  background: linear-gradient(to right, #f27a54 25%, #a154f2 100%);
+/* info */
+
+.cinema-wrap {
+  border-bottom: 1px dashed black;
 }
 
-/* info */
 .cinema-detail {
   background-color: #ffd671;
   margin: 0px;
   padding: 20px;
-  color:black;
+  color: black;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
@@ -155,14 +176,27 @@ h3 {
 
 .cinema-info {
   text-align: left;
-  font-size: 12px;
+  font-size: 14px;
   width: 100%;
 }
 
 .address-details {
-  text-align: center;
+  text-align: left;
   width: 100%;
-  font-size: 12px;
+  font-size: 14px;
+  /*display: flex;
+  justify-content: space-between;*/
+}
+
+.address-details p {
+  font-weight: bold;
+  border-bottom: 1px dashed black;
+  padding-bottom: 5px;
+}
+
+.address-details ul {
+  margin-left: -20px;
+  padding: 0;
 }
 
 .cinema-info li,
@@ -172,9 +206,18 @@ h3 {
   margin: 5px 20px;
 }
 
-.cinema-info ul,
-.cinema-detail ul {
+.cinema-info ul {
   padding: 0;
+  margin-left: -20px;
+  display: flex;
+  flex-grow: 1;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.cinema-info-line {
+  display: flex;
+  justify-content: space-between;
 }
 
 /* tablet */
@@ -182,6 +225,7 @@ h3 {
 @media screen and (min-width: 541px) {
   h3 {
     font-size: 18px;
+    text-align: center;
   }
 
   .programme-day {
@@ -204,8 +248,8 @@ h3 {
     font-size: 16px;
   }
 
-  .address-details ul {
-    padding-left: 0px;
+  .copyright {
+    font-size: 10px;
   }
 }
 
@@ -226,15 +270,65 @@ h3 {
 
   .cinema-info {
     font-size: 16px;
-    width: 100%;
-    align-content: left;
+    flex: 0 0 50%;
+  }
+
+  .cinema-info p {
+    padding-left: 30px;
   }
 
   .address-details {
     font-size: 16px;
-    width: 50%;
+    width: 100%;
     margin-left: 20px;
-    margin-top: 50px;
+    margin-top: 15px;
+  }
+
+  .address-details p {
+    padding: 0;
+    border-bottom: none;
+    margin-left: -10px;
+  }
+  .cinema-info ul {
+    margin-left: 10px;
+  }
+  .address-details ul {
+    margin-left: -30px;
+  }
+
+  .cinema-wrap {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 50%;
+    border-bottom: none;
+  }
+
+  .cinema-name p {
+    font-size: 16px;
+  }
+  .cinema-photo {
+    width: 100%;
+    height: auto;
+  }
+
+  .copyright {
+    font-size: 12px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed black;
+  }
+
+  .cinema-detail {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+
+  .cinema-info li {
+    width: 100%;
+  }
+
+  .cinema-info-line {
+    display: block;
   }
 }
 </style>
