@@ -28,12 +28,6 @@
 
     <router-link to="/"></router-link>
     <router-view></router-view>
-
-    <footer>
-      <a href="https://www.freepik.com/free-photos-vectors/space"
-        >Space photo created by freepik - www.freepik.com</a
-      >
-    </footer>
   </div>
 </template>
 
@@ -48,8 +42,8 @@ export default {
       } else {
         x.className = "topnav";
       }
-    },
-  },
+    }
+  }
 };
 </script>
 
@@ -67,10 +61,6 @@ body {
 :after,
 :before {
   box-sizing: border-box;
-}
-
-.perex {
-  font-family: "Montserrat", sans-serif;
 }
 
 .title {
@@ -121,9 +111,9 @@ body {
 }
 
 /* Add an active class to highlight the current page */
-.topnav a.active {
+.topnav a:active {
   background-color: white;
-  color: black;
+  color: #ffd665;
 }
 
 /* Hide the link that should open and close the topnav on small screens */
@@ -337,7 +327,6 @@ footer a {
   text-align: center;
   outline: none;
 }
-
 
 .hp {
   width: 75px;

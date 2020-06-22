@@ -11,17 +11,12 @@
             <h2>Vyber film</h2>
 
             <section class="select">
-              <select
-                name="choose_movie"
-                id="choose_movie"
-                v-model="chosenMovie"
-              >
+              <select name="choose_movie" id="choose_movie" v-model="chosenMovie">
                 <option
                   v-for="movie in uniqueMovies"
                   v-bind:key="movie"
                   v-bind:value="movie"
-                  >{{ movie }}</option
-                >
+                >{{ movie }}</option>
               </select>
             </section>
           </div>
@@ -63,7 +58,7 @@ import { getUniqueMovies, getScheduleByMovie } from "../databazeFilmy";
 export default {
   name: "SelectMovie",
   components: {
-    ProgrammeByMovie: ProgrammeByMovie,
+    ProgrammeByMovie: ProgrammeByMovie
   },
 
   data() {
@@ -72,23 +67,23 @@ export default {
 
       uniqueMovies: [],
 
-      schedules: [],
+      schedules: []
     };
   },
   watch: {
     chosenMovie: function(newChosenMovie) {
-      getScheduleByMovie(newChosenMovie).then((schedule) => {
+      getScheduleByMovie(newChosenMovie).then(schedule => {
         console.log("sifhsifhsuifh", schedule);
         this.schedules = schedule;
       });
-    },
+    }
   },
 
   created() {
-    getUniqueMovies().then((apiMovies) => {
+    getUniqueMovies().then(apiMovies => {
       this.uniqueMovies = apiMovies;
     });
-  },
+  }
 };
 </script>
 
@@ -173,10 +168,19 @@ select::-ms-expand {
 }
 
 .programme-movie-name {
-  padding: 10px;
+  padding-top: 10px;
   font-size: 18px;
   text-transform: uppercase;
   font-weight: bold;
+}
+
+.animated {
+  text-align: center;
+}
+
+#cam {
+  width: 50px;
+  margin-top: 30px;
 }
 
 /*tablet*/
@@ -224,16 +228,13 @@ select::-ms-expand {
   .schedule {
     display: flex;
   }
-  .programme-movie-name {
-    display: none;
-  }
 
   .animated {
     text-align: center;
   }
 
   #cam {
-    width: 100px;
+    width: 80px;
     margin-top: 30px;
   }
 }

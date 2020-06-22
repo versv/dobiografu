@@ -6,11 +6,7 @@
       </div>
 
       <div class="schedule_day_time">
-        <div
-          class="date_time"
-          v-for="(schedule, index) in schedules"
-          v-bind:key="index"
-        >
+        <div class="date_time" v-for="(schedule, index) in schedules" v-bind:key="index">
           <p class="p-date">
             <strong>{{ schedule.date.split(" ")[1] }}</strong>
           </p>
@@ -24,7 +20,7 @@
 <script>
 export default {
   name: "ProgrammeByMovie",
-  props: ["cinemaName", "schedules"],
+  props: ["cinemaName", "schedules"]
 };
 </script>
 
@@ -32,8 +28,8 @@ export default {
 .schedule {
   display: flex;
   flex-direction: column;
-  border-bottom: 1px dashed #e0d9d3;
-  padding: 0 10px;
+  border-bottom: 1px dashed black;
+  padding: 0px;
 }
 
 .schedule_cinema {
@@ -42,7 +38,10 @@ export default {
 
 .schedule_cinema p {
   margin-bottom: 0;
-  font-weight: bold;
+
+  text-transform: uppercase;
+  font-size: 18px;
+  border-bottom: 1px dashed #e0d9d3;
 }
 
 .schedule_day_time {
@@ -53,12 +52,8 @@ export default {
   text-align: left;
 }
 
-.schedule_day_time .cinemas {
-  margin-bottom: 15px;
-}
-
 .p-date {
-  margin-bottom: 0;
+  margin-bottom: 2px;
 }
 
 .p-times {
