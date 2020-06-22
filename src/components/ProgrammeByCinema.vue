@@ -2,7 +2,7 @@
   <div>
     
     <div class="programme-day">
-      <div class="programme-cinema-name">{{ date }}</div>
+      <div class="programme-cinema-name">{{ date.split(" ")[1] }}</div>
       <div class="movies-list">
         <div class="movie">
           <ul>

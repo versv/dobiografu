@@ -53,6 +53,10 @@ export default {
 </script>
 
 <style scoped>
+
+ .cinema-list-items > div {
+   border-top: 2px solid white;
+ }
 .ahoj {
   display: flex;
   justify-content: space-between;
@@ -106,7 +110,10 @@ export default {
     flex-wrap: wrap;
   }
   .cinema-list-items > div {
-    flex: 0 0 50%;
+    flex: 0 0 49.8%;
+  }
+  .cinema-list-items > div:nth-child(2n + 1) {
+    border-right: 2px solid white;
   }
 
   
