@@ -235,10 +235,6 @@ h3 {
   flex-wrap: wrap;
 }
 
-.cinema-info-line {
-  display: flex;
-  justify-content: space-between;
-}
 
 .message {
   padding: 10px;
@@ -252,6 +248,12 @@ h3 {
 /* tablet */
 
 @media screen and (min-width: 541px) {
+
+  .cinema-info-line {
+  display: flex;
+  justify-content: space-between;
+}
+
   h3 {
     font-size: 18px;
     text-align: center;
