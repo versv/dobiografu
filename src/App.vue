@@ -144,6 +144,7 @@ header {
 
   .nav-bars {
     width: 50%;
+    padding: 0px;
     /**/
     margin-bottom: 10px;
   }
