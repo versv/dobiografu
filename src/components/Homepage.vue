@@ -66,10 +66,6 @@ h2 {
   height: auto;
 }
 
-.background-pic {
-  position: relative;
-}
-
 footer {
   text-align: center;
 }

@@ -15,7 +15,10 @@
         </div>
 
         <a href="javascript:void(0);" class="icon" v-on:click="myFunction()">
-          <i v-bind:class="{'fa fa-bars': className, 'fa fa-times': !className }" @click="changeClass"></i>
+          <i
+            v-bind:class="{'fa fa-bars': className, 'fa fa-times': !className }"
+            @click="changeClass"
+          ></i>
         </a>
       </div>
     </header>
@@ -26,13 +29,13 @@
 </template>
 
 <script>
-import { getCinemaByUrl } from './databaze';
+import { getCinemaByUrl } from "./databaze";
 export default {
   name: "App",
   data() {
     return {
       className: true
-    }
+    };
   },
   methods: {
     myFunction: function() {
@@ -44,9 +47,8 @@ export default {
       }
     },
     changeClass: function() {
-      this.className =! this.className
-      }
-
+      this.className = !this.className;
+    }
   }
 };
 </script>
@@ -72,6 +74,12 @@ footer a {
   color: black;
   font-family: "Montserrat", sans-serif;
   font-size: 8px;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .title {
