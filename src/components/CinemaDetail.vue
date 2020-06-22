@@ -58,7 +58,7 @@ export default {
 
 .cinema-name {
   width: 100%;
-  z-index: 10;
+  z-index: 0;
   padding: 10px;
 }
 
