@@ -121,10 +121,11 @@ export default {
   font-style: italic;
 }
 
-h3 {
+.programme-header h3 {
   font-style: italic;
   font-weight: 400;
   font-size: 16px;
+  text-align: center;
 }
 
 .programme-day {
@@ -235,7 +236,6 @@ h3 {
   flex-wrap: wrap;
 }
 
-
 .message {
   padding: 10px;
   font-size: 14px;
@@ -248,15 +248,8 @@ h3 {
 /* tablet */
 
 @media screen and (min-width: 541px) {
-
-  .cinema-info-line {
-  display: flex;
-  justify-content: space-between;
-}
-
-  h3 {
+  .programme-header h3 {
     font-size: 18px;
-    text-align: center;
   }
 
   .programme-day {
@@ -284,6 +277,11 @@ h3 {
     font-size: 10px;
   }
 
+  .cinema-info-line {
+    display: flex;
+    justify-content: space-between;
+  }
+
   .tickets-button {
     width: 30%;
   }
@@ -292,7 +290,7 @@ h3 {
 /* desktop */
 
 @media screen and (min-width: 961px) {
-  h3 {
+  .programme-header h3 {
     font-size: 20px;
   }
 
