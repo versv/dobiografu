@@ -35,6 +35,7 @@ export default {
 
 .cinema-name h2 {
   text-transform: uppercase;
+  border: none;
 }
 
 .cinema-name h2,
