@@ -13,9 +13,7 @@
         </div>
 
         <div class="program-button">
-          <router-link :to="`/CinemaProgramme/${url}`"
-            >Info & program »</router-link
-          >
+          <router-link :to="`/CinemaProgramme/${url}`">Info & program »</router-link>
         </div>
       </div>
     </div>
@@ -25,7 +23,7 @@
 <script>
 export default {
   name: "CinemaDetail",
-  props: ["name", "tagline", "link", "image", "alt", "copyright", "url"],
+  props: ["name", "tagline", "link", "image", "alt", "copyright", "url"]
 };
 </script>
 
@@ -83,34 +81,6 @@ export default {
 .program-button a:hover {
   color: #ffd671;
 }
-
-/*.cinema-button button {
-  color: black;
-  border-radius: 15px;
-  display: inline-block;
-  padding: 1em 3em;
-  border: none;
-  text-decoration: none;
-  background: white;
-  font-family: "Montserrat", sans-serif;
-  font-size: 12px;
-  cursor: pointer;
-  text-align: center;
-  outline: none;
-}
-
-.cinema-button button:focus {
-  outline: 0;
-  border-style: outset;
-  border: none;
-}
-
-.cinema-button button:active {
-  transform: scale(0.99);
-  border-style: outset;
-  border: none;
-}
-*/
 
 .cinema-info-heading {
   font-weight: bold;
@@ -196,6 +166,5 @@ export default {
   .cinema-item {
     height: 250px;
   }
-
 }
 </style>

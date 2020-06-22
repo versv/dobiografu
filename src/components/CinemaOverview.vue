@@ -1,7 +1,7 @@
 <template>
   <section class="cinema-overview">
     <div class="cinema-overview-header">
-      <div class="ahoj">
+      <div class="cinema-header">
         <div class="camera-img">
           <img src="assets/images/camera.png" alt="logo kamery" />
         </div>
@@ -13,7 +13,7 @@
     </div>
 
     <div class="cinema-list-items">
-      <CinemaDetail 
+      <CinemaDetail
         v-for="(cinema, index) in cinemaList"
         v-bind:name="cinema.name"
         v-bind:address="cinema.address"
@@ -28,8 +28,6 @@
         v-bind:copyright="cinema.copyright"
         v-bind:url="cinema.url"
         v-bind:key="index"
-        
-        
       />
     </div>
   </section>
@@ -43,21 +41,20 @@ export default {
   name: "CinemaOverview",
   data() {
     return {
-      cinemaList: cinemaList,
+      cinemaList: cinemaList
     };
   },
   components: {
-    CinemaDetail: CinemaDetail,
-  },
+    CinemaDetail: CinemaDetail
+  }
 };
 </script>
 
 <style scoped>
-
- .cinema-list-items > div {
-   border-top: 2px solid white;
- }
-.ahoj {
+.cinema-list-items > div {
+  border-top: 2px solid white;
+}
+.cinema-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -85,8 +82,6 @@ export default {
     display: block;
     width: 100px;
   }
-
-  
 }
 
 /*desktop*/
@@ -117,7 +112,5 @@ export default {
   .cinema-list-items > div:nth-child(2n + 1) {
     border-right: 2px solid white;
   }
-
-  
 }
 </style>

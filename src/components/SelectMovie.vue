@@ -2,7 +2,7 @@
   <div>
     <section class="cinema-overview">
       <div class="cinema-overview-header">
-        <div class="ahoj">
+        <div class="cinema-header">
           <div class="ticket-img">
             <img src="assets/images/ticket.png" alt="ikonka lístku" />
           </div>
@@ -98,7 +98,7 @@ export default {
   padding: 5px;
 }
 
-.ahoj {
+.cinema-header {
   display: flex;
   justify-content: space-between;
   align-items: center;

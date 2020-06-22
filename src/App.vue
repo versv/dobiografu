@@ -12,7 +12,6 @@
             <h1>DO&nbsp;BIOGRAFU</h1>
           </router-link>
         </div>
-        <!-- <a href="#home" class="active">DO BIOGRAFU</a>-->
 
         <div class="nav-bars">
           <router-link to="/CinemaOverview">Přehled kin</router-link>
@@ -42,8 +41,8 @@ export default {
       } else {
         x.className = "topnav";
       }
-    },
-  },
+    }
+  }
 };
 </script>
 
