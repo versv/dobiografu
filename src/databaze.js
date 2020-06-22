@@ -208,7 +208,7 @@ export const cinemaList = [
     bar: " ✓",
     transport: ["tramvaj: Jindřišská - linka: 3, 6, 9, 14, 24"],
     link: "https://goout.net/cs/kina/edison-filmhub/tekd/",
-    image: "Edison.jpeg",
+    image: "Edison.jpg",
     alt: "Edison Filmhub",
     copyright: "©Edison Filmhub"
   },
