@@ -144,6 +144,8 @@ header {
 
   .nav-bars {
     width: 50%;
+    /**/
+    margin-bottom: 10px;
   }
 
   .title h1 {
@@ -160,6 +162,8 @@ header {
   .topnav a.icon {
     float: right;
     display: block;
+    height: 1em;
+    margin-top: 22px;
   }
 }
 
@@ -176,6 +180,8 @@ header {
     position: absolute;
     right: 0;
     top: 0;
+    height: 1em;
+    margin-top: 22px;
   }
   .topnav.responsive .nav-bars {
     float: none;
@@ -183,9 +189,10 @@ header {
     text-align: left;
     flex: none;
     position: absolute;
-    top: 50px;
-    right: 0;
+    top: 65px;
+    right: 10px;
     z-index: 1;
+    margin-right: 5px;
   }
 
   .topnav.responsive .nav-bars .bars {
@@ -196,7 +203,7 @@ header {
     width: 100%;
     font-size: 16px;
     font-weight: 400;
-    line-height: 2;
+    line-height: 1;
     margin: 0;
     padding-top: 15px;
     padding-left: 5px;
@@ -212,6 +219,7 @@ header {
   .topnav.responsive .nav-bars a:hover {
     border: none;
     font-weight: bold;
+    color: #ffd671;
     background-color: rgb(94, 90, 90);
   }
 }
