@@ -45,7 +45,7 @@
         </div>
       </div>
     </section>
-    <div class="animated">
+    <div class="animated" v-if="schedules.length === 0">
       <img id="cam" src="assets/images/stativ.png" alt="kamera" />
     </div>
   </div>

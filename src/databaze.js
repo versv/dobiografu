@@ -26,7 +26,7 @@ export const cinemaList = [
     link: "https://www.kinosvetozor.cz/",
     image: "Svetozor.jpg",
     alt: "Kino Světozor",
-    copyright: "©Kino Světozor"
+    copyright: "©Martin Strachoň / Wikimedia Commons"
   },
 
   {

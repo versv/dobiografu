@@ -31,7 +31,6 @@ export default {
 
 <style scoped>
 .cinema-list {
-  box-shadow: 4px 4px 8px 0px rgba(50, 50, 50, 0.27);
   padding: 0;
   margin: 0;
 }
@@ -197,5 +196,6 @@ export default {
   .cinema-item {
     height: 250px;
   }
+
 }
 </style>

@@ -51,6 +51,7 @@
       </div>
 
       <!--Sekce Seznam kin-->
+      <h2>Program kina</h2>
       <div class="programme-wrapper">
         <ProgrammeByCinema
           v-for="(date, index) in dates"
@@ -58,6 +59,8 @@
           v-bind:movies="date.movies"
           v-bind:key="index"
         />
+
+        <div class="message" v-if="dates.length === 0">Program brzy doplníme.</div>
 
         <div class="tickets-button">
           <a :href="`${cinema.link}`">Koupit lístky</a>
@@ -196,12 +199,10 @@ h3 {
   text-align: left;
   width: 100%;
   font-size: 14px;
-  /*display: flex;
-  justify-content: space-between;*/
 }
 
 .address-details p {
-  font-weight: bold;
+  font-weight: 500;
   border-bottom: 1px dashed black;
   padding-bottom: 5px;
 }
@@ -232,6 +233,15 @@ h3 {
   justify-content: space-between;
 }
 
+.message {
+  padding: 10px;
+  font-size: 14px;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-style: italic;
+}
+
 /* tablet */
 
 @media screen and (min-width: 541px) {
@@ -256,7 +266,8 @@ h3 {
     font-size: 16px;
   }
 
-  .address-details {
+  .address-details,
+  .message {
     font-size: 16px;
   }
 
@@ -298,11 +309,12 @@ h3 {
     width: 100%;
     margin-left: 20px;
     margin-top: 15px;
+    
   }
 
   .address-details p {
     padding: 0;
-    border-bottom: none;
+    border: none;
     margin-left: -10px;
   }
   .cinema-info ul {
@@ -330,7 +342,7 @@ h3 {
   .copyright {
     font-size: 12px;
     padding-bottom: 10px;
-    border-bottom: 1px dashed black;
+   
   }
 
   .cinema-detail {
@@ -345,6 +357,10 @@ h3 {
 
   .cinema-info-line {
     display: block;
+  }
+
+  .tickets-button {
+    width: 20%;
   }
 
   .tickets-button a {

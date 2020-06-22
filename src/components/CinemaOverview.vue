@@ -108,9 +108,11 @@ export default {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    box-sizing: border-box;
   }
   .cinema-list-items > div {
-    flex: 0 0 49.8%;
+    flex: 0 0 50%;
+    box-sizing: border-box;
   }
   .cinema-list-items > div:nth-child(2n + 1) {
     border-right: 2px solid white;

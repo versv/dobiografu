@@ -42,8 +42,8 @@ export default {
       } else {
         x.className = "topnav";
       }
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -66,7 +66,7 @@ body {
 .title {
   margin: 0px;
   padding: 0px;
-  width: 40%;
+  width: 30%;
   flex-grow: 1;
 }
 
@@ -124,6 +124,8 @@ body {
 @media screen and (max-width: 840px) {
   .nav-bars a {
     font-size: 14px;
+    margin-left: 0;
+    padding-left: 0;
   }
 
   .nav-bars {
@@ -131,7 +133,7 @@ body {
   }
 
   .title h1 {
-    font-size: 32px;
+    font-size: 28px;
   }
 }
 
@@ -178,22 +180,30 @@ body {
 
   .topnav.responsive .nav-bars a {
     width: 100%;
-    font-size: 14px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 2;
     margin: 0;
-    padding: 0;
-    background-color: lightgrey;
+    padding-top: 15px;
+    padding-left: 5px;
+    padding-right: 10px;
+    color: white;
+    background-color: rgba(94, 90, 90, 0.9);
     border: none;
-    height: 30px;
+    height: auto;
+    min-width: 120px;
     text-align: center;
   }
 
   .topnav.responsive .nav-bars a:hover {
     border: none;
+    font-weight: bold;
+    background-color: rgb(94, 90, 90);
   }
 
-  .topnav.responsive .nav-bars a:first-child {
+  /*.topnav.responsive .nav-bars a:first-child {
     padding-top: 10px;
-  }
+  }*/
 }
 
 /*KONEC STYLE  NAV
