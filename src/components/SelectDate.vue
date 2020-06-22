@@ -258,6 +258,8 @@ select::-ms-expand {
   }
   .cinema-programme {
     padding: 0;
+    width: 80%;
+    margin: 0 auto;
   }
 }
 </style>

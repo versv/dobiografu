@@ -12,18 +12,13 @@
       <div class="cinema-detail">
         <div class="cinema-wrap">
           <div class="cinema-photo">
-            <img
-              v-bind:src="`../assets/images/${cinema.image}`"
-              v-bind:alt="`${alt}`"
-            />
+            <img v-bind:src="`../assets/images/${cinema.image}`" v-bind:alt="`${alt}`" />
             <div class="copyright">{{ cinema.copyright }}</div>
           </div>
           <div class="address-details">
             <p>{{ cinema.address }}</p>
             <ul>
-              <li v-for="means in cinema.transport" v-bind:key="means">
-                {{ means }}
-              </li>
+              <li v-for="means in cinema.transport" v-bind:key="means">{{ means }}</li>
             </ul>
           </div>
         </div>
@@ -43,9 +38,7 @@
             <b>Speciální program:</b>
           </p>
           <ul>
-            <li v-for="type in cinema.specialProgrammeTypes" v-bind:key="type">
-              {{ type }}
-            </li>
+            <li v-for="type in cinema.specialProgrammeTypes" v-bind:key="type">{{ type }}</li>
           </ul>
         </div>
       </div>
@@ -76,23 +69,23 @@ export default {
   data() {
     return {
       dates: [],
-      cinema: getCinemaByUrl(this.$route.params.cinemaUrl),
+      cinema: getCinemaByUrl(this.$route.params.cinemaUrl)
     };
   },
   components: {
-    ProgrammeByCinema: ProgrammeByCinema,
+    ProgrammeByCinema: ProgrammeByCinema
   },
   created() {
     this.getMovies();
   },
   methods: {
     getMovies: function() {
-      loadMoviesForCinema(this.cinema).then((cinema) => {
+      loadMoviesForCinema(this.cinema).then(cinema => {
         //to cinema je moje pojmenování těch dat, které mi ta funkce vrátila, čili celé to pole
         this.dates = cinema.info; //tady pak k těm datům přistupuju
       });
-    },
-  },
+    }
+  }
 };
 </script>
 
@@ -349,6 +342,12 @@ h3 {
 
   .tickets-button a {
     font-size: 18px;
+  }
+
+  .programme-wrapper {
+    width: 80%;
+    margin-left: 5%;
+    padding: 0;
   }
 }
 </style>

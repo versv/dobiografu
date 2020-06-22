@@ -41,7 +41,6 @@ export default {
 
   text-transform: uppercase;
   font-size: 18px;
-  /*border-bottom: 1px dashed #e0d9d3;*/
 }
 
 .schedule_day_time {
@@ -64,15 +63,6 @@ export default {
   .programme-movie-name {
     font-weight: bold;
   }
-
-  /*.programme-movie-name:after {
-    content: "";
-    background: linear-gradient(to right, #f27a54 25%, #a154f2 100%);
-    display: block;
-    height: 2.5px;
-    width: 100%;
-    margin-top: 10px;
-  }*/
 }
 
 @media screen and (min-width: 961px) {
@@ -93,6 +83,11 @@ export default {
     margin: 0 10px;
     display: flex;
     justify-content: space-between;
+    border-bottom: 1px dashed #e0d9d3;
+  }
+
+  .date_time:last-child {
+    border-bottom: none;
   }
 
   .p-date p {
@@ -101,10 +96,13 @@ export default {
     text-align: right;
   }
 
+  .p-times {
+    font-size: 18px;
+  }
+
   .schedule_day_time {
-    border-bottom: 1px dashed #e0d9d3;
+    border-bottom: 1px dashed black;
     flex-grow: 1;
-    /*justify-content: flex-start;*/
   }
 }
 </style>

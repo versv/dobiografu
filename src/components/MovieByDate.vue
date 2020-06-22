@@ -44,7 +44,6 @@ export default {
 
   .programme-day {
     display: flex;
-    /*margin: 0px 150px 0px 100px;*/
   }
 
   .programme-cinema-name {

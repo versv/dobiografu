@@ -144,6 +144,7 @@ select::-ms-expand {
   right: 0;
   bottom: 0;
   padding: 0 1em;
+  color: black;
   background: #fdd673;
   cursor: pointer;
   pointer-events: none;
@@ -153,6 +154,11 @@ select::-ms-expand {
 .select:hover::after {
   color: #2b2e2e;
 }
+
+#select-movie {
+  width: 30vh;
+}
+
 .ticket-img img {
   width: 90px;
   margin-left: 10px;
