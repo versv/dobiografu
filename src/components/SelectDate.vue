@@ -16,8 +16,7 @@
                   v-for="date in dates"
                   :value="date.name"
                   :key="date.id"
-                  >{{ date.displayName }}</option
-                >
+                >{{ date.displayName }}</option>
               </select>
             </section>
           </div>
@@ -51,7 +50,7 @@ import { getMoviesForDate, formatDate } from "../databazeFilmy";
 export default {
   name: "SelectDate",
   components: {
-    MovieByDate: MovieByDate,
+    MovieByDate: MovieByDate
   },
   data() {
     return {
@@ -72,15 +71,15 @@ export default {
         "středa",
         "čtvrtek",
         "pátek",
-        "sobota",
-      ],
+        "sobota"
+      ]
     };
   },
 
   watch: {
     chosenDate: function(newChosenDate, chosenDate) {
       this.get(newChosenDate);
-    },
+    }
   },
 
   created() {
@@ -100,7 +99,7 @@ export default {
       this.dates.push({
         name: name,
         displayName: displayName,
-        id: i,
+        id: i
       });
     }
 
@@ -115,11 +114,11 @@ export default {
     },
 
     get: function(date) {
-      getMoviesForDate(date).then((cinema) => {
+      getMoviesForDate(date).then(cinema => {
         this.cinemaToday = cinema;
       });
-    },
-  },
+    }
+  }
 };
 </script>
 
@@ -180,25 +179,27 @@ select::-ms-expand {
   line-height: 2;
   background: #e0d9d3;
   overflow: hidden;
-  border-radius: 0.25em;
+
   margin-bottom: 10px;
 }
 
 .select::after {
   content: "\25BC";
   position: absolute;
+
   top: 0;
   right: 0;
   bottom: 0;
   padding: 0 1em;
-  background: #2b2e2e;
+  color: black;
+  background: #ffd671;
   cursor: pointer;
   pointer-events: none;
   transition: 0.25s all ease;
 }
 
 .select:hover::after {
-  color: #f27a54;
+  color: #2b2e2e;
 }
 
 .programme-cinema-name {
@@ -227,7 +228,7 @@ select::-ms-expand {
 /*desktop*/
 @media screen and (min-width: 961px) {
   .cinema-overview {
-    margin: 0 50px;
+    margin: 0 10px;
   }
 
   select {
@@ -236,9 +237,9 @@ select::-ms-expand {
 
   .select {
     display: inline-flex;
-    height: 3em;
-    line-height: 3;
-    width: 20vh;
+    height: 2em;
+    line-height: 2;
+    width: 35vh;
   }
 
   .calendar-img img {
@@ -257,6 +258,8 @@ select::-ms-expand {
   }
   .cinema-programme {
     padding: 0;
+    width: 80%;
+    margin: 0 auto;
   }
 }
 </style>

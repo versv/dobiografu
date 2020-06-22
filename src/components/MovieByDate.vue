@@ -5,7 +5,7 @@
       <div class="movies-list">
         <div class="program-of-cinema" v-for="(movie, index) in cinema.movies" v-bind:key="index">
           <p>{{ movie.movieName }}</p>
-          <p>{{ movie.time }}</p>
+          <p id="movietime">{{ movie.time }}</p>
         </div>
       </div>
     </div>
@@ -44,7 +44,6 @@ export default {
 
   .programme-day {
     display: flex;
-    margin: 0px 150px 0px 100px;
   }
 
   .programme-cinema-name {
@@ -54,6 +53,10 @@ export default {
   }
   .movies-list {
     flex-grow: 1;
+  }
+
+  #movietime {
+    font-size: 18px;
   }
 }
 </style>

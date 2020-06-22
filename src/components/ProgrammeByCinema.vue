@@ -1,6 +1,5 @@
 <template>
   <div>
-    
     <div class="programme-day">
       <div class="programme-cinema-name">{{ date.split(" ")[1] }}</div>
       <div class="movies-list">
@@ -29,7 +28,7 @@ export default {
   name: "ProgrammeByCinema",
   props: [
     "date",
-   "movies",
+    "movies",
     "address",
     "tagline",
     "specialProgramme",
@@ -41,16 +40,15 @@ export default {
     "image",
     "alt",
     "copyright",
-    "url",
-   ],
+    "url"
+  ],
   data() {
     return {
       sortedMovies: [...this.movies].sort((a, b) => {
         return a.times[0].localeCompare(b.times[0]);
       }),
-      cinemaList: cinemaList,
+      cinemaList: cinemaList
     };
-    
   }
 };
 </script>
@@ -78,11 +76,13 @@ export default {
   list-style-type: none;
   display: flex;
   justify-content: space-between;
+  border-bottom: 1px dashed #e0d9d3;
 }
 
 .movie ul {
   padding: 0;
   width: 100%;
+  border-top: 1px dashed black;
 }
 
 .movie p {
