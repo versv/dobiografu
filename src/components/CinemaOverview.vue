@@ -1,7 +1,7 @@
 <template>
   <section class="cinema-overview">
     <div class="cinema-overview-header">
-      <div class="ahoj">
+      <div class="cinema-header">
         <div class="camera-img">
           <img src="assets/images/camera.png" alt="logo kamery" />
         </div>
@@ -41,12 +41,12 @@ export default {
   name: "CinemaOverview",
   data() {
     return {
-      cinemaList: cinemaList,
+      cinemaList: cinemaList
     };
   },
   components: {
-    CinemaDetail: CinemaDetail,
-  },
+    CinemaDetail: CinemaDetail
+  }
 };
 </script>
 
@@ -54,7 +54,7 @@ export default {
 .cinema-list-items > div {
   border-top: 2px solid white;
 }
-.ahoj {
+.cinema-header {
   display: flex;
   justify-content: space-between;
   align-items: center;

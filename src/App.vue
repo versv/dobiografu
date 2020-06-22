@@ -36,8 +36,8 @@ export default {
       } else {
         x.className = "topnav";
       }
-    },
-  },
+    }
+  }
 };
 </script>
 

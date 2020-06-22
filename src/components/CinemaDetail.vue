@@ -13,9 +13,7 @@
         </div>
 
         <div class="program-button">
-          <router-link :to="`/CinemaProgramme/${url}`"
-            >Info & program »</router-link
-          >
+          <router-link :to="`/CinemaProgramme/${url}`">Info & program »</router-link>
         </div>
       </div>
     </div>
@@ -25,7 +23,7 @@
 <script>
 export default {
   name: "CinemaDetail",
-  props: ["name", "tagline", "link", "image", "alt", "copyright", "url"],
+  props: ["name", "tagline", "link", "image", "alt", "copyright", "url"]
 };
 </script>
 
@@ -168,6 +166,5 @@ export default {
   .cinema-item {
     height: 250px;
   }
-
 }
 </style>

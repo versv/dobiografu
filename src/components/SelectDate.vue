@@ -2,7 +2,7 @@
   <div>
     <section class="cinema-overview">
       <div class="cinema-overview-header">
-        <div class="ahoj">
+        <div class="cinema-header">
           <div class="calendar-img">
             <img src="assets/images/calendar.png" alt="ikonka kalendáře" />
           </div>
@@ -133,7 +133,7 @@ export default {
   padding: 5px;
 }
 
-.ahoj {
+.cinema-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
