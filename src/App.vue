@@ -15,7 +15,7 @@
         </div>
 
         <a href="javascript:void(0);" class="icon" v-on:click="myFunction()">
-          <i class="fa fa-bars"></i>
+          <i v-bind:class="{'fa fa-bars': className, 'fa fa-times': !className }" @click="changeClass"></i>
         </a>
       </div>
     </header>
@@ -26,8 +26,14 @@
 </template>
 
 <script>
+import { getCinemaByUrl } from './databaze';
 export default {
   name: "App",
+  data() {
+    return {
+      className: true
+    }
+  },
   methods: {
     myFunction: function() {
       var x = document.getElementById("myTopnav");
@@ -36,7 +42,11 @@ export default {
       } else {
         x.className = "topnav";
       }
-    }
+    },
+    changeClass: function() {
+      this.className =! this.className
+      }
+
   }
 };
 </script>
