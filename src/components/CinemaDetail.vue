@@ -84,34 +84,6 @@ export default {
   color: #ffd671;
 }
 
-/*.cinema-button button {
-  color: black;
-  border-radius: 15px;
-  display: inline-block;
-  padding: 1em 3em;
-  border: none;
-  text-decoration: none;
-  background: white;
-  font-family: "Montserrat", sans-serif;
-  font-size: 12px;
-  cursor: pointer;
-  text-align: center;
-  outline: none;
-}
-
-.cinema-button button:focus {
-  outline: 0;
-  border-style: outset;
-  border: none;
-}
-
-.cinema-button button:active {
-  transform: scale(0.99);
-  border-style: outset;
-  border: none;
-}
-*/
-
 .cinema-info-heading {
   font-weight: bold;
 }
@@ -130,7 +102,7 @@ export default {
   padding-left: 0;
 }
 
-/*------------------------------------------------------------------------------------------------------Detail kina */
+/* Detail kina */
 
 .cinema-wrap {
   display: flex;

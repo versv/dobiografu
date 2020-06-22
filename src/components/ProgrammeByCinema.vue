@@ -54,24 +54,6 @@ export default {
 </script>
 
 <style>
-.programme-day {
-  text-align: left;
-}
-
-.programme-day-date {
-  font-weight: bold;
-  padding: 10px;
-}
-
-.programme-day-date:after {
-  content: "";
-  background: linear-gradient(to right, #f27a54 25%, #a154f2 100%);
-  display: block;
-  height: 2.5px;
-  width: 100%;
-  margin-top: 5px;
-}
-
 .movie li {
   list-style-type: none;
   display: flex;
@@ -97,23 +79,4 @@ export default {
   margin-bottom: 15px;
 }
 
-@media screen and (min-width: 541px) {
-  .programme-day {
-    font-size: 16px;
-  }
-
-  .programme-day-date:after {
-    margin-top: 10px;
-  }
-}
-
-@media screen and (min-width: 961px) {
-  .programme-day {
-    font-size: 16px;
-  }
-
-  .cinema-programme {
-    padding: 40px;
-  }
-}
 </style>

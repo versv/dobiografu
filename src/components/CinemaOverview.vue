@@ -13,7 +13,7 @@
     </div>
 
     <div class="cinema-list-items">
-      <CinemaDetail 
+      <CinemaDetail
         v-for="(cinema, index) in cinemaList"
         v-bind:name="cinema.name"
         v-bind:address="cinema.address"
@@ -28,8 +28,6 @@
         v-bind:copyright="cinema.copyright"
         v-bind:url="cinema.url"
         v-bind:key="index"
-        
-        
       />
     </div>
   </section>
@@ -53,10 +51,9 @@ export default {
 </script>
 
 <style scoped>
-
- .cinema-list-items > div {
-   border-top: 2px solid white;
- }
+.cinema-list-items > div {
+  border-top: 2px solid white;
+}
 .ahoj {
   display: flex;
   justify-content: space-between;
@@ -85,8 +82,6 @@ export default {
     display: block;
     width: 100px;
   }
-
-  
 }
 
 /*desktop*/
@@ -117,7 +112,5 @@ export default {
   .cinema-list-items > div:nth-child(2n + 1) {
     border-right: 2px solid white;
   }
-
-  
 }
 </style>

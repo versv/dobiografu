@@ -12,13 +12,18 @@
       <div class="cinema-detail">
         <div class="cinema-wrap">
           <div class="cinema-photo">
-            <img v-bind:src="`../assets/images/${cinema.image}`" v-bind:alt="`${alt}`" />
+            <img
+              v-bind:src="`../assets/images/${cinema.image}`"
+              v-bind:alt="`${alt}`"
+            />
             <div class="copyright">{{ cinema.copyright }}</div>
           </div>
           <div class="address-details">
             <p>{{ cinema.address }}</p>
             <ul>
-              <li v-for="means in cinema.transport" v-bind:key="means">{{ means }}</li>
+              <li v-for="means in cinema.transport" v-bind:key="means">
+                {{ means }}
+              </li>
             </ul>
           </div>
         </div>
@@ -35,10 +40,12 @@
             </p>
           </div>
           <p>
-           Speciální program:
+            Speciální program:
           </p>
           <ul>
-            <li v-for="type in cinema.specialProgrammeTypes" v-bind:key="type">{{ type }}</li>
+            <li v-for="type in cinema.specialProgrammeTypes" v-bind:key="type">
+              {{ type }}
+            </li>
           </ul>
         </div>
       </div>
@@ -53,11 +60,12 @@
           v-bind:key="index"
         />
 
-        <div class="message" v-if="dates.length === 0">Program brzy doplníme.</div>
-
-        <div class="tickets-button">
-          <a :href="`${cinema.link}`">Koupit lístky</a>
+        <div class="message" v-if="dates.length === 0">
+          Program brzy doplníme.
         </div>
+      </div>
+      <div class="tickets-button">
+        <a :href="`${cinema.link}`">Koupit lístky</a>
       </div>
     </section>
   </div>
@@ -72,23 +80,23 @@ export default {
   data() {
     return {
       dates: [],
-      cinema: getCinemaByUrl(this.$route.params.cinemaUrl)
+      cinema: getCinemaByUrl(this.$route.params.cinemaUrl),
     };
   },
   components: {
-    ProgrammeByCinema: ProgrammeByCinema
+    ProgrammeByCinema: ProgrammeByCinema,
   },
   created() {
     this.getMovies();
   },
   methods: {
     getMovies: function() {
-      loadMoviesForCinema(this.cinema).then(cinema => {
+      loadMoviesForCinema(this.cinema).then((cinema) => {
         //to cinema je moje pojmenování těch dat, které mi ta funkce vrátila, čili celé to pole
         this.dates = cinema.info; //tady pak k těm datům přistupuju
       });
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -308,7 +316,6 @@ h3 {
     width: 100%;
     margin-left: 20px;
     margin-top: 15px;
-    
   }
 
   .address-details p {
@@ -341,7 +348,6 @@ h3 {
   .copyright {
     font-size: 12px;
     padding-bottom: 10px;
-   
   }
 
   .cinema-detail {
