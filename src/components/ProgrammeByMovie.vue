@@ -41,7 +41,7 @@ export default {
 
   text-transform: uppercase;
   font-size: 18px;
-  border-bottom: 1px dashed #e0d9d3;
+  /*border-bottom: 1px dashed #e0d9d3;*/
 }
 
 .schedule_day_time {
@@ -79,18 +79,20 @@ export default {
   .schedule {
     border: none;
     flex-direction: row;
-    margin: 10px 0px;
+    margin-top: 10px;
+    margin-bottom: 15px;
   }
 
   .schedule_cinema {
-    width: 200px;
     text-align: right;
     text-transform: uppercase;
+    width: 15%;
   }
 
   .date_time {
     margin: 0 10px;
     display: flex;
+    justify-content: space-between;
   }
 
   .p-date p {
@@ -100,9 +102,9 @@ export default {
   }
 
   .schedule_day_time {
-    width: 100vh;
     border-bottom: 1px dashed #e0d9d3;
-    justify-content: flex-start;
+    flex-grow: 1;
+    /*justify-content: flex-start;*/
   }
 }
 </style>

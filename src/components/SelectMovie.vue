@@ -10,7 +10,7 @@
           <div class="filtr">
             <h2>Vyber film</h2>
 
-            <section class="select">
+            <section class="select" id="select-movie">
               <select name="choose_movie" id="choose_movie" v-model="chosenMovie">
                 <option
                   v-for="movie in uniqueMovies"
@@ -31,7 +31,7 @@
       <!--Seznam kin, co hrají vybraný film-->
 
       <div class="cinema-programme">
-        <div class="programme-day">
+        <div class="select-movie">
           <div class="programme-movie-name">{{ chosenMovie }}</div>
           <div class="cinemas">
             <!-- níže je část kód která se zobrazí v závisloti na vybraném filmu-->
@@ -45,7 +45,7 @@
         </div>
       </div>
     </section>
-    <div class="animated">
+    <div class="camera">
       <img id="cam" src="assets/images/stativ.png" alt="kamera" />
     </div>
   </div>
@@ -118,7 +118,7 @@ select {
   padding: 0 0.5em;
   color: black;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 1em;
   font-family: "Montserrat", sans-serif;
 }
 
@@ -131,11 +131,10 @@ select::-ms-expand {
   display: flex;
   height: 2em;
   line-height: 2;
-  background: #5c6664;
+  background: #e0d9d3;
   overflow: hidden;
-  border-radius: 0.25em;
+
   margin-bottom: 10px;
-  width: 25vh;
 }
 
 .select::after {
@@ -145,14 +144,14 @@ select::-ms-expand {
   right: 0;
   bottom: 0;
   padding: 0 1em;
-  background: #2b2e2e;
+  background: #fdd673;
   cursor: pointer;
   pointer-events: none;
   transition: 0.25s all ease;
 }
 
 .select:hover::after {
-  color: #f27a54;
+  color: #2b2e2e;
 }
 .ticket-img img {
   width: 90px;
@@ -200,6 +199,10 @@ select::-ms-expand {
     margin-left: 10px;
     margin-right: 10px;
   }
+
+  #select-movie {
+    width: 45vh;
+  }
 }
 
 /*desktop*/
@@ -210,32 +213,39 @@ select::-ms-expand {
 
   .select {
     display: inline-flex;
-    height: 3em;
-    line-height: 3;
-    width: 20vh;
+    height: 2em;
+    line-height: 2;
   }
 
+  #select-movie {
+    width: 75vh;
+  }
   .ticket-img img {
-    width: 150px;
+    width: 120px;
     margin-left: 30px;
   }
 
   .ticket-img_b img {
     display: block;
-    width: 150px;
+    width: 120px;
     margin-right: 30px;
   }
+
+  .select-movie {
+    padding: 10px;
+  }
+
   .schedule {
     display: flex;
   }
 
-  .animated {
+  .camera {
     text-align: center;
   }
 
   #cam {
     width: 80px;
-    margin-top: 30px;
+    margin-top: 50px;
   }
 }
 </style>
