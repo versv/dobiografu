@@ -69,7 +69,7 @@ export default {
 
 .camera-img-flipped img {
   display: none;
-  width: 50px;
+  width: 90px;
   margin-right: 10px;
   transform: rotateY(180deg);
 }
@@ -83,7 +83,7 @@ export default {
   .camera-img img,
   .camera-img-flipped img {
     display: block;
-    width: 80px;
+    width: 100px;
   }
 
   
@@ -101,7 +101,7 @@ export default {
   .camera-img img,
   .camera-img-flipped img {
     display: block;
-    width: 150px;
+    width: 120px;
   }
 
   .cinema-list-items {
