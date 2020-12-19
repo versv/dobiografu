@@ -15,7 +15,10 @@
         </div>
 
         <a href="javascript:void(0);" class="icon" v-on:click="myFunction()">
-          <i v-bind:class="{'fa fa-bars': className, 'fa fa-times': !className }" @click="changeClass"></i>
+          <i
+            v-bind:class="{'fa fa-bars': className, 'fa fa-times': !className }"
+            @click="changeClass"
+          ></i>
         </a>
       </div>
     </header>
@@ -26,13 +29,13 @@
 </template>
 
 <script>
-import { getCinemaByUrl } from './databaze';
+import { getCinemaByUrl } from "./databaze";
 export default {
   name: "App",
   data() {
     return {
       className: true
-    }
+    };
   },
   methods: {
     myFunction: function() {
@@ -44,9 +47,8 @@ export default {
       }
     },
     changeClass: function() {
-      this.className =! this.className
-      }
-
+      this.className = !this.className;
+    }
   }
 };
 </script>
@@ -72,6 +74,12 @@ footer a {
   color: black;
   font-family: "Montserrat", sans-serif;
   font-size: 8px;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .title {
@@ -136,6 +144,9 @@ footer a {
 
   .nav-bars {
     width: 50%;
+    padding: 0px;
+    /**/
+    margin-bottom: 10px;
   }
 
   .title h1 {
@@ -152,6 +163,8 @@ footer a {
   .topnav a.icon {
     float: right;
     display: block;
+    height: 1em;
+    margin-top: 22px;
   }
 }
 
@@ -168,6 +181,8 @@ footer a {
     position: absolute;
     right: 0;
     top: 0;
+    height: 1em;
+    margin-top: 22px;
   }
   .topnav.responsive .nav-bars {
     float: none;
@@ -175,9 +190,10 @@ footer a {
     text-align: left;
     flex: none;
     position: absolute;
-    top: 50px;
-    right: 0;
+    top: 65px;
+    right: 10px;
     z-index: 1;
+    margin-right: 5px;
   }
 
   .topnav.responsive .nav-bars .bars {
@@ -188,7 +204,7 @@ footer a {
     width: 100%;
     font-size: 16px;
     font-weight: 400;
-    line-height: 2;
+    line-height: 1;
     margin: 0;
     padding-top: 15px;
     padding-left: 5px;
@@ -204,6 +220,7 @@ footer a {
   .topnav.responsive .nav-bars a:hover {
     border: none;
     font-weight: bold;
+    color: #ffd671;
     background-color: rgb(94, 90, 90);
   }
 }
