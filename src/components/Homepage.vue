@@ -13,7 +13,7 @@
       <h2>dnes v kinech</h2>
     </div>
 
-    <div class="cinema-programme" v-if="cinema != null">
+    <div class="cinema-programme">
       <MovieByDate
         v-for="(cinema, index) in cinemaToday"
         v-bind:key="index"
@@ -21,10 +21,6 @@
       />
 
       <!--část kódu, která se zobrazí v závislti na vybraném daut .programme-day-->
-    </div>
-    <div class="covid" v-else>
-      Bohužel, nic tu teď není :(. Vzhledem k aktuální situaci a vládním
-      nařízením kina nepromítají.
     </div>
     <footer>
       <a href="https://www.freepik.com/free-photos-vectors/space"
